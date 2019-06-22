@@ -1,0 +1,24 @@
+spring:
+  datasource:
+    username: root
+    password: fp8oDILnjth8tN93P21ntgtjkY7Hdu//AS+ZVPe1gw90FRe4zjyXidZyYdUDA1G5Rq5O5LHfVhXbqqhtek6YsA==
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://119.29.233.28:3306/blog2?useSSL=false&serverTimeZone=UTC&characterEncoding=utf-8
+    #druid连接池配置------------------------------------------------------------------------------------
+    type: com.alibaba.druid.pool.DruidDataSource
+    druid:
+      filters: config,stat,wall,slf4j
+      initial-size: 5
+      max-active: 20
+      min-idle: 5
+      max-wait: 60000
+      time-between-eviction-runs-millis: 60000
+      min-evictable-idle-time-millis: 300000
+      validation-query: SELECT 1 FROM DUAL
+      test-while-idle: true
+      test-on-borrow: false
+      test-on-return: false
+      pool-prepared-statements: false
+      #数据库密码加密
+      connection-properties: config.decrypt=true;config.decrypt.key=MFwwDQYJKoZIhvcNAQEBBQADSwAwSAJBAMCjBwKaNEiUeK3cEIehMB3VNNqo/oXLpNvagica8Dga8SOfVyZF83RX5/+4zDIgUBOF4elEkCN6k86pJ0JMKqECAwEAAQ==
+
