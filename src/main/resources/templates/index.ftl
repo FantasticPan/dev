@@ -4,6 +4,7 @@
     <title>首页</title>
     <meta charset="UTF-8">
 </head>
+<link rel="stylesheet" href="/css/style.css">
 <body>
 <h1>首页</h1>
 <hr>
@@ -19,5 +20,6 @@
     <li><a href="/toLogin">登录</a></li>
     <li><a href="/toRegister">注册</a></li>
 </ul>
+<#include "include/footer.ftl">
 </body>
 </html>
