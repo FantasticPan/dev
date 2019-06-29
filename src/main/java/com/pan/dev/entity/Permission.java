@@ -8,7 +8,7 @@ import java.io.Serializable;
  */
 public class Permission implements Serializable {
 
-    private static final long serialVersionUID = 155018394631288985L;
+    private static final long serialVersionUID = -4725468965132158926L;
 
     private Integer permissionId;
 

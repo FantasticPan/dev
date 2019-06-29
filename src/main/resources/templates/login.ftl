@@ -4,7 +4,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-    <title>Li Pan`s 博客-登录页</title>
+    <title>Li Pan`s 博客 - 登录</title>
     <meta name="author" content="李攀">
     <meta name="keywords" content=""/>
     <meta name="description" content="">
@@ -14,7 +14,7 @@
     <link href="https://cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
     <link href="https://cdn.bootcss.com/nprogress/0.2.0/nprogress.min.css" rel="stylesheet">
     <link href="https://cdn.bootcss.com/toastr.js/2.0.3/css/toastr.min.css" rel="stylesheet">
-    <link href="/css/style.css" rel="stylesheet">
+    <link href="/lipan/css/lipan.core.css" rel="stylesheet">
 </head>
 <body>
 <section class="material-half-bg">

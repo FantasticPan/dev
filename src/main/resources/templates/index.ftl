@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>首页</title>
+    <title>Li Pan`s 博客 - 首页</title>
     <meta charset="UTF-8">
 </head>
-<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/lipan/css/lipan.core.css">
 <body>
 <h1>首页</h1>
 <hr>

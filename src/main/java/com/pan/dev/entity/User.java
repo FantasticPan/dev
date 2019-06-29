@@ -9,7 +9,7 @@ import java.util.Set;
  */
 public class User implements Serializable {
 
-    private static final long serialVersionUID = -4332635296774437833L;
+    private static final long serialVersionUID = -6938501357167798234L;
 
     private Integer userId;
 
