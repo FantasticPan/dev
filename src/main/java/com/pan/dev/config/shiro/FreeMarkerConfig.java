@@ -9,11 +9,19 @@ import org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer;
 import java.io.IOException;
 
 /**
+ * Shiro-Freemarker配置类
  * Created by Pan on 2019/6/21.
  */
 @Configuration
 public class FreeMarkerConfig {
 
+    /**
+     * 开启Freemarker页面对Shiro标签的支持
+     *
+     * @return
+     * @throws IOException
+     * @throws TemplateException
+     */
     @Bean
     public FreeMarkerConfigurer freeMarkerConfigurer() throws IOException, TemplateException {
         FreeMarkerConfigurer freeMarkerConfigurer = new FreeMarkerConfigurer();

@@ -11,16 +11,6 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 @Configuration
 public class MvcConfig implements WebMvcConfigurer {
 
-    //@Bean
-    //public FreeMarkerViewResolver freeMarkerViewResolver() {
-    //    FreeMarkerViewResolver resolver = new FreeMarkerViewResolver();
-    //    resolver.setPrefix("");
-    //    resolver.setSuffix(".ftl");
-    //    resolver.setContentType("text/html; charset=UTF-8");
-    //    resolver.setRequestContextAttribute("request");
-    //    return resolver;
-    //}
-
     /**
      * 效果等价于后端的Controller代码，若Controller中不写逻辑代码的话这样更方便，减少代码书写
      *
