@@ -40,6 +40,6 @@ public class ArticleController {
                                        @RequestParam("editor-html-code") String htmlContent) {
         Article article = new Article();
         articleDao.insertArticle(article);
-        return ResultUtil.redirect("/");
+        return ResultUtil.redirect("/show");
     }
 }

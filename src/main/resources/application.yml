@@ -23,4 +23,3 @@ server:
   port: 8888
 mybatis:
   mapper-locations: classpath:/mybatis/*.xml
-  type-aliases-package: com.pan.dev.entity

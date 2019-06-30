@@ -2,13 +2,17 @@
 <html lang="zh-CN">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
     <title>Li Pan`s 博客 - 登录</title>
-    <meta name="author" content="李攀">
-    <meta name="keywords" content=""/>
-    <meta name="description" content="">
+    <meta name="author" content="李攀(www.lipan.xyz)">
+    <#--<meta name="keywords" content=""/>-->
+    <#--<meta name="description" content="">-->
+    <#--不允许爬取本页面的链接-->
     <meta name="robots" content="nofollow"/>
+    <#--防止重复收录-->
+    <link rel="canonical" href="http://www.lipan.xyz/">
     <link href="https://cdn.bootcss.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="https://cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">

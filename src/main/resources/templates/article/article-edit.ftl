@@ -44,9 +44,9 @@
             saveHTMLToTextarea: true,
             // syncScrolling : "single",  //预览栏单独滚动，不写的话两边同步滚动
             path: "/editormd/lib/",
-            previewTheme: "dark",
-            // theme: "dark",
-            // editorTheme: "pastel-on-dark",
+            previewTheme: "dark", //预览主题
+            // theme: "dark", //工具栏主题
+            // editorTheme: "pastel-on-dark", //编辑区主题
             // emoji: true,
             taskList: true,
             tocm: true,                  // Using [TOCM]

@@ -3,9 +3,7 @@
 
 <mapper namespace="com.pan.dev.dao.ArticleDao">
 
-    <!--<select id="getUserByUsername" parameterType="string" resultType="com.pan.dev.entity.Article">-->
-        <!--SELECT *-->
-        <!--FROM user-->
-        <!--WHERE username = #{username}-->
-    <!--</select>-->
+    <insert id="insertArticle" useGeneratedKeys="true" keyProperty="articleId" parameterType="com.pan.dev.entity.Article">
+        INSERT INTO article
+    </insert>
 </mapper>

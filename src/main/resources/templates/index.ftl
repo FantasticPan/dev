@@ -10,8 +10,8 @@
 <hr>
 <ul>
     <h1>
-        <@shiro.guest>Hello guest!</@shiro.guest>
-        <@shiro.user>认证查看</@shiro.user>
+        <@shiro.guest>游客看到的内容</@shiro.guest>
+        <@shiro.user>认证之后看到的内容</@shiro.user>
     </h1>
     <#--hdsohvidosvhdiosvhio-->
     <li><a href="/user/index">个人中心</a></li>
