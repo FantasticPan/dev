@@ -15,6 +15,8 @@ public class Role implements Serializable {
 
     private String roleName;
 
+    private String description;
+
     private Set<Permission> permissions;
 
     public static long getSerialVersionUID() {
@@ -35,6 +37,14 @@ public class Role implements Serializable {
 
     public void setRoleName(String roleName) {
         this.roleName = roleName;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public Set<Permission> getPermissions() {

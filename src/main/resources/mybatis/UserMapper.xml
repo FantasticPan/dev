@@ -3,12 +3,34 @@
 
 <mapper namespace="com.pan.dev.dao.UserDao">
 
-    <select id="getUserByUsername" parameterType="string" resultType="com.pan.dev.entity.User">
+    <resultMap id="user" type="com.pan.dev.entity.User">
+        <id property="userId" column="user_id"/>
+        <result property="username" column="username"/>
+        <result property="password" column="password"/>
+        <collection property="roles" column="role_id" ofType="com.pan.dev.entity.Role" resultMap="role"/>
+    </resultMap>
+    <resultMap id="role" type="com.pan.dev.entity.Role">
+        <id property="roleId" column="role_id"/>
+        <result property="roleName" column="role_name"/>
+        <result property="description" column="description"/>
+        <collection property="permissions" column="permission_id" ofType="com.pan.dev.entity.Permission"
+                    resultMap="permission"/>
+    </resultMap>
+    <resultMap id="permission" type="com.pan.dev.entity.Permission">
+        <id property="permissionId" column="permission_id"/>
+        <result property="permissionName" column="permission_name"/>
+    </resultMap>
+
+    <select id="getUserByUsername" parameterType="string" resultMap="user">
         SELECT
             *
         FROM
-            user u, user_role ur ,role_permission rp
+            user u, role r, permission p, user_role ur, role_permission rp
         WHERE
-            u.id = ur.user_id AND ur.role_id = rp.role_id AND username = #{username}
+            u.id = ur.user_id
+            AND r.id = ur.role_id
+            AND p.id = rp.permission_id
+            AND ur.role_id = rp.role_id
+            AND username = #{username}
     </select>
 </mapper>

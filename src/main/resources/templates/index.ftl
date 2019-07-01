@@ -13,7 +13,6 @@
         <@shiro.guest>游客看到的内容</@shiro.guest>
         <@shiro.user>认证之后看到的内容</@shiro.user>
     </h1>
-    <#--hdsohvidosvhdiosvhio-->
     <li><a href="/user/index">个人中心</a></li>
     <li><a href="/vip/index">会员中心</a></li>
     <li><a href="/logout">退出登录</a></li>
