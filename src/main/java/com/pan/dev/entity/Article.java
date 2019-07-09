@@ -62,6 +62,12 @@ public class Article implements Serializable {
     //文章归档
     private Boolean articleArchive;
 
+    //文章图片路径
+    private String articleImage;
+
+    //文章置顶
+    private Boolean top;
+
     public Article() {
     }
 
@@ -203,5 +209,21 @@ public class Article implements Serializable {
 
     public void setArticleArchive(Boolean articleArchive) {
         this.articleArchive = articleArchive;
+    }
+
+    public String getArticleImage() {
+        return articleImage;
+    }
+
+    public void setArticleImage(String articleImage) {
+        this.articleImage = articleImage;
+    }
+
+    public Boolean getTop() {
+        return top;
+    }
+
+    public void setTop(Boolean top) {
+        this.top = top;
     }
 }
