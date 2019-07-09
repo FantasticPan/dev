@@ -7,14 +7,13 @@
         <id property="userId" column="user_id"/>
         <result property="username" column="username"/>
         <result property="password" column="password"/>
-        <collection property="roles" column="role_id" ofType="com.pan.dev.entity.Role" resultMap="role"/>
+        <collection property="roles" column="role_id" ofType="Role" resultMap="role"/>
     </resultMap>
     <resultMap id="role" type="Role">
         <id property="roleId" column="role_id"/>
         <result property="roleName" column="role_name"/>
         <result property="description" column="description"/>
-        <collection property="permissions" column="permission_id" ofType="com.pan.dev.entity.Permission"
-                    resultMap="permission"/>
+        <collection property="permissions" column="permission_id" ofType="Permission" resultMap="permission"/>
     </resultMap>
     <resultMap id="permission" type="Permission">
         <id property="permissionId" column="permission_id"/>
