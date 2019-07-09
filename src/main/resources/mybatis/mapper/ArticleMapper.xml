@@ -3,7 +3,7 @@
 
 <mapper namespace="com.pan.dev.dao.ArticleDao">
 
-    <insert id="insertArticle" useGeneratedKeys="true" keyProperty="articleId" parameterType="com.pan.dev.entity.Article">
+    <insert id="insertArticle" useGeneratedKeys="true" keyProperty="articleId" parameterType="Article">
         INSERT INTO article
     </insert>
 </mapper>
