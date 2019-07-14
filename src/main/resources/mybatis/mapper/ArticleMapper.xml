@@ -3,7 +3,63 @@
 
 <mapper namespace="com.pan.dev.dao.ArticleDao">
 
+    <resultMap id="article" type="Article">
+        <id property="articleId" column="article_id"/>
+        <result property="articleTitle" column="article_title"/>
+        <result property="articleMarkdownContent" column="article_markdown_content"/>
+        <result property="articleHtmlContent" column="article_html_content"/>
+        <result property="articleSummary" column="article_summary"/>
+        <result property="articleReleaseDate" column="article_release_date"/>
+        <result property="articleUpdateDate" column="article_update_date"/>
+        <result property="articleViewCount" column="article_view_count"/>
+        <result property="articleCommentCount" column="article_comment_count"/>
+        <result property="articleLikeCount" column="article_like_count"/>
+        <result property="articleReleaseType" column="article_release_type"/>
+        <result property="articleClassify" column="article_classify"/>
+        <result property="articleCanComment" column="article_can_comment"/>
+        <result property="articlePreArticleTitle" column="article_pre_article_title"/>
+        <result property="articleNextArticleTitle" column="article_next_article_title"/>
+        <result property="articleImage" column="article_image"/>
+        <result property="articleTop" column="article_top"/>
+        <association property="articleAuthor" column="article_author" javaType="User" resultMap="user"/>
+    </resultMap>
+
+    <resultMap id="user" type="User">
+        <id property="userId" column="user_id"/>
+        <result property="username" column="username"/>
+        <result property="password" column="password"/>
+        <collection property="roles" column="role_id" ofType="Role" resultMap="role"/>
+    </resultMap>
+    <resultMap id="role" type="Role">
+        <id property="roleId" column="role_id"/>
+        <result property="roleName" column="role_name"/>
+        <result property="description" column="description"/>
+        <collection property="permissions" column="permission_id" ofType="Permission" resultMap="permission"/>
+    </resultMap>
+    <resultMap id="permission" type="Permission">
+        <id property="permissionId" column="permission_id"/>
+        <result property="permissionName" column="permission_name"/>
+    </resultMap>
+
     <insert id="insertArticle" useGeneratedKeys="true" keyProperty="articleId" parameterType="Article">
-        INSERT INTO article
+        INSERT INTO
+            article (article_id, article_title, article_markdown_content, article_summary, article_html_content, article_author, article_release_date, article_update_date, article_release_type, article_classify, article_pre_article_title, article_next_article_title)
+        VALUES
+            (#{articleId}, #{articleTitle}, #{articleMarkdownContent}, #{articleSummary}, #{articleHtmlContent},
+                           #{articleAuthor.userId}, #{articleReleaseDate}, #{articleUpdateDate}, #{articleReleaseType},
+                           #{articleClassify}, #{articlePreArticleTitle}, #{articleNextArticleTitle})
     </insert>
+
+    <delete id="deleteArticle" parameterType="Article">
+        DELETE FROM
+            article
+        WHERE
+            article_id = #{articleId}
+    </delete>
+
+    <select id="getAllArticle">
+        SELECT *
+        FROM
+            article
+    </select>
 </mapper>

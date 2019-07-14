@@ -18,19 +18,19 @@ public class Article implements Serializable {
     private String articleTitle;
 
     //文章内容
-    private String markdownArticleContent;
+    private String articleMarkdownContent;
 
     //文章摘要
     private String articleSummary;
 
     //文章html内容
-    private String htmlArticleContent;
+    private String articleHtmlContent;
 
     //文章作者
     private User articleAuthor;
 
     //文章创建时间
-    private Timestamp articleCreateDate;
+    private Timestamp articleReleaseDate;
 
     //文章更新时间
     private Timestamp articleUpdateDate;
@@ -45,28 +45,25 @@ public class Article implements Serializable {
     private Integer articleLikeCount;
 
     //文章原创、转载
-    private String articleAuthorType;
+    private String articleReleaseType;
 
     //文章分类
     private String articleClassify;
 
     //文章是否可以评论
-    private Boolean canComment;
+    private Boolean articleCanComment;
 
     //上一篇文章标题
-    private String preArticleTitle;
+    private String articlePreArticleTitle;
 
     //下一篇文章标题
-    private String nextArticleTitle;
-
-    //文章归档
-    private Boolean articleArchive;
+    private String articleNextArticleTitle;
 
     //文章图片路径
     private String articleImage;
 
     //文章置顶
-    private Boolean top;
+    private Boolean articleTop;
 
     public Article() {
     }
@@ -91,12 +88,12 @@ public class Article implements Serializable {
         this.articleTitle = articleTitle;
     }
 
-    public String getMarkdownArticleContent() {
-        return markdownArticleContent;
+    public String getArticleMarkdownContent() {
+        return articleMarkdownContent;
     }
 
-    public void setMarkdownArticleContent(String markdownArticleContent) {
-        this.markdownArticleContent = markdownArticleContent;
+    public void setArticleMarkdownContent(String articleMarkdownContent) {
+        this.articleMarkdownContent = articleMarkdownContent;
     }
 
     public String getArticleSummary() {
@@ -107,12 +104,12 @@ public class Article implements Serializable {
         this.articleSummary = articleSummary;
     }
 
-    public String getHtmlArticleContent() {
-        return htmlArticleContent;
+    public String getArticleHtmlContent() {
+        return articleHtmlContent;
     }
 
-    public void setHtmlArticleContent(String htmlArticleContent) {
-        this.htmlArticleContent = htmlArticleContent;
+    public void setArticleHtmlContent(String articleHtmlContent) {
+        this.articleHtmlContent = articleHtmlContent;
     }
 
     public User getArticleAuthor() {
@@ -123,12 +120,12 @@ public class Article implements Serializable {
         this.articleAuthor = articleAuthor;
     }
 
-    public Timestamp getArticleCreateDate() {
-        return articleCreateDate;
+    public Timestamp getArticleReleaseDate() {
+        return articleReleaseDate;
     }
 
-    public void setArticleCreateDate(Timestamp articleCreateDate) {
-        this.articleCreateDate = articleCreateDate;
+    public void setArticleReleaseDate(Timestamp articleReleaseDate) {
+        this.articleReleaseDate = articleReleaseDate;
     }
 
     public Timestamp getArticleUpdateDate() {
@@ -163,12 +160,12 @@ public class Article implements Serializable {
         this.articleLikeCount = articleLikeCount;
     }
 
-    public String getArticleAuthorType() {
-        return articleAuthorType;
+    public String getArticleReleaseType() {
+        return articleReleaseType;
     }
 
-    public void setArticleAuthorType(String articleAuthorType) {
-        this.articleAuthorType = articleAuthorType;
+    public void setArticleReleaseType(String articleReleaseType) {
+        this.articleReleaseType = articleReleaseType;
     }
 
     public String getArticleClassify() {
@@ -179,36 +176,28 @@ public class Article implements Serializable {
         this.articleClassify = articleClassify;
     }
 
-    public Boolean getCanComment() {
-        return canComment;
+    public Boolean getArticleCanComment() {
+        return articleCanComment;
     }
 
-    public void setCanComment(Boolean canComment) {
-        this.canComment = canComment;
+    public void setArticleCanComment(Boolean articleCanComment) {
+        this.articleCanComment = articleCanComment;
     }
 
-    public String getPreArticleTitle() {
-        return preArticleTitle;
+    public String getArticlePreArticleTitle() {
+        return articlePreArticleTitle;
     }
 
-    public void setPreArticleTitle(String preArticleTitle) {
-        this.preArticleTitle = preArticleTitle;
+    public void setArticlePreArticleTitle(String articlePreArticleTitle) {
+        this.articlePreArticleTitle = articlePreArticleTitle;
     }
 
-    public String getNextArticleTitle() {
-        return nextArticleTitle;
+    public String getArticleNextArticleTitle() {
+        return articleNextArticleTitle;
     }
 
-    public void setNextArticleTitle(String nextArticleTitle) {
-        this.nextArticleTitle = nextArticleTitle;
-    }
-
-    public Boolean getArticleArchive() {
-        return articleArchive;
-    }
-
-    public void setArticleArchive(Boolean articleArchive) {
-        this.articleArchive = articleArchive;
+    public void setArticleNextArticleTitle(String articleNextArticleTitle) {
+        this.articleNextArticleTitle = articleNextArticleTitle;
     }
 
     public String getArticleImage() {
@@ -219,11 +208,11 @@ public class Article implements Serializable {
         this.articleImage = articleImage;
     }
 
-    public Boolean getTop() {
-        return top;
+    public Boolean getArticleTop() {
+        return articleTop;
     }
 
-    public void setTop(Boolean top) {
-        this.top = top;
+    public void setArticleTop(Boolean articleTop) {
+        this.articleTop = articleTop;
     }
 }

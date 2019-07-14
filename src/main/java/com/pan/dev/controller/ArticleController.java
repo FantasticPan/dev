@@ -42,4 +42,6 @@ public class ArticleController {
         articleDao.insertArticle(article);
         return ResultUtil.redirect("/show");
     }
+
+
 }
