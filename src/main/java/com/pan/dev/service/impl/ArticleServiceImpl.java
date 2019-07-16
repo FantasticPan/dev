@@ -4,12 +4,14 @@ import com.pan.dev.dao.ArticleDao;
 import com.pan.dev.entity.Article;
 import com.pan.dev.service.ArticleService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 /**
  * Created by Pan on 2019/6/17.
  */
+@Service
 public class ArticleServiceImpl implements ArticleService {
 
     @Autowired
