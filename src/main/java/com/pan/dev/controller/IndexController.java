@@ -23,13 +23,21 @@ public class IndexController {
     @Autowired
     private ArticleService articleService;
 
+    /**
+     * 加载首页，使用分页显示文章列表
+     *
+     * @param pageNum 当前页数
+     * @param model   模型
+     * @return 返回ModelAndView
+     */
     @RequestMapping("/")
     public ModelAndView index(@RequestParam(required = false, defaultValue = "1", value = "pageNum") Integer pageNum,
                               Model model) {
+        pageNum = pageNum <= 0 ? 1 : pageNum;
         PageHelper.startPage(pageNum, 10);
         List<Article> articleList = articleService.getAllArticle();
         PageInfo<Article> pageInfo = new PageInfo<>(articleList, 10);
         model.addAttribute("pageInfo", pageInfo);
-        return ResultUtil.view("index", "pageInfoModel", model);
+        return ResultUtil.view("index");
     }
 }

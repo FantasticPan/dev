@@ -38,6 +38,12 @@ public class LoginController {
         return ResultUtil.view("login");
     }
 
+    /**
+     * 登录
+     * @param username 用户名
+     * @param password 密码
+     * @return 跳转至首页
+     */
     @PostMapping("/login")
     public ModelAndView login(@RequestParam("username") String username,
                               @RequestParam("password") String password) {

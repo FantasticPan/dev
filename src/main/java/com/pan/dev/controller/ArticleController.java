@@ -31,9 +31,11 @@ public class ArticleController {
     }
 
     /**
-     * 保存发布文章
+     * 发布文章
      *
-     * @return
+     * @param markdownContent markdown格式文章内容
+     * @param htmlContent     html格式文章内容
+     * @return 页面跳转
      */
     @PostMapping("/publish")
     public ModelAndView articlePublish(@RequestParam("editormd-markdown-doc") String markdownContent,
