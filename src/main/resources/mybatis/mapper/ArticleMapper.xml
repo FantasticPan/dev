@@ -43,23 +43,42 @@
 
     <insert id="insertArticle" useGeneratedKeys="true" keyProperty="articleId" parameterType="Article">
         INSERT INTO
-            article (article_id, article_title, article_markdown_content, article_summary, article_html_content, article_author, article_release_date, article_update_date, article_release_type, article_classify, article_pre_article_title, article_next_article_title)
+            article (article_title, article_markdown_content, article_summary, article_html_content, article_author, article_release_date, article_update_date, article_release_type, article_classify, article_pre_article_title, article_next_article_title)
         VALUES
-            (#{articleId}, #{articleTitle}, #{articleMarkdownContent}, #{articleSummary}, #{articleHtmlContent},
-                           #{articleAuthor.userId}, #{articleReleaseDate}, #{articleUpdateDate}, #{articleReleaseType},
-                           #{articleClassify}, #{articlePreArticleTitle}, #{articleNextArticleTitle})
+            (#{articleTitle}, #{articleMarkdownContent}, #{articleSummary}, #{articleHtmlContent},
+                              #{articleAuthor.userId}, #{articleReleaseDate}, #{articleUpdateDate},
+                              #{articleReleaseType},
+                              #{articleClassify}, #{articlePreArticleTitle}, #{articleNextArticleTitle})
     </insert>
 
-    <delete id="deleteArticle" parameterType="Article">
+    <delete id="deleteArticleById" parameterType="integer">
         DELETE FROM
             article
         WHERE
             article_id = #{articleId}
     </delete>
 
-    <select id="getAllArticle">
+    <update id="updateArticle">
+
+    </update>
+
+    <select id="getAllArticle" resultMap="article">
         SELECT *
         FROM
             article
+    </select>
+
+    <select id="getArticleById" parameterType="integer" resultMap="article">
+        SELECT *
+        FROM
+            article
+        WHERE article_id = #{articleId}
+    </select>
+
+    <select id="getArticlesByClassify" parameterType="string" resultMap="article">
+        SELECT *
+        FROM
+            article
+        WHERE article_classify = #{articleClassify}
     </select>
 </mapper>

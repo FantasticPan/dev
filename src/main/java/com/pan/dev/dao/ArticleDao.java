@@ -13,7 +13,7 @@ public interface ArticleDao {
 
     void insertArticle(Article article);
 
-    void deleteArticle(Article article);
+    void deleteArticleById(Integer articleId);
 
     void updateArticle(Article article);
 
@@ -21,7 +21,5 @@ public interface ArticleDao {
 
     List<Article> getArticlesByClassify(String articleClassify);
 
-    void viewCountIncrease(Integer articleId);
-
-    void likeCountIncrease(Integer articleId);
+    Article getArticleById(Integer articleId);
 }

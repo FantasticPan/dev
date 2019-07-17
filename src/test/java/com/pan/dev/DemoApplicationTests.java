@@ -1,6 +1,7 @@
 package com.pan.dev;
 
 import com.pan.dev.entity.User;
+import com.pan.dev.service.ArticleService;
 import com.pan.dev.service.UserService;
 import org.apache.shiro.crypto.hash.Sha256Hash;
 import org.apache.shiro.crypto.hash.SimpleHash;
@@ -17,6 +18,8 @@ public class DemoApplicationTests {
 
     @Autowired
     private UserService userService;
+    @Autowired
+    private ArticleService articleService;
 
 	@Test
 	public void contextLoads() {
@@ -25,10 +28,5 @@ public class DemoApplicationTests {
         SimpleHash info = new SimpleHash(Sha256Hash.ALGORITHM_NAME, user.getPassword(), credentialsSalt, 1024);
         System.out.println(info.toString());
 	}
-
-	@Test
-    public void testMybatis() {
-	    User user = userService.getUserByUsername("李攀");
-    }
 
 }

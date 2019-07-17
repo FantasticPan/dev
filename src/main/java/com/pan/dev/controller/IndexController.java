@@ -8,7 +8,7 @@ import com.pan.dev.util.ResultUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -28,13 +28,12 @@ public class IndexController {
      *
      * @param pageNum 当前页数
      * @param model   模型
-     * @return 返回ModelAndView
+     * @return 返回ModelAndView视图模型
      */
-    @RequestMapping("/")
+    @GetMapping("/")
     public ModelAndView index(@RequestParam(required = false, defaultValue = "1", value = "pageNum") Integer pageNum,
                               Model model) {
-        pageNum = pageNum <= 0 ? 1 : pageNum;
-        PageHelper.startPage(pageNum, 10);
+        PageHelper.startPage(pageNum, 5);
         List<Article> articleList = articleService.getAllArticle();
         PageInfo<Article> pageInfo = new PageInfo<>(articleList, 10);
         model.addAttribute("pageInfo", pageInfo);

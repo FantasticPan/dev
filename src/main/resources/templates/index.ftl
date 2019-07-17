@@ -91,16 +91,41 @@
 <article>
     <div class="blogs">
         <#list pageInfo.list as article>
-            <li data-scroll-reveal="enter bottom over 1s"><span class="blogpic"><a href="/"><img
-                    src="${article.articleImage}"></a></span>
+            <li data-scroll-reveal="enter bottom over 1s"><span class="blogpic"><a href="/"><img src=""></a></span>
                 <h3 class="blogtitle">
-                    <#if article.articleTop == true>【置顶】</#if><a href="/">${article.articleTitle}</a></h3>
+                    <#if article.articleTop != 0>【置顶】</#if><a href="/">${article.articleTitle}</a></h3>
                 <div class="bloginfo">
                     <p>${article.articleSummary}</p>
                 </div>
-                <div class="autor"><span class="lm"><a href="/" title="${article.articleClassify}" target="_blank" class="classname">${article.articleClassify}</a></span><span class="dtime">${article.articleReleaseDate}</span><span class="viewnum">浏览（${article.articleViewCount}）</span><span class="pingl f_l">喜欢（${article.articleLikeCount}）</span><span class="readmore"><a href="/">阅读原文>></a></span></div>
+                <div class="autor">
+                    <span class="lm"><a href="/" title="${article.articleClassify}" target="_blank" class="classname">${article.articleClassify}</a></span>
+                    <span class="dtime">${article.articleReleaseDate}</span><span class="viewnum">浏览（${article.articleViewCount}）</span>
+                    <span class="pingl">喜欢（${article.articleLikeCount}）</span><span class="readmore"><a href="/">阅读原文>></a></span></div>
             </li>
         </#list>
+        <div class="pagelist">
+            <a>&nbsp;<b>共${pageInfo.total}页</b></a>&nbsp;&nbsp;&nbsp;
+            <a href="/">首页</a>&nbsp;
+            <#if pageInfo.hasPreviousPage>
+                <#if pageInfo.pageNum == 2>
+                    <a href="/">上一页</a>&nbsp;
+                </#if>
+                <#if pageInfo.pageNum != 2>
+                    <a href="/?pageNum=${pageInfo.prePage}">上一页</a>&nbsp;
+                </#if>
+            </#if>
+            <#list pageInfo.navigatepageNums as page_num>
+                <#if page_num == pageInfo.pageNum>
+                    <b>${page_num}</b>&nbsp;
+                </#if>
+                <#if page_num != pageInfo.pageNum>
+                    <a href="/?pageNum=${page_num}">${page_num}</a>&nbsp;
+                </#if>
+            </#list>
+            <#if pageInfo.hasNextPage>
+                <a href="/?pageNum=${pageInfo.nextPage}">下一页</a>&nbsp;
+            </#if>
+            <a href="/?pageNum=${pageInfo.navigateLastPage}">尾页</a></div>
     </div>
     <div class="sidebar">
         <div class="about">
@@ -128,14 +153,6 @@
                 <a href="/">校园生活</a>
                 <a href="/">html5</a>
                 <a href="/">SumSung</a>
-                <a href="/">青春</a>
-                <a href="/">温暖</a>
-                <a href="/">阳光</a>
-                <a href="/">三星</a>
-                <a href="/">索尼</a>
-                <a href="/">华维荣耀</a>
-                <a href="/">三星</a>
-                <a href="/">索尼</a>
             </ul>
         </div>
         <div class="paihang">
@@ -143,15 +160,13 @@
             <ul>
                 <li><a href="/">学无止境（33）</a></li>
                 <li><a href="/">日记（19）</a></li>
-                <li><a href="/">慢生活（520）</a></li>
-                <li><a href="/">美文欣赏（40）</a></li>
             </ul>
         </div>
         <div class="paihang">
             <h2 class="hometitle">点击排行</h2>
             <ul>
-                <li><b><a href="/download/div/2015-04-10/746.html" target="_blank">${article.articleTitle}</a></b>
-                    <p><i><img src="${article.articleImage}"></i>${article.articleSummary}</p>
+                <li><b><a href="/download/div/2015-04-10/746.html" target="_blank"></a></b>
+                    <p><i><img src=""></i></p>
                 </li>
             </ul>
         </div>
@@ -181,9 +196,7 @@
     </div>
 </article>
 <div class="blank"></div>
-<footer>
-    <p>Design by <a href="/">杨青个人博客</a> <a href="/">蜀ICP备11002373号-1</a></p>
-</footer>
+<#include "include/footer.ftl"/>
 <a href="#" class="cd-top">Top</a>
 <script src="/pages/js/jquery-2.1.1.min.js" type="text/javascript"></script>
 <script type="text/javascript" src="/pages/js/comm.js"></script>

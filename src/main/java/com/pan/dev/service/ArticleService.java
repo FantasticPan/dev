@@ -11,13 +11,15 @@ public interface ArticleService {
 
     void insertArticle(Article article);
 
-    void deleteArticle(Article article);
+    void deleteArticleById(Integer articleId);
 
     void updateArticle(Article article);
 
     List<Article> getAllArticle();
 
     List<Article> getArticlesByClassify(String articleClassify);
+
+    Article getArticleById(Integer articleId);
 
     void viewCountIncrease(Integer articleId);
 

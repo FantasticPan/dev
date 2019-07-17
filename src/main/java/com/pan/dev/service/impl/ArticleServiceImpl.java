@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * Created by Pan on 2019/6/17.
@@ -23,8 +24,8 @@ public class ArticleServiceImpl implements ArticleService {
     }
 
     @Override
-    public void deleteArticle(Article article) {
-        articleDao.deleteArticle(article);
+    public void deleteArticleById(Integer articleId) {
+        articleDao.deleteArticleById(articleId);
     }
 
     @Override
@@ -43,12 +44,25 @@ public class ArticleServiceImpl implements ArticleService {
     }
 
     @Override
+    public Article getArticleById(Integer articleId) {
+        return articleDao.getArticleById(articleId);
+    }
+
+    @Override
     public void viewCountIncrease(Integer articleId) {
-        articleDao.viewCountIncrease(articleId);
+        Article article = this.getArticleById(articleId);
+        //cas操作加1
+        AtomicInteger viewCount = new AtomicInteger(article.getArticleViewCount());
+        article.setArticleViewCount(viewCount.incrementAndGet());
+        this.updateArticle(article);
     }
 
     @Override
     public void likeCountIncrease(Integer articleId) {
-        articleDao.likeCountIncrease(articleId);
+        Article article = this.getArticleById(articleId);
+        //cas操作加1
+        AtomicInteger likeCount = new AtomicInteger(article.getArticleLikeCount());
+        article.setArticleLikeCount(likeCount.incrementAndGet());
+        this.updateArticle(article);
     }
 }

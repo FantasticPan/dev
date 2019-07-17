@@ -23,15 +23,15 @@
         <shiro-thymeleaf.version>2.0.0</shiro-thymeleaf.version>
         <freemarker-shiro-tag.version>1.0.0</freemarker-shiro-tag.version>
         <jsoup.version>1.10.2</jsoup.version>
-        <pagehelper.version>1.2.12</pagehelper.version>
+        <pagehelper.version>5.1.4</pagehelper.version>
     </properties>
 
 	<dependencies>
-        <dependency>
-            <groupId>com.github.pagehelper</groupId>
-            <artifactId>pagehelper-spring-boot-starter</artifactId>
-            <version>${pagehelper.version}</version>
-        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>com.github.pagehelper</groupId>-->
+            <!--<artifactId>pagehelper-spring-boot-starter</artifactId>-->
+            <!--<version>${pagehelper.version}</version>-->
+        <!--</dependency>-->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-freemarker</artifactId>
@@ -93,11 +93,11 @@
             <artifactId>mysql-connector-java</artifactId>
             <scope>runtime</scope>
         </dependency>
-        <!--<dependency>-->
-            <!--<groupId>org.springframework.boot</groupId>-->
-            <!--<artifactId>spring-boot-devtools</artifactId>-->
-            <!--<optional>true</optional>-->
-        <!--</dependency>-->
+        <dependency>
+            <groupId>com.github.pagehelper</groupId>
+            <artifactId>pagehelper</artifactId>
+            <version>${pagehelper.version}</version>
+        </dependency>
 	</dependencies>
 
 	<build>

@@ -6,9 +6,10 @@
 }
 
 body {
-    font: 14px "Œ¢»Ì—≈∫⁄", Arial, Helvetica, sans-serif;
+    font: 15px "Œ¢»Ì—≈∫⁄", "Microsoft YaHei", Arial, Helvetica, sans-serif;
     color: #555;
     background: #f1f1f1;
+    /*line-height: 1.5;*/
 }
 
 img {
@@ -239,11 +240,15 @@ footer {
     background: #333;
     color: #a5a4a4;
     text-align: center;
-    padding: 20px 0;
+    padding: 15px 0;
 }
 
 footer a {
     color: #a5a4a4
+}
+
+footer img {
+    display: inline-block;
 }
 
 /* ∑÷“≥ */

@@ -40,6 +40,7 @@ public class LoginController {
 
     /**
      * 登录
+     *
      * @param username 用户名
      * @param password 密码
      * @return 跳转至首页
@@ -54,6 +55,12 @@ public class LoginController {
         return ResultUtil.redirect("/");
     }
 
+    /**
+     * 注册
+     *
+     * @param user 用户
+     * @return
+     */
     @PostMapping(value = "/register")
     @ResponseBody
     public String register(User user) {
