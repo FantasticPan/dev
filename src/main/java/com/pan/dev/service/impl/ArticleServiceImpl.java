@@ -44,6 +44,11 @@ public class ArticleServiceImpl implements ArticleService {
     }
 
     @Override
+    public List<Article> getArticleByTag(String articleTag) {
+        return articleDao.getArticleByTag(articleTag);
+    }
+
+    @Override
     public Article getArticleById(Integer articleId) {
         return articleDao.getArticleById(articleId);
     }

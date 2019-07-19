@@ -93,7 +93,7 @@
         <#list pageInfo.list as article>
             <li data-scroll-reveal="enter bottom over 1s"><span class="blogpic"><a href="/"><img src=""></a></span>
                 <h3 class="blogtitle">
-                    <#if article.articleTop != 0>【置顶】</#if><a href="/">${article.articleTitle}</a></h3>
+                    <#if article.articleTop != 0>【置顶】</#if><a href="/article/display?articleId=${article.articleId}">${article.articleTitle}</a></h3>
                 <div class="bloginfo">
                     <p>${article.articleSummary}</p>
                 </div>

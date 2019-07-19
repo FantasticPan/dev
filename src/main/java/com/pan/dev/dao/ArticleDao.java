@@ -21,5 +21,7 @@ public interface ArticleDao {
 
     List<Article> getArticlesByClassify(String articleClassify);
 
+    List<Article> getArticleByTag(String articleTag);
+
     Article getArticleById(Integer articleId);
 }

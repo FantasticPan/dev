@@ -43,12 +43,119 @@
 
     <insert id="insertArticle" useGeneratedKeys="true" keyProperty="articleId" parameterType="Article">
         INSERT INTO
-            article (article_title, article_markdown_content, article_summary, article_html_content, article_author, article_release_date, article_update_date, article_release_type, article_classify, article_pre_article_title, article_next_article_title)
-        VALUES
-            (#{articleTitle}, #{articleMarkdownContent}, #{articleSummary}, #{articleHtmlContent},
-                              #{articleAuthor.userId}, #{articleReleaseDate}, #{articleUpdateDate},
-                              #{articleReleaseType},
-                              #{articleClassify}, #{articlePreArticleTitle}, #{articleNextArticleTitle})
+            article
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="articleId != null">
+                article_id,
+            </if>
+            <if test="articleTitle != null">
+                article_title,
+            </if>
+            <if test="articleMarkdownContent != null">
+                article_markdown_content,
+            </if>
+            <if test="articleSummary != null">
+                article_summary,
+            </if>
+            <if test="articleHtmlContent != null">
+                article_html_content,
+            </if>
+            <if test="articleAuthor != null">
+                article_author,
+            </if>
+            <if test="articleReleaseDate != null">
+                article_release_date,
+            </if>
+            <if test="articleUpdateDate != null">
+                article_update_date,
+            </if>
+            <if test="articleViewCount != null">
+                article_view_count,
+            </if>
+            <if test="articleCommentCount != null">
+                article_comment_count,
+            </if>
+            <if test="articleLikeCount != null">
+                article_like_count,
+            </if>
+            <if test="articleReleaseType != null">
+                article_release_type,
+            </if>
+            <if test="articleClassify != null">
+                article_classify,
+            </if>
+            <if test="articleCanComment != null">
+                article_can_comment,
+            </if>
+            <if test="articlePreArticleTitle != null">
+                article_pre_article_title,
+            </if>
+            <if test="articleNextArticleTitle != null">
+                article_next_article_title,
+            </if>
+            <if test="articleImage != null">
+                article_image,
+            </if>
+            <if test="articleTop != null">
+                article_top,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="articleId != null">
+                #{articleId,jdbcType=INTEGER},
+            </if>
+            <if test="articleTitle != null">
+                #{articleTitle,jdbcType=VARCHAR},
+            </if>
+            <if test="articleMarkdownContent != null">
+                #{articleMarkdownContent,jdbcType=VARCHAR},
+            </if>
+            <if test="articleSummary != null">
+                #{articleSummary,jdbcType=VARCHAR},
+            </if>
+            <if test="articleHtmlContent != null">
+                #{articleHtmlContent,jdbcType=VARCHAR},
+            </if>
+            <if test="articleAuthor != null">
+                #{articleAuthor,jdbcType=INTEGER},
+            </if>
+            <if test="articleReleaseDate != null">
+                #{articleReleaseDate,jdbcType=TIMESTAMP},
+            </if>
+            <if test="articleUpdateDate != null">
+                #{articleUpdateDate,jdbcType=TIMESTAMP},
+            </if>
+            <if test="articleViewCount != null">
+                #{articleViewCount,jdbcType=INTEGER},
+            </if>
+            <if test="articleCommentCount != null">
+                #{articleCommentCount,jdbcType=INTEGER},
+            </if>
+            <if test="articleLikeCount != null">
+                #{articleLikeCount,jdbcType=INTEGER},
+            </if>
+            <if test="articleReleaseType != null">
+                #{articleReleaseType,jdbcType=VARCHAR},
+            </if>
+            <if test="articleClassify != null">
+                #{articleClassify,jdbcType=VARCHAR},
+            </if>
+            <if test="articleCanComment != null">
+                #{articleCanComment,jdbcType=BIT},
+            </if>
+            <if test="articlePreArticleTitle != null">
+                #{articlePreArticleTitle,jdbcType=VARCHAR},
+            </if>
+            <if test="articleNextArticleTitle != null">
+                #{articleNextArticleTitle,jdbcType=VARCHAR},
+            </if>
+            <if test="articleImage != null">
+                #{articleImage,jdbcType=VARCHAR},
+            </if>
+            <if test="articleTop != null">
+                #{articleTop,jdbcType=INTEGER},
+            </if>
+        </trim>
     </insert>
 
     <delete id="deleteArticleById" parameterType="integer">
@@ -59,26 +166,140 @@
     </delete>
 
     <update id="updateArticle">
-
+        UPDATE
+            article
+        <set>
+            <if test="record.articleId != null">
+                article_id = #{record.articleId,jdbcType=INTEGER},
+            </if>
+            <if test="record.articleTitle != null">
+                article_title = #{record.articleTitle,jdbcType=VARCHAR},
+            </if>
+            <if test="record.articleMarkdownContent != null">
+                article_markdown_content = #{record.articleMarkdownContent,jdbcType=VARCHAR},
+            </if>
+            <if test="record.articleSummary != null">
+                article_summary = #{record.articleSummary,jdbcType=VARCHAR},
+            </if>
+            <if test="record.articleHtmlContent != null">
+                article_html_content = #{record.articleHtmlContent,jdbcType=VARCHAR},
+            </if>
+            <if test="record.articleAuthor != null">
+                article_author = #{record.articleAuthor,jdbcType=INTEGER},
+            </if>
+            <if test="record.articleReleaseDate != null">
+                article_release_date = #{record.articleReleaseDate,jdbcType=TIMESTAMP},
+            </if>
+            <if test="record.articleUpdateDate != null">
+                article_update_date = #{record.articleUpdateDate,jdbcType=TIMESTAMP},
+            </if>
+            <if test="record.articleViewCount != null">
+                article_view_count = #{record.articleViewCount,jdbcType=INTEGER},
+            </if>
+            <if test="record.articleCommentCount != null">
+                article_comment_count = #{record.articleCommentCount,jdbcType=INTEGER},
+            </if>
+            <if test="record.articleLikeCount != null">
+                article_like_count = #{record.articleLikeCount,jdbcType=INTEGER},
+            </if>
+            <if test="record.articleReleaseType != null">
+                article_release_type = #{record.articleReleaseType,jdbcType=VARCHAR},
+            </if>
+            <if test="record.articleClassify != null">
+                article_classify = #{record.articleClassify,jdbcType=VARCHAR},
+            </if>
+            <if test="record.articleCanComment != null">
+                article_can_comment = #{record.articleCanComment,jdbcType=BIT},
+            </if>
+            <if test="record.articlePreArticleTitle != null">
+                article_pre_article_title = #{record.articlePreArticleTitle,jdbcType=VARCHAR},
+            </if>
+            <if test="record.articleNextArticleTitle != null">
+                article_next_article_title = #{record.articleNextArticleTitle,jdbcType=VARCHAR},
+            </if>
+            <if test="record.articleImage != null">
+                article_image = #{record.articleImage,jdbcType=VARCHAR},
+            </if>
+            <if test="record.articleTop != null">
+                article_top = #{record.articleTop,jdbcType=INTEGER},
+            </if>
+        </set>
+        WHERE
+            article_id = #{articleId,jdbcType=INTEGER}
     </update>
 
     <select id="getAllArticle" resultMap="article">
-        SELECT *
+        SELECT
+            article_id,
+            article_title,
+            article_markdown_content,
+            article_summary,
+            article_html_content,
+            article_author,
+            article_release_date,
+            article_update_date,
+            article_view_count,
+            article_comment_count,
+            article_like_count,
+            article_release_type,
+            article_classify,
+            article_can_comment,
+            article_pre_article_title,
+            article_next_article_title,
+            article_image,
+            article_top
         FROM
             article
     </select>
 
     <select id="getArticleById" parameterType="integer" resultMap="article">
-        SELECT *
+        SELECT
+            article_id,
+            article_title,
+            article_markdown_content,
+            article_summary,
+            article_html_content,
+            article_author,
+            article_release_date,
+            article_update_date,
+            article_view_count,
+            article_comment_count,
+            article_like_count,
+            article_release_type,
+            article_classify,
+            article_can_comment,
+            article_pre_article_title,
+            article_next_article_title,
+            article_image,
+            article_top
         FROM
             article
         WHERE article_id = #{articleId}
     </select>
 
     <select id="getArticlesByClassify" parameterType="string" resultMap="article">
-        SELECT *
+        SELECT
+            article_id,
+            article_title,
+            article_markdown_content,
+            article_summary,
+            article_html_content,
+            article_author,
+            article_release_date,
+            article_update_date,
+            article_view_count,
+            article_comment_count,
+            article_like_count,
+            article_release_type,
+            article_classify,
+            article_can_comment,
+            article_pre_article_title,
+            article_next_article_title,
+            article_image,
+            article_top
         FROM
             article
-        WHERE article_classify = #{articleClassify}
+        WHERE
+            article_classify = #{articleClassify}
     </select>
 </mapper>

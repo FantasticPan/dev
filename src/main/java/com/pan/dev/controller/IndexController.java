@@ -4,6 +4,7 @@ import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.pan.dev.entity.Article;
 import com.pan.dev.service.ArticleService;
+import com.pan.dev.util.ConstantUtil;
 import com.pan.dev.util.ResultUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -33,9 +34,9 @@ public class IndexController {
     @GetMapping("/")
     public ModelAndView index(@RequestParam(required = false, defaultValue = "1", value = "pageNum") Integer pageNum,
                               Model model) {
-        PageHelper.startPage(pageNum, 5);
+        PageHelper.startPage(pageNum, ConstantUtil.PAGE_SIZE);
         List<Article> articleList = articleService.getAllArticle();
-        PageInfo<Article> pageInfo = new PageInfo<>(articleList, 10);
+        PageInfo<Article> pageInfo = new PageInfo<>(articleList, ConstantUtil.NAVIGATE_PAGES);
         model.addAttribute("pageInfo", pageInfo);
         return ResultUtil.view("index");
     }
