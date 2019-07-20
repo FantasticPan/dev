@@ -16,6 +16,7 @@
         <result property="articleLikeCount" column="article_like_count"/>
         <result property="articleReleaseType" column="article_release_type"/>
         <result property="articleClassify" column="article_classify"/>
+        <result property="articleTag" column="article_tag"/>
         <result property="articleCanComment" column="article_can_comment"/>
         <result property="articlePreArticleTitle" column="article_pre_article_title"/>
         <result property="articleNextArticleTitle" column="article_next_article_title"/>
@@ -84,6 +85,9 @@
             <if test="articleClassify != null">
                 article_classify,
             </if>
+            <if test="articleTag != null">
+                article_tag,
+            </if>
             <if test="articleCanComment != null">
                 article_can_comment,
             </if>
@@ -139,6 +143,9 @@
             </if>
             <if test="articleClassify != null">
                 #{articleClassify,jdbcType=VARCHAR},
+            </if>
+            <if test="articleTag != null">
+                #{articleTag,jdbcType=VARCHAR},
             </if>
             <if test="articleCanComment != null">
                 #{articleCanComment,jdbcType=BIT},
@@ -208,6 +215,9 @@
             <if test="record.articleClassify != null">
                 article_classify = #{record.articleClassify,jdbcType=VARCHAR},
             </if>
+            <if test="record.articleTag != null">
+                article_tag = #{record.articleTag,jdbcType=VARCHAR},
+            </if>
             <if test="record.articleCanComment != null">
                 article_can_comment = #{record.articleCanComment,jdbcType=BIT},
             </if>
@@ -243,6 +253,7 @@
             article_like_count,
             article_release_type,
             article_classify,
+            article_tag,
             article_can_comment,
             article_pre_article_title,
             article_next_article_title,
@@ -292,6 +303,7 @@
             article_like_count,
             article_release_type,
             article_classify,
+            article_tag,
             article_can_comment,
             article_pre_article_title,
             article_next_article_title,

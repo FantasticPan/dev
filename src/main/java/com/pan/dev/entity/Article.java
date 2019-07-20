@@ -50,6 +50,9 @@ public class Article implements Serializable {
     //文章分类
     private String articleClassify;
 
+    //文章标签
+    private String articleTag;
+
     //文章是否可以评论
     private Boolean articleCanComment;
 
@@ -235,6 +238,7 @@ public class Article implements Serializable {
         sb.append(", articleLikeCount=").append(articleLikeCount);
         sb.append(", articleReleaseType=").append(articleReleaseType);
         sb.append(", articleClassify=").append(articleClassify);
+        sb.append(", articleTag=").append(articleTag);
         sb.append(", articleCanComment=").append(articleCanComment);
         sb.append(", articlePreArticleTitle=").append(articlePreArticleTitle);
         sb.append(", articleNextArticleTitle=").append(articleNextArticleTitle);

@@ -54,4 +54,18 @@ public class Role implements Serializable {
     public void setPermissions(Set<Permission> permissions) {
         this.permissions = permissions;
     }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(getClass().getSimpleName());
+        sb.append(" [");
+        sb.append("Hash = ").append(hashCode());
+        sb.append(", roleId=").append(roleId);
+        sb.append(", roleName=").append(roleName);
+        sb.append(", description=").append(description);
+        sb.append(", serialVersionUID=").append(serialVersionUID);
+        sb.append("]");
+        return sb.toString();
+    }
 }

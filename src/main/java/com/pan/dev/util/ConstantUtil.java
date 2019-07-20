@@ -7,7 +7,7 @@ package com.pan.dev.util;
 public class ConstantUtil {
 
     //分页时每页文章数
-    public static final Integer PAGE_SIZE = 8;
+    public static final Integer PAGE_SIZE = 4;
     //分页导航页数
     public static final Integer NAVIGATE_PAGES = 10;
 }

@@ -33,4 +33,17 @@ public class Permission implements Serializable {
     public void setPermissionName(String permissionName) {
         this.permissionName = permissionName;
     }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(getClass().getSimpleName());
+        sb.append(" [");
+        sb.append("Hash = ").append(hashCode());
+        sb.append(", permissionId=").append(permissionId);
+        sb.append(", permissionName=").append(permissionName);
+        sb.append(", serialVersionUID=").append(serialVersionUID);
+        sb.append("]");
+        return sb.toString();
+    }
 }
