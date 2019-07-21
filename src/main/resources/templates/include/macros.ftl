@@ -50,9 +50,17 @@
                     <div class="user-login">欢迎光临！</div>
                     <div class="nav-set">
                         <div class="nav-login">
-                            <a href="admin/login"
-                               title="Login"><i class="fa fa-user"></i>登录
-                            </a>
+                            <@shiro.principal property="username"/>
+                        </div>
+                    </div>
+                    <div class="nav-set">
+                        <div class="nav-login">
+                            <@shiro.notAuthenticated>
+                                <a href="admin/login" title="Login"><i class="fa fa-user"></i>登录</a>
+                            </@shiro.notAuthenticated>
+                            <@shiro.user>
+                                <a href="/logout"><i class="fa fa-sign-in"></i>退出</a>
+                            </@shiro.user>
                         </div>
                     </div>
                     <div class="clear"></div>
