@@ -1,237 +1,938 @@
-<!doctype html>
+ï»¿<#include "../include/macros.ftl"/>
+<!DOCTYPE html>
 <html>
 <head>
-<meta charset="gb2312">
-<title>ÄÚÈİÒ³_ÑîÇà¸öÈË²©¿Í - Ò»¸öÕ¾ÔÚwebÇ°¶ËÉè¼ÆÖ®Â·µÄÅ®¼¼ÊõÔ±¸öÈË²©¿ÍÍøÕ¾</title>
-<meta name="keywords" content="¸öÈË²©¿Í,ÑîÇà¸öÈË²©¿Í,¸öÈË²©¿ÍÄ£°å,ÑîÇà" />
-<meta name="description" content="ÑîÇà¸öÈË²©¿Í£¬ÊÇÒ»¸öÕ¾ÔÚwebÇ°¶ËÉè¼ÆÖ®Â·µÄÅ®³ÌĞòÔ±¸öÈËÍøÕ¾£¬Ìá¹©¸öÈË²©¿ÍÄ£°åÃâ·Ñ×ÊÔ´ÏÂÔØµÄ¸öÈËÔ­´´ÍøÕ¾¡£" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link href="css/base.css" rel="stylesheet">
-<link href="css/index.css" rel="stylesheet">
-<link href="css/m.css" rel="stylesheet">
-<script src="js/jquery-2.1.1.min.js"></script>
-<!--[if lt IE 9]>
-<script src="js/modernizr.js"></script>
-<![endif]-->
-<script>
-window.onload = function ()
-{
-	var oH2 = document.getElementsByTagName("h2")[0];
-	var oUl = document.getElementsByTagName("ul")[0];
-	oH2.onclick = function ()
-	{
-		var style = oUl.style;
-		style.display = style.display == "block" ? "none" : "block";
-		oH2.className = style.display == "block" ? "open" : ""
-	}
-}
-</script>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <title>ElasticSeachå®æ—¶åŒæ­¥MySQLæ•°æ® | è¨€æ›Œåšå®¢</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="renderer" content="webkit">
+    <meta name="theme-color" content="#fff">
+    <meta name="keywords" content="MySQL,elasticsearch">
+    <meta name="description"
+          content="ElasticSearchæ˜¯ç›®å‰æœ€é£é¡çš„ä¸€æ¬¾çš„å¼€æºæ¡†æ¶ï¼Œå¯ç”¨äºç«™å†…æœç´¢å’Œæ—¥å¿—åˆ†æã€‚ ç›®å‰ï¼Œæˆ‘ä»¬å‡†å¤‡æŠŠæ‰€æœ‰æ–‡ç« æœç´¢æˆ–åˆ†é¡µéƒ½åŸºäº ElasticSearch å®ç°ï¼Œå…¶&ldquo;æœç´¢é€Ÿåº¦å¿«ï¼Œæœ‰åˆ†è¯ï¼Œé«˜äº®">
+    <@css></@css>
 </head>
 <body>
-<header>
-  <div class="tophead">
-    <div class="logo"><a href="/">ÑîÇà¸öÈË²©¿Í</a></div>
-    <div id="mnav">
-      <h2><span class="navicon"></span></h2>
-      <ul>
-        <li><a href="index.html">ÍøÕ¾Ê×Ò³</a></li>
-        <li><a href="about.html">¹ØÓÚÎÒ</a></li>
-        <li><a href="share.html">Ä£°å·ÖÏí</a></li>
-        <li><a href="list.html">Ñ§ÎŞÖ¹¾³</a></li>
-        <li><a href="info.html">ÂıÉú»î</a></li>
-        <li><a href="gbook.html">ÁôÑÔ</a></li>
-      </ul>
-    </div>
-    <nav class="topnav" id="topnav">
-      <ul>
-        <li><a href="index.html">ÍøÕ¾Ê×Ò³</a></li>
-        <li><a href="about.html">¹ØÓÚÎÒ</a></li>
-        <li><a href="share.html">Ä£°å·ÖÏí</a></li>
-        <li><a href="list.html">Ñ§ÎŞÖ¹¾³</a></li>
-        <li><a href="info.html">ÂıÉú»î</a></li>
-        <li><a href="gbook.html">ÁôÑÔ</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
-<article>
-  <h1 class="t_nav"><span>ÄúÏÖÔÚµÄÎ»ÖÃÊÇ£ºÊ×Ò³ > ÂıÉú»î > ³ÌĞòÈËÉú</span><a href="/" class="n1">ÍøÕ¾Ê×Ò³</a><a href="/" class="n2">ÂıÉú»î</a></h1>
-  <div class="infos">
-    <div class="newsview">
-      <h3 class="news_title">¸öÈË²©¿Í£¬ÊôÓÚÎÒµÄĞ¡ÊÀ½ç£¡</h3>
-      <div class="news_author"><span class="au01"><a href="mailto:dancesmiling@qq.com">ÑîÇà</a></span><span class="au02">2018-04-27</span><span class="au03">¹²<b><script src="/e/public/ViewClick/?classid=5&amp;id=816&amp;addclick=1"></script>1833</b>ÈËÎ§¹Û</span></div>
-      <div class="tags"><a href="/e/tags/?tagname=%B8%F6%C8%CB%B2%A9%BF%CD&amp;tempid=13" target="_blank">¸öÈË²©¿Í</a> &nbsp; <a href="/e/tags/?tagname=%D0%A1%CA%C0%BD%E7&amp;tempid=13" target="_blank">Ğ¡ÊÀ½ç</a></div>
-      <div class="news_about"><strong>¼ò½é</strong>¸öÈË²©¿Í£¬ÓÃÀ´×öÊ²Ã´£¿ÎÒ¸Õ¿ªÊ¼¾Í°ÑËüµ±×öÒ»¸öÎÒÍÂ²ÛĞÄÇéµÄµØ·½£¬Ò²¾ÍÏàµ±ÓÚÒ»¸öÍøÂç¼ÇÊÂ±¾£¬Ğ´ÉÏÒ»Ğ©¹ØÓÚ×Ô¼ºÉú»î¹¤×÷ÖĞµÄĞ¡ÇéĞ¡ÊÂ£¬Ò²»á·ÅÉÏÒ»Ğ©ÕÕÆ¬£¬ÒôÀÖ¡£Ã¿Ìì¹¤×÷»Ø¼Òºó¾ÍÄÜ·ÃÎÊ×Ô¼ºµÄÍøÕ¾£¬Ò»±ßÌı×ÅÒôÀÖ£¬Ò»±ßĞ´Ğ´ÎÄÕÂ¡£</div>
-      <div class="news_infos"> ±¾ÎÄºÜ³¤£¬¼ÇÂ¼ÁËÎÒ²©¿Í½¨Õ¾³õµ½ÏÖÔÚµÄ¹ı³Ì£¬»¹ÓĞÎÒ´Ó±ÏÒµµ½ÏÖÔÚµÄÒ»¸ö×´Ì¬£¬¸ĞĞ»ÄúµÄÔÄ¶Á£¬Èç¹ûÄã»¹ÊÇÑ§Éú£¬Ò²ĞíÄãÄÜ´Ó´ËÎÄÖĞ£¬ÕÒµ½ÎÒÃÇÔø¾­ÏàËÆµÄµØ·½¡£Èç¹ûÄãÒÑ¾­¹¤×÷£¬ÓĞ×Ô¼ºµÄ²©¿Í£¬ÎÒÏë£¬Äã²¢Ã»ÓĞÍü¼Çµ±³õ½¨Á¢¸öÈË²©¿ÍµÄ³õÖÔ°É£¡<br>
-        <br>
-        ÎÒµÄ¸öÈË²©¿ÍÒÑ¾­½¨Õ¾ÓĞ8ÄêµÄÊ±¼äÁË£¬¶ÔËüµÄÈÈ°®£¬Ò»Ö±¶¼ÊÇÖ»ÔöÎ´¼õ¡£»ØÏë´óÑ§¶ÁÊéµÄÄÇ¼¸Äê£¬ÄÇ»á¶ù·Ç³£Á÷ĞĞQQ¿Õ¼ä£¬ÎÒÃÇÇŞÊÒµÄÊÒÓÑ»¹¾­³£ÑûÔ¼È¥Ñ§Ğ£µÄÍø°É×ö×Ô¼ºµÄ¿Õ¼ä¡£ÏµÀïÓĞ¸öÄĞÉú£¬¿Õ¼ä×öµÃ·Ç³£Æ¯ÁÁ£¬Ê²Ã´Ğü¸¡£¬¿ª³¡¶¯»­£¬ÒôÀÖ²¥·ÅÆ÷£¬ÎÒÃÇÅ®ÉúÏÛÄ½µÃ²»µÃÁË¡£»¹ÑûÔ¼Ëû¸úÎÒÃÇÒ»ÆğÈ¥Í¨ÏüÅª¿Õ¼ä£¬ÍøÉÏ¿ÉÒÔÕÒµ½ºÜ¶àÃâ·ÑµÄflash×ÊÔ´£¬»¹ÓĞÒôÀÖ£¬ÄÇÒ²ÊÇµÚÒ»´Î½Ó´¥js£¬ÖªµÀÔÚä¯ÀÀÆ÷ÊäÈëÒ»¸öµØÖ·£¬ĞŞ¸ÄÒ»ÏÂÊı¾İ£¬¾ÍÄÜµ÷ÓÃÒ»Ğ©±³¾°³öÀ´¡£È»ºó°Ñ×Ô¼ºQQ¿Õ¼äÅªµÃÆ¯Æ¯ÁÁÁÁµÄ£¬¾­³£ÑûÔ¼ÊÒÓÑÀ´»¥²È¡£ÎÒ¼ÇµÃ08ÄêµØÕğ£¬µÚ¶şÌìÍíÉÏ£¬ÎÒÃÇÇŞÊÒµÄ¼¸¸öÈË»¹µ­¶¨µÄÔÚÇŞÊÒ×°°ç¿Õ¼äÄØ£¡<br>
-        <br>
-        <img alt="" src="images/bi01.jpg"><br>
-        <br>
-        ºóÀ´¿Õ¼äÊÕ·ÑÏîÄ¿Ò²¶àÁË£¬¹Ù·½Â©¶´Ò²ĞŞ¸´ÁË£¬¼ÓÉÏÁÙ½ü±ÏÒµ£¬ÓÖÒªÃ¦×Å×ö±ÏÒµÉè¼Æ£¬¾ÍÃ»ÔÙ´òÀíQQ¿Õ¼ä¡£ÎÒÖªµÀÏÖÔÚµÄ¾ÅÁãºó£¬ÁãÁãºó£¬ÄãÃÇ¿Ï¶¨Ã»¿´¹ı¡¶Ò»Á±ÓÄÃÎ¡·£¬ÄÇ»á¶ùÎÒÒ²ÊÇ·è¿ñ×·¾ç£¬Ï²»¶ÉÏ×ÏÁâ£¬Ï²»¶ÉÏËıµÄÍøÕ¾¡£Ïë¿´¿´ËıµÄĞ¡ÊÀ½ç£¬¶øÎÒ¸üÏëÑ§×Å×öÒ»¸öËıÄÇÑùµÄÍøÕ¾¡£ÄÇ»á¶ù»¹ÌìÕæµÄÒÔÎªÍøÉÏÕæµÄÓĞËıµÄÍøÕ¾£¬°Ù¶ÈËÑÁËºÃĞ©ÌìÒ²Ã»ÓĞ¡£<br>
-        <br>
-        Òª±ÏÒµµÄÊ±ºò£¬Òª½»×÷ÒµÁË£¬¸Ğ¾õ×Ô¼ºÊ²Ã´¶¼Ã»Ñ§»á¡£ÊÒÓÑÀ­×ÅÎÒÃÇÈ¥¿´ÁËËıÍ¬Ñ§×öµÄÍøÕ¾£¬ÎÒÃÇÒ»¸ö¸öÅå·şµÃÎåÌåÍ¶µØ£¬ÉõÖÁ¾õµÃÌ«²»¿ÉË¼ÒéÁË¡£ÓĞÄÑ¶È£¬ÓÖÅÂ×Ô¼º²»»á¡£ÀÏÊ¦½ÌÎÒÃÇÔõÃ´²¼¾Ö£¬ÔõÃ´×ö£¬²¢Ã»ÓĞ½ÌÎÒÃÇÓÒ¼ü±£´æÍøÒ³¡£²»ÖªµÀÊÇË­ÏÈ»áÁËÕâ¾ø¼¼£¬È»ºóÎÒÃÇÒ»¸ö¸öÓÖ¸ú´òÁË¼¦ÑªËÆµÄ£¬·è¿ñÔÚÍøÉÏÕÒÍøÒ³£¬ÓÒ¼üÁí´æÎª¡£È»ºóÒ»¸ö¸öĞŞ¸ÄÎÄ×Ö£¬Í¼Æ¬¡£·Â·ğÓÖ»Øµ½ÁËÄÇ»á¶ù×öQQ¿Õ¼äÄÇ¸öÊ±ºò¡£ÄÃ×ÅcopyÀ´£¬²¢ÇÒ¾«ĞÄĞŞ¸ÄµÄ×÷Æ·£¬µİ½»ÁË±ÏÒµÉè¼Æ£¬Ë³Àû½áÒµ¡£ÄÇ»á¶ù»¹ÊÇºÜÃÉ£¬Ò»ÖÖÔÆÀïÎíÀïµÄ¸Ğ¾õ£¬¾¹ÓĞÖÖ²»ÖªµÀ×Ô¼ºµ½µ×ÊÇ»á»¹ÊÇ²»»áµÄ¸Ğ¾õ£¬Ò²¾ÍÊÇ´ó¼Ò³£ËµµÄ±ÏÒµÃÔÃ£ÆÚ¡£<br>
-        <br>
-        <img alt="" src="images/bi02.jpg"><br>
-        <br>
-        ¹¤×÷ºó½øÈëÉç»á£¬³öÈ¥Ì¸ÒµÎñ£¬Óöµ½Ò»¸ö¶ÔÍøÒ³Éè¼Æ³¬¼¶¸ĞĞËÈ¤µÄÈË£¬ÁÄÁËÒ»ÏÂÎç¶¼»¹²»¹»£¬ËûÊÇÍêÈ«×ÔÑ§µÄ£¬×öÁËÒ»¸öÊ×Ò³Ğû´«ËûÃÇµÄ²úÆ·¡£ËûÑÛÀïµÄÎÒ¾ÍÊÇ×¨ÒµµÄ£¬×ÜÊÇÇë½ÌÎÒÒ»Ğ©ÎÊÌâ¡£ÆäÊµÎÒÄÚĞÄÌØÏÛÄ½ÈË¼Ò£¬Ã¿´ÎÎÊÎÒ£¬ÎÒÒ²ËÆ¶®·Ç¶®µÄ¸úÈË¼Ò½â¾öÎÊÌâ£¬µ«ÎÒ»¹ÊÇ¾­³£¿¿°Ù¶ÈÀ´ËÑË÷ËûÒªµÄ´ğ°¸¡£ËûÉíÉÏÄÇÖÖºÃÑ§ºÃÎÊµÄÄÇ¹É¾¢¶ù£¬Ò²³ÉÎªÎÒÆÈÇĞÏëÓµÓĞ×Ô¼ºµÄ¸öÈË²©¿ÍµÄÒ»¸öÖØÒªÔ­Òò¡£<br>
-        <br>
-        ×ö²©¿Í²»ÊÇËµ×ö¾Í×öµÄ£¬ºÜ¶à¶«Î÷ÎÒ¶¼²»¶®£¬Ò²²»ÖªµÀÒª¹ºÂòÓòÃû»¹ÓĞ¿Õ¼ä¡£Ç°ÆÚÒª×öµÄ¹¤×÷»¹ÊÇºÜ¶à¡£ĞÒºÃÕÅÔ°Í¬Ñ§£¬Ò²ÊÇÎÒÊµÏ°ÆÚµÄÍ¬ÊÂ£¬Ëû»áÕâĞ©£¬½ÌÎÒÍøÉÏÕÒÃâ·ÑµÄĞéÄâ¿Õ¼ä£¬È»ºó¾ÍÊÇ°Ñ×Ô¼º×öµÄÒ³ÃæÉÏ´«½øÈ¥£¬»¹¸øÁËÓĞÒ»¸öµØÖ·£¬È»ºó¾ÍÄÜ·ÃÎÊÁË¡£ÄÇÊÇµÚÒ»´Î½Ó´¥£¬Ò²ÁË½âÁËÕû¸öÍøÕ¾µÄÖÆ×÷¹ı³Ì£¬Ö»¿ÉÏ§ÂòÓòÃû»¹ÓĞ¿Õ¼äĞèÒª·ÑÓÃ£¬»¹ÔÚÊµÏ°ÆÚµÄÎÒ£¬ÏëÏëÒ²¾ÍËãÁË¡£ĞéÄâ¿Õ¼ä±Ï¾¹ÊÇÃâ·ÑµÄ£¬Ã»¶à³¤Ê±¼ä£¬×ö¹ıµÄÍøÒ³¾Í²»ÄÜ·ÃÎÊÁË£¬ÓÖµÃÖØĞÂ×¢²á£¬ÖØĞÂÉÏ´«¡£<br>
-        <br>
-        µÈ×Ô¼ºÓĞÒ»Ğ©×Ê½ğºÍ¼¼Êõºó£¬ÎÒ¿ªÊ¼ÂòÓòÃûºÍ¿Õ¼ä¡£´ÓÒ»¿ªÊ¼£¬ÎÒ¾ÍÃ»Ïë¹ıÖ»ÊÇÁ·Á·ÊÖ£¬»òÕßÓÃÒ»¶ÎÊ±¼ä¾ÍĞĞÁË¡£ÎÒ»áÒ»Ö±ÓÃÏÂÈ¥£¬ËùÒÔ¾«ĞÄÌôÑ¡ÁËÓòÃûºÍ¿Õ¼ä¡£ÕâĞ©Äê³ıÁËÓòÃûÃ»ÓĞ¸ü»»Íâ£¬ºóÌ¨³ÌĞòÓÉasp»»³ÉÁËphp£¬¿Õ¼ä´ÓÎ÷²¿Êı¾İ»»³ÉÍòÍø£¬Ò²¾ÍÊÇÏÖÔÚµÄ°¢ÀïÔÆ¡£Ò»²½²½Éı¼¶£¬¾ÍÏë°Ñ×îºÃµÄÒ»Ãæ³ÊÏÖ¸ø´ó¼Ò¡£ºÜ¶àÈËÎÊÎÒÍøÕ¾ËÙ¶ÈÔõÃ´·ÃÎÊÄÇÃ´¿ì£¬ÆäÊµÒ»ÊÇÍøÕ¾³ÌĞò£¬Ò³Ãæ×îºÃÊÇ¾²Ì¬Ò³Ãæ¡£Ã¿´ÎÎÒĞ´µÄ´úÂëµÄÊ±ºò£¬ÎÒ¶¼ÔÚ×ÁÄ¥ÔõÃ´¼õÉÙ´úÂë£¬¼õÉÙÊ¹ÓÃdivºÍÍ¼Æ¬£¬ÈÃhtml½á¹¹¼òµ¥»¯£¬¶øÓÖ²»Ê§ÃÀ¹Û¡£ËùÒÔ£¬ÍøÕ¾Ò²¸Ä°æÁËÓĞºÃ¼¸´Î¡£¶şÊÇ¿Õ¼ä»¹ÓĞ´ø¿í¡£Õâ¸öÆäÊµºÜÖØÒª£¬ÏÖÔÚ±¸°¸¸úÒÔÇ°±È£¬¿ìºÜ¶àÁË£¬¿ìµÄ»°Ò»ĞÇÆÚ£¬ÂıµÄ»°¶¥¶à¶şÊ®Ìì¡£ËùÒÔ£¬²»ÊÇÒòÎªÌØ×Å¼±µÄ»°£¬»¹ÊÇÓÃ¹úÄÚ¿Õ¼ä¡£¹ØÓÚ¹úÍâ¿Õ¼ä£¬ÆäÊµÏÖÔÚ°¢ÀïÔÆµÄÏã¸ÛĞéÄâÖ÷»úÒ²²»´í£¬·ÃÎÊ»¹ÊÇÉÏ´«¶¼±ÈÒÔÇ°ºÃºÜ¶àÁË¡£ÓÃËüµÄĞ¡»ï°éÒ²Í¦¶à¡£ÑÓÉìÔÄ¶Á ¡¶<u><a href="http://www.yangqq.com/jstt/web/2014-01-18/644.html" target="_blank">ÎÒµÄ¸öÈË²©¿ÍÖ®¡ª¡ª°¢ÀïÔÆ¿Õ¼äÑ¡Ôñ</a></u>¡·<br>
-        <br>
-        <img alt="" src="images/bi03.jpg"><br>
-        <br>
-        ¸öÈË²©¿Í£¬ÓÃÀ´×öÊ²Ã´£¿ÎÒ¸Õ¿ªÊ¼¾Í°ÑËüµ±×öÒ»¸öÎÒÍÂ²ÛĞÄÇéµÄµØ·½£¬Ò²¾ÍÏàµ±ÓÚÒ»¸öÍøÂç¼ÇÊÂ±¾£¬Ğ´ÉÏÒ»Ğ©¹ØÓÚ×Ô¼ºÉú»î¹¤×÷ÖĞµÄĞ¡ÇéĞ¡ÊÂ£¬Ò²»á·ÅÉÏÒ»Ğ©ÕÕÆ¬£¬ÒôÀÖ¡£Ã¿Ìì¹¤×÷»Ø¼Òºó¾ÍÄÜ·ÃÎÊ×Ô¼ºµÄÍøÕ¾£¬Ò»±ßÌı×ÅÒôÀÖ£¬Ò»±ßĞ´Ğ´ÎÄÕÂ¡£ËäÈ»·ÃÎÊÈËÊıÉÙ£¬ÎÒÒ²²»ÔÚºõÕâĞ©£¬¸öÈË²©¿Í¾ÍºÃÏñÎÒ×Ô¼ºµÄÒ»¸öÈÕ¼Ç±¾£¬À´¿úÌ½µÄÈË¶àÁË£¬·´¶ø²»×ÔÔÚÁË¡£ÒòÎª²©¿Í£¬ÎÒ»¹ÊÇ½»ÁË²»ÉÙÅóÓÑ¡£ÎÒÍøÕ¾Ö®Ç°µÄlogo¾ÍÊÇÍøÓÑ¸øÎÒÉè¼ÆµÄ¡£<br>
-        <br>
-        <img alt="" src="images/bi04.jpg"><br>
-        <br>
-        ºóÀ´£¬Ò²ÊÇÒòÎªÍ¬Ñ§Ëµ°Ù¶ÈËÑ²»×ÅÎÒµÄ¸öÈË²©¿Í£¬ÎÒ²Å¿ªÊ¼×ÁÄ¥ÔõÃ´°Ñ×Ô¼ºµÄ²©¿ÍÅÅÃûÌáÉÏÈ¥£¬·ÅÉÏÈ¥Ò»Ğ©×Ô¼º×ö¹ıµÄÄ£°å£¬Ìá¹©Ãâ·ÑÏÂÔØ¡£Ò³ÃæÒÔÇ°Ò²Ö»ÓĞÒ»¸öÊ×Ò³£¬µ±³õÎÒ¾ÍÊÇÏë×ÅÉè¼ÆÒ»¸öÊ×Ò³¾ÍĞĞÁË£¬ÕæÕıÏëÑ§µÄÈË£¬Ò»¸öÒ³Ãæ×ã¹»ÁË£¬ÆäËûÒ³Ãæ£¬¶¼¿¿×Ô¼ºÉè¼Æ¡£ÏÖÔÚ²»Í¬À²£¬½üÆÚ°æ±¾ÎÒÌá¹©µÄÄ£°å¶¼ºÜÈ«£¬ÊµÔÚÊÇ¼Ü²»×¡ÈË¶à¶¼À´ÎÊÎÒÔõÃ´Ö»ÓĞÒ»¸öÒ³Ãæ£¬ËäÈ»ÎÒÒÑ¾­ÔÚÏÂÔØËµÃ÷ÀïÃæËµµÃºÜÇå³şÁË¡£Ò²¾ÍÊÇÌá¹©ÁËÕâÑùÒ»Ğ©×ÊÔ´£¬ÎÒµÄ¸öÈË²©¿ÍÒ²²»ÔÙÊÇÒ»¸öÖ»¹Øºõ×Ô¼ºµÄÒ»¸öÆ½Ì¨¡£ÆØ¹âÂÊÔ½À´Ô½¸ß£¬¹âÌì»¯ÈÕÖ®ÏÂ£¬ÄÄ¸Ò·Å×Ô¼ºÕÕÆ¬£¬Ğ´×Ô¼ºĞÄÇé°¡£¬ÓÚÊÇºõ£¬¼ÌĞøÕâÑùµÄÄ£Ê½°É£¬°Ñ×Ô¼ºĞ´µÄÄ£°å·Åµ½ÍøÕ¾ÉÏÈ¥¡£ÀÖÓÚ·ÖÏí£¬ÊÇÄÜ½á½»µ½ºÜ¶àÅóÓÑµÄ¡£<br>
-        <br>
-        <img alt="" src="images/bi05.jpg"><br>
-        <br>
-        ÎÒµÄ¸öÈË²©¿Í£¬ÔÚ½ñÄêÈıÔÂ·İÖ®Ç°ÊÇÃ»ÓĞÌá¹©ºóÌ¨°²×°£¬µ÷ÊÔÕâĞ©·şÎñµÄ¡£ÆäÊµÒ»Ö±¶¼ÓĞÈËÕÒÎÒ×ö¸öÈË²©¿Í£¬ÒòÎªµ÷ÊÔÊ±¼ä»¹ÓĞĞŞ¸ÄµÄÎÊÌâ£¬´ÓÉÏ´«µ½°²×°µ½ĞŞ¸Äµ÷ÊÔ£¬Ò»°ãÒªËÄÎå¸öĞ¡Ê±£¬ÎÒÅÂÊÕ·Ñ¸ß£¬ËùÒÔÒ»Ö±¶¼ÊÇ¾Ü¾øµÄ¡£×Ô´ÓÍÆ³öÀ´¡¶<u><a href="http://www.yangqq.com/download/div/2017-09-08/789.html" target="_blank">ĞÄÀ¶Ê±¼äÖá</a></u>¡·ºó£¬Ö÷¶¯ÕÒÎÒ×öÍøÕ¾µÄÒ²¶àÁË£¬ËûÃÇ¶¼ËµÊÇÎÒ·ÛË¿£¬Ï²»¶ÎÒµÄÄ£°å£¬ËùÒÔÎÒÔÚÄ£°åÏÂÃæĞ´ÁË¸¶·ÑËµÃ÷£¬ÎÒµÄ¸öÈË²©¿ÍÒ²¿ªÊ¼ÓĞÁË¸¶·ÑÏîÄ¿¡£<br>
-        <br>
-        <img alt="" src="images/bi06.jpg"><br>
-        <br>
-        ÎÒ½Óµ½µÄµÚÒ»µ¥£¬ÊÇÒ»Î»¸¸Ç×£¬Ïë¸ø×Ô¼ÒµÄ±¦±´½¨Á¢Ò»¸ö²©¿Í¡£ËûËµËûÏëÂòÒ»¸öÓòÃû£¬Ì¸ÁËºÃ¼¸Ìì£¬×îÖÕ»¨ÁË8000¶à¹ºÂòµ½£¬ÎÒÍ¦¾´ÅåËûµÄ£¬¶Ôº¢×ÓµÄ°®£¬ºÁ²»ÁßØÄ¡£ÓòÃû¹ÌÈ»ÖØÒª£¬ÆäÊµÎÒÏëËµ¼á³ÖÓÃ²©¿ÍÀ´¼ÇÂ¼±¦±´³É³¤µãµÎ£¬²ÅÊÇ×îÓĞ¼ÛÖµµÄ¡£µÚ¶şµ¥ÊÇÒ»¸öÔÄ¶ÁÍøÕ¾£¬´Ó¼ÓËûµ½¸úËûÁÄ£¬¿´ËûÅóÓÑÈ¦£¬ºÜÓĞ²ÅÆøµÄÒ»¸öÈË£¬Ò²Ïàµ±ÓĞ°®ĞÄ£¬ËûµÄÍøÕ¾´ó²¿·ÖÊÇ·ÖÏí¸øÒ»Ğ©°®ºÃÔÄ¶ÁµÄ³¤Õß¡£»¹ÓĞĞ©¾ÍÊÇ¼¼ÊõÀàµÄÕ¾³¤£¬×ö×ÊÑ¶£¬×öÂÃÓÎ£¬×öÍÆ¹ãµÄ¡£Í¨³££¬´ÓÑ¡µÄÄ£°å¾ÍÄÜ¿´³öÀ´ÍøÕ¾ÀàĞÍ¡£¡¶<u><a href="http://www.yangqq.com/download/div/2017-09-08/789.html">ĞÄÀ¶Ê±¼äÖá</a></u>¡·Æ«¸öÈË£¬¡¶<u><a href="http://www.yangqq.com/download/div/2018-03-18/807.html">ÉğÊ¿</a></u>¡·£¬¡¶<u><a href="http://www.yangqq.com/download/div/2018-04-22/815.html" target="_blank">¸ñµ÷</a></u>¡·Æ«¼¼Êõ£¬×ÊÑ¶¡£¡¶<u><a href="http://www.yangqq.com/download/div/2018-04-18/814.html" target="_blank">ÇåÑÅ</a></u>¡·£¬¡¶<u><a href="http://www.yangqq.com/download/div/2017-07-16/785.html" target="_blank">Ë®Ä«¹Åµä</a></u>¡·Æ«ÎÄÒÕ¡£µ«Ò²ÓĞ¶ÔÎÒ·À±¸ĞÄµÄ£¬±ÈÈçËµ¸¶¿î·½Ê½£¬ÄÜ²»ÄÜ×ßÌÔ±¦£¬ÕâĞ©ÎÒÒ²ÄÜÀí½â£¬µ«ÊÇÓĞĞ©°É£¬´ÓÒ»¿ªÊ¼ÁÄ£¬¸Ğ¾õ¾Í²»Ì«ºÃ£¬ÀíÓ¦¾ÍÈÏÎª²»Ó¦¸ÃÊÕÇ®£¬ÊÕÇ®¸ÉÂï£¬µ½´¦¶¼ÊÇÃâ·ÑµÄ£¬Ìıµ½ÕâĞ©£¬ÎÒÒ²ÂıÂı½âÊÍ¡£ÆäÊµËûÃÇ²¢²»ÁË½âÎÒ£¬ÁË½âÎÒµÄÍøÕ¾£¬Ö»ÒªÊÇ´ÓÎÒ²©¿ÍÀ´µÄ£¬¹Ø×¢¹ıÒ»¶ÎÊ±¼äµÄ£¬¶¼ÖªµÀÇà½ãµÄÈËÆ·ÊÇÕ¦ÑùµÄ¡£ÓÃ¡°ĞÄÈû¡±Õâ¸ö´Ê£¬ºÁ²»Îª¹ı°É¡£<br>
-        <br>
-        ÎÒ×ö¹ıµÄÍøÕ¾£¬Ã¿¹ıÒ»¶ÎÊ±¼ä£¬ÎÒ¶¼»áÒ»¸ö¸öµã»÷¿´¿´½øÕ¹ÔõÃ´Ñù£¬¸öÈË²©¿Í£¬²»ÏñÕæÊµµÄÃæ¶ÔÃæÁÄ£¬¸ü¶àµÄÊÇÎÄ×ÖµÄ½»Á÷£¬²»µÃ²»ËµÓĞÊ±ºòÎÄ×Ö´«´ïµÄĞÅÏ¢¸üÄÜÁË½âÒ»¸öÈË£¬ÉõÖÁÓĞĞÄÁé¹²Ãù¡£ÎÒÏëÎÒ»¹»áÔÙÖØĞÂ×öÒ»¸ö½ö½öÊôÓÚ×Ô¼ºµÄ¸öÈË²©¿Í£¬Èç¹ûÄãÒ²ÏëÒª×öÒ»¸ö²©¿Í£¬ÓÃÀ´¼ÇÂ¼×Ô¼ºµÄ¼ÒÍ¥£¬¹¤×÷£¬Éú»î£¬»òÕßÌÖÅ®ÓÑ»¶ĞÄ£¬²»·ÁÏÖÔÚ¾Í¿ªÊ¼°É£¡<br>
-        <br>
-        &nbsp; </div>
-    </div>
-    <div class="share"> </div>
-    <div class="nextinfo">
-      <p>ÉÏÒ»Æª£º<a href="/news/life/2018-03-13/804.html">×÷ÎªÒ»¸öÉè¼ÆÊ¦,Èç¹ûÔâµ½ÖÊÒÉÄãÊÇ·ñÄÜã¡ÊØ×Ô¼ºµÄÔ­Ôò?</a></p>
-      <p>ÏÂÒ»Æª£º<a href="/news/life/">·µ»ØÁĞ±í</a></p>
-    </div>
-    <div class="otherlink">
-      <h2>Ïà¹ØÎÄÕÂ</h2>
-      <ul>
-        <li><a href="/download/div/2018-04-22/815.html" title="html5¸öÈË²©¿ÍÄ£°å¡¶ºÚÉ«¸ñµ÷¡·">html5¸öÈË²©¿ÍÄ£°å¡¶ºÚÉ«¸ñµ÷¡·</a></li>
-        <li><a href="/download/div/2018-04-18/814.html" title="html5¸öÈË²©¿ÍÄ£°åÖ÷Ìâ¡¶ÇåÑÅ¡·">html5¸öÈË²©¿ÍÄ£°åÖ÷Ìâ¡¶ÇåÑÅ¡·</a></li>
-        <li><a href="/download/div/2018-03-18/807.html" title="html5¸öÈË²©¿ÍÄ£°åÖ÷Ìâ¡¶ÉğÊ¿¡·">html5¸öÈË²©¿ÍÄ£°åÖ÷Ìâ¡¶ÉğÊ¿¡·</a></li>
-        <li><a href="/download/div/2018-02-22/798.html" title="html5Ê±ÉĞ¸öÈË²©¿ÍÄ£°å-¼¼ÊõÃÅ»§ĞÍ">html5Ê±ÉĞ¸öÈË²©¿ÍÄ£°å-¼¼ÊõÃÅ»§ĞÍ</a></li>
-        <li><a href="/download/div/2017-09-08/789.html" title="html5¸öÈË²©¿ÍÄ£°åÖ÷Ìâ¡¶ĞÄÀ¶Ê±¼äÖá¡·">html5¸öÈË²©¿ÍÄ£°åÖ÷Ìâ¡¶ĞÄÀ¶Ê±¼äÖá¡·</a></li>
-        <li><a href="/download/div/2017-07-16/785.html" title="¹Åµä¸öÈË²©¿ÍÄ£°å¡¶½­ÄÏÄ«¾í¡·">¹Åµä¸öÈË²©¿ÍÄ£°å¡¶½­ÄÏÄ«¾í¡·</a></li>
-        <li><a href="/download/div/2017-07-13/783.html" title="¹Åµä·ç¸ñ-¸öÈË²©¿ÍÄ£°å">¹Åµä·ç¸ñ-¸öÈË²©¿ÍÄ£°å</a></li>
-        <li><a href="/download/div/2015-06-28/748.html" title="¸öÈË²©¿Í¡¶²İ¸ùÑ°ÃÎ¡·¡ªÊÖ»ú°æÄ£°å">¸öÈË²©¿Í¡¶²İ¸ùÑ°ÃÎ¡·¡ªÊÖ»ú°æÄ£°å</a></li>
-        <li><a href="/download/div/2015-04-10/746.html" title="¡¾»î¶¯×÷Æ·¡¿ÄûÃÊÂÌÍÃĞ¡°×¸öÈË²©¿ÍÄ£°å">¡¾»î¶¯×÷Æ·¡¿ÄûÃÊÂÌÍÃĞ¡°×¸öÈË²©¿ÍÄ£°å</a></li>
-        <li><a href="/jstt/bj/2015-01-09/740.html" title="¡¾´Ò´ÒÄÇĞ©Äê¡¿×Ü½á¸öÈË²©¿Í¾­ÀúµÄÕâËÄÄê¡­">¡¾´Ò´ÒÄÇĞ©Äê¡¿×Ü½á¸öÈË²©¿Í¾­ÀúµÄÕâËÄÄê¡­</a></li>
-      </ul>
-    </div>
-    <div class="news_pl">
-      <h2>ÎÄÕÂÆÀÂÛ</h2>
-      <ul>
-        <div class="gbko"> </div>
-      </ul>
-    </div>
-  </div>
-  <div class="sidebar">
-    <div class="search">
-      <form action="/e/search/index.php" method="post" name="searchform" id="searchform">
-        <input name="keyboard" id="keyboard" class="input_text" value="ÇëÊäÈë¹Ø¼ü×Ö" style="color: rgb(153, 153, 153);" onfocus="if(value=='ÇëÊäÈë¹Ø¼ü×Ö'){this.style.color='#000';value=''}" onblur="if(value==''){this.style.color='#999';value='ÇëÊäÈë¹Ø¼ü×Ö'}" type="text">
-        <input name="show" value="title" type="hidden">
-        <input name="tempid" value="1" type="hidden">
-        <input name="tbname" value="news" type="hidden">
-        <input name="Submit" class="input_submit" value="ËÑË÷" type="submit">
-      </form>
-    </div>
-    <div class="lmnav">
-      <h2 class="hometitle">À¸Ä¿µ¼º½</h2>
-      <ul class="navbor">
-        <li><a href="#">¹ØÓÚÎÒ</a></li>
-        <li><a href="share.html">Ä£°å·ÖÏí</a>
-          <ul>
-            <li><a href="list.html">¸öÈË²©¿ÍÄ£°å</a></li>
-            <li><a href="#">HTML5Ä£°å</a></li>
-          </ul>
-        </li>
-        <li><a href="list.html">Ñ§ÎŞÖ¹¾³</a>
-          <ul>
-            <li><a href="list.html">Ñ§Ï°±Ê¼Ç</a></li>
-            <li><a href="#">HTML5+CSS3</a></li>
-            <li><a href="#">ÍøÕ¾½¨Éè</a></li>
-          </ul>
-        </li>
-        <li><a href="#">ÂıÉú»î</a></li>
-      </ul>
-    </div>
-    <div class="paihang">
-      <h2 class="hometitle">µã»÷ÅÅĞĞ</h2>
-      <ul>
-        <li><b><a href="/download/div/2015-04-10/746.html" target="_blank">¡¾»î¶¯×÷Æ·¡¿ÄûÃÊÂÌÍÃĞ¡°×¸öÈË²©¿ÍÄ£°å30...</a></b>
-          <p><i><img src="images/t02.jpg"></i>Õ¹Ê¾µÄÊÇÊ×Ò³html£¬²©¿ÍÒ³Ãæ²¼¾Ö¸ñÊ½¼òµ¥£¬Ã»ÓĞ¸´ÔÓµÄ±³¾°£¬É«²Ê¾Ö²¿µã×º£¬¶¯Ì¬µÄ»ÃµÆÆ¬Õ¹Ê¾£¬ÇĞ»»¿¨£¬±ê...</p>
-        </li>
-        <li><b><a href="/download/div/2014-02-19/649.html" target="_blank"> ¸öÈË²©¿ÍÄ£°å£¨2014²İ¸ùÑ°ÃÎ£©30...</a></b>
-          <p><i><img src="images/b03.jpg"></i>2014µÚÒ»°æ¡¶²İ¸ùÑ°ÃÎ¡·¸öÈË²©¿ÍÄ£°å¼òµ¥¡¢ÓÅÑÅ¡¢ÎÈÖØ¡¢´óÆø¡¢µÍµ÷¡£×¨ÎªÄêÇáÓĞÖ¾ÏòÈ´ÓÖµÍµ÷µÄ²İ¸ùÕ¾³¤Éè...</p>
-        </li>
-        <li><b><a href="/download/div/2013-08-08/571.html" target="_blank">ºÚÉ«ÖÊ¸ĞÊ±¼äÖáhtml5¸öÈË²©¿ÍÄ£°å30...</a></b>
-          <p><i><img src="images/b04.jpg"></i>ºÚÉ«Ê±¼äÖáhtml5¸öÈË²©¿ÍÄ£°åÑÕÉ«ÒÔºÚÉ«ÎªÖ÷É«£¬Ìí¼ÓÁË²ÊÉ«×÷ÎªÍøÒ³µÄÒ»¸öÁÁµã£¬µ¼º½¸ßÁÁÏÔÊ¾¡¢bannerÍ¼Æ¬...</p>
-        </li>
-        <li><b><a href="/download/div/2014-09-18/730.html" target="_blank">ÇéÂÂ²©¿ÍÄ£°åÏµÁĞÖ®¡¶»ØÒä¡·Html30...</a></b>
-          <p><i><img src="images/b05.jpg"></i>Html5+css3ÇéÂÂ²©¿ÍÄ£°å£¬Ö÷Ìâ¡¶»ØÒä¡·£¬Ê¹ÓÃcss3¼¼ÊõÊµÏÖÍøÕ¾¶¯»­Ğ§¹û£¬Ö÷Ìâ¡¶»ØÒä¡·,·ÖÎªËÄ¸öÖ÷Òª²¿·Ö£¬...</p>
-        </li>
-        <li><b><a href="/download/div/2014-04-17/661.html" target="_blank">ºÚÉ«Html5¸öÈË²©¿ÍÄ£°åÖ÷Ìâ¡¶ÈçÓ°ËæĞÎ¡·30...</a></b>
-          <p><i><img src="images/b06.jpg"></i>014µÚ¶ş°æºÚÉ«Html5¸öÈË²©¿ÍÄ£°åÖ÷Ìâ¡¶ÈçÓ°ËæĞÎ¡·£¬Èç¾«Áé°ãµÄÓ°×Ó»á¸øÈËÒ»ÖÖÉñÃØµÄ¸Ğ¾õ¡£Ò»ÕÅ¼ôÓ°Í¼ºÚ°×...</p>
-        </li>
-        <li><b><a href="/jstt/bj/2015-01-09/740.html" target="_blank">¡¾´Ò´ÒÄÇĞ©Äê¡¿×Ü½á¸öÈË²©¿Í¾­ÀúµÄÕâËÄÄê¡­30...</a></b>
-          <p><i><img src="images/mb02.jpg"></i>²©¿Í´Ó×î³õµÄÓòÃû¹ºÂò£¬µ½ÉÏÏßÒÑ¾­ÓĞËÄÄêµÄÊ±¼äÁË£¬ÕâËÄÄêµÄÊ±¼ä£¬ÓĞĞ¦¹ı£¬ÓĞÔ¹¹ı£¬ÓĞ»Ú¹ı£¬ÓĞÖ´×Å¹ı£¬Ò²...</p>
-        </li>
-      </ul>
-    </div>
-    <div class="cloud">
-      <h2 class="hometitle">±êÇ©ÔÆ</h2>
-      <ul>
-        <a href="/">Ä°ÉÏ»¨¿ª</a> <a href="/">Ğ£Ô°Éú»î</a> <a href="/">html5</a> <a href="/">SumSung</a> <a href="/">Çà´º</a> <a href="/">ÎÂÅ¯</a> <a href="/">Ñô¹â</a> <a href="/">ÈıĞÇ</a><a href="/">Ë÷Äá</a> <a href="/">»ªÎ¬ÈÙÒ«</a> <a href="/">ÈıĞÇ</a> <a href="/">Ë÷Äá</a>
-      </ul>
-    </div>
-    <div class="paihang">
-      <h2 class="hometitle">Õ¾³¤ÍÆ¼ö</h2>
-      <ul>
-        <li><b><a href="/download/div/2015-04-10/746.html" target="_blank">¡¾»î¶¯×÷Æ·¡¿ÄûÃÊÂÌÍÃĞ¡°×¸öÈË²©¿ÍÄ£°å30...</a></b>
-          <p><i><img src="images/t02.jpg"></i>Õ¹Ê¾µÄÊÇÊ×Ò³html£¬²©¿ÍÒ³Ãæ²¼¾Ö¸ñÊ½¼òµ¥£¬Ã»ÓĞ¸´ÔÓµÄ±³¾°£¬É«²Ê¾Ö²¿µã×º£¬¶¯Ì¬µÄ»ÃµÆÆ¬Õ¹Ê¾£¬ÇĞ»»¿¨£¬±ê...</p>
-        </li>
-        <li><b><a href="/download/div/2014-02-19/649.html" target="_blank"> ¸öÈË²©¿ÍÄ£°å£¨2014²İ¸ùÑ°ÃÎ£©30...</a></b>
-          <p><i><img src="images/b03.jpg"></i>2014µÚÒ»°æ¡¶²İ¸ùÑ°ÃÎ¡·¸öÈË²©¿ÍÄ£°å¼òµ¥¡¢ÓÅÑÅ¡¢ÎÈÖØ¡¢´óÆø¡¢µÍµ÷¡£×¨ÎªÄêÇáÓĞÖ¾ÏòÈ´ÓÖµÍµ÷µÄ²İ¸ùÕ¾³¤Éè...</p>
-        </li>
-        <li><b><a href="/download/div/2013-08-08/571.html" target="_blank">ºÚÉ«ÖÊ¸ĞÊ±¼äÖáhtml5¸öÈË²©¿ÍÄ£°å30...</a></b>
-          <p><i><img src="images/b04.jpg"></i>ºÚÉ«Ê±¼äÖáhtml5¸öÈË²©¿ÍÄ£°åÑÕÉ«ÒÔºÚÉ«ÎªÖ÷É«£¬Ìí¼ÓÁË²ÊÉ«×÷ÎªÍøÒ³µÄÒ»¸öÁÁµã£¬µ¼º½¸ßÁÁÏÔÊ¾¡¢bannerÍ¼Æ¬...</p>
-        </li>
-        <li><b><a href="/download/div/2014-09-18/730.html" target="_blank">ÇéÂÂ²©¿ÍÄ£°åÏµÁĞÖ®¡¶»ØÒä¡·Html30...</a></b>
-          <p><i><img src="images/b05.jpg"></i>Html5+css3ÇéÂÂ²©¿ÍÄ£°å£¬Ö÷Ìâ¡¶»ØÒä¡·£¬Ê¹ÓÃcss3¼¼ÊõÊµÏÖÍøÕ¾¶¯»­Ğ§¹û£¬Ö÷Ìâ¡¶»ØÒä¡·,·ÖÎªËÄ¸öÖ÷Òª²¿·Ö£¬...</p>
-        </li>
-        <li><b><a href="/download/div/2014-04-17/661.html" target="_blank">ºÚÉ«Html5¸öÈË²©¿ÍÄ£°åÖ÷Ìâ¡¶ÈçÓ°ËæĞÎ¡·30...</a></b>
-          <p><i><img src="images/b06.jpg"></i>014µÚ¶ş°æºÚÉ«Html5¸öÈË²©¿ÍÄ£°åÖ÷Ìâ¡¶ÈçÓ°ËæĞÎ¡·£¬Èç¾«Áé°ãµÄÓ°×Ó»á¸øÈËÒ»ÖÖÉñÃØµÄ¸Ğ¾õ¡£Ò»ÕÅ¼ôÓ°Í¼ºÚ°×...</p>
-        </li>
-        <li><b><a href="/jstt/bj/2015-01-09/740.html" target="_blank">¡¾´Ò´ÒÄÇĞ©Äê¡¿×Ü½á¸öÈË²©¿Í¾­ÀúµÄÕâËÄÄê¡­30...</a></b>
-          <p><i><img src="images/mb02.jpg"></i>²©¿Í´Ó×î³õµÄÓòÃû¹ºÂò£¬µ½ÉÏÏßÒÑ¾­ÓĞËÄÄêµÄÊ±¼äÁË£¬ÕâËÄÄêµÄÊ±¼ä£¬ÓĞĞ¦¹ı£¬ÓĞÔ¹¹ı£¬ÓĞ»Ú¹ı£¬ÓĞÖ´×Å¹ı£¬Ò²...</p>
-        </li>
-      </ul>
-    </div>
-    <div class="weixin">
-      <h2 class="hometitle">¹Ù·½Î¢ĞÅ</h2>
-      <ul>
-        <img src="images/wx.jpg">
-      </ul>
-    </div>
-    <div class="ad" id="left_flow2"> <img src="images/ad.jpg"> </div>
-  </div>
-</article>
-<#include "../include/footer.ftl"/>
-<script src="js/nav.js"></script> 
-<script type="text/javascript">
-jQuery.noConflict();
-jQuery(function() { 
-    var elm = jQuery('#left_flow2'); 
-    var startPos = jQuery(elm).offset().top; 
-    jQuery.event.add(window, "scroll", function() { 
-        var p = jQuery(window).scrollTop(); 
-        jQuery(elm).css('position',((p) > startPos) ? 'fixed' : ''); 
+<link rel="stylesheet" href="http://blog-cdn.codergroup.cn/static/plugins/highlight/highlight.css">
+<style>
+    .dp-highlighter {
+        border: none;
+        background-color: #F5F2F0;
+    }
 
-        jQuery(elm).css('top',((p) > startPos) ? '0' : '');
-    }); 
-}); 
+    .dp-highlighter:hover {
+        border: none;
+        background-color: #F5F2F0;
+    }
+
+    h2 {
+        border-bottom: 1px solid red;
+    }
+
+    .entry-title {
+        background: #f8f8f8;
+    }
+</style>
+<div id="page" class="hfeed site">
+    <@header></@header>
+    <nav class="breadcrumb">
+        <a class="crumbs" href=""><i class="fa fa-home"></i>é¦–é¡µ</a>
+        <i class="fa fa-angle-right"></i>
+        <a href="category/search-engine">æœç´¢å¼•æ“æ¡†æ¶</a>
+        <i class="fa fa-angle-right"></i>
+        <a href="category/dependency">ç¬¬ä¸‰æ–¹ä¾èµ–</a>
+        <i class="fa fa-angle-right"></i>
+        æ­£æ–‡
+    </nav>
+
+    <div id="content" class="site-content">
+        <div id="primary" class="content-area">
+
+            <main id="main" class="site-main" role="main">
+                <article class="post">
+                    <header class="entry-header">
+                        <h1 class="entry-title">
+                            ElasticSeachå®æ—¶åŒæ­¥MySQLæ•°æ®
+                        </h1>
+                    </header><!-- .entry-header -->
+
+                    <div class="entry-content">
+                        <div class="single-content">
+                            <p>ElasticSearchæ˜¯ç›®å‰æœ€é£é¡çš„ä¸€æ¬¾çš„å¼€æºæ¡†æ¶ï¼Œå¯ç”¨äºç«™å†…æœç´¢å’Œæ—¥å¿—åˆ†æã€‚ ç›®å‰ï¼Œæˆ‘ä»¬å‡†å¤‡æŠŠæ‰€æœ‰æ–‡ç« æœç´¢æˆ–åˆ†é¡µéƒ½åŸºäº ElasticSearch å®ç°ï¼Œå…¶&ldquo;æœç´¢é€Ÿåº¦å¿«ï¼Œæœ‰åˆ†è¯ï¼Œé«˜äº®ç­‰åŠŸèƒ½&rdquo;éå¸¸å¸å¼•äººã€‚
+                                é€šå¸¸ä¸ºäº†ç¼“è§£ MySQL çš„å‹åŠ›ï¼Œæˆ‘ä»¬å¯ä»¥å°è¯•è®© MySQL ç”¨äºå†™ï¼Œè¯»éƒ½ä» ElasticSearch æˆ– Redis æ¥è¿›è¡Œã€‚ç„¶åï¼Œæˆ‘ä»¬éœ€è¦è§£å†³çš„å°±æ˜¯æ•°æ®å¦‚ä½•ä»
+                                MySQLå®æ—¶æˆ–è¿‘å®æ—¶åŒæ­¥åˆ° ElasticSearch ä¸­å»ï¼Œå¯ä»¥ç”¨ MySQL çš„ binlog å‡ºå‘ï¼Œå®ƒè®°å½•äº† MySQL æ‰§è¡Œçš„ sql
+                                è¯­å¥(é™¤äº†æŸ¥è¯¢è¯­å¥)ï¼Œå¯ä»¥ç”¨äºæ¢å¤æ•°æ®ã€‚ ç›®å‰é€šè¿‡ binlog å®ç° mysql æ•°æ®åŒæ­¥åˆ° es
+                                ä¸­çš„å¼€æºæ¡†æ¶æœ‰å¥½å‡ ä¸ªï¼Œæœ¬æ–‡ä»‹ç»å…¶ä¸­ä¸€ç§ï¼šgo-mysql-elasticsearchï¼Œåœ¨ mac ä¸Šå®è·µã€‚ å®˜æ–¹åœ°å€ï¼š<a
+                                        href="https://github.com/siddontang/go-mysql-elasticsearch"
+                                        rel="noopener noreferrer" target="_blank">https://github.com/siddontang/go-mysql-elasticsearch</a>
+                                &nbsp;</p>
+                            <h2>ä¸€ã€å®‰è£… go ç¯å¢ƒ</h2>
+                            <p><strong>1.ä¸‹è½½</strong> goè¯­è¨€ä¸­æ–‡ç½‘ï¼š<a href="https://studygolang.com/dl"
+                                                                rel="noopener noreferrer" target="_blank">https://studygolang.com/dl</a>
+                                ä¸‹è½½ &gt; 1.9 ç‰ˆæœ¬çš„å¯¹åº”çš„åŒ…ï¼Œmac ç‰ˆå¯ä»¥ç›´æ¥ä¸‹è½½ pkg åç¼€çš„æ‰§è¡Œæ–‡ä»¶ï¼ŒåŒå‡»å®‰è£… ä¹Ÿå¯ä»¥ç›´æ¥ä¸‹è½½å‹ç¼©åŒ…ï¼Œç„¶åè§£å‹ &nbsp;
+                                <strong>2.é…ç½®ç¯å¢ƒå˜é‡</strong></p>
+                            <div class="dp-highlighter">
+                                <ol class="dp-j" start="1">
+                                    <li class="alt">export&nbsp;PATH=$PATH:/usr/local/go/bin</li>
+                                    <li>export&nbsp;GOPATH=/Users/liuyanzhao/go</li>
+                                </ol>
+                            </div>
+                            <p>&nbsp;</p>
+                            <h2>äºŒã€ä¸‹è½½ go-mysql-elasticsearch</h2>
+                            <p>åˆ†åˆ«æ‰§è¡Œä»¥ä¸‹ä¸‰è¡Œå‘½ä»¤(ä¹Ÿå¯ä»¥ç›´æ¥å…‹éš†ä¸Šé¢çš„ github èµ„æºåœ°å€åˆ°æœ¬åœ°) go get github.com/siddontang/go-mysql-elasticsearch
+                                cd&nbsp;<code>$GOPATH/src/github.com/siddontang/go-mysql-elasticsearch</code> make
+                                &nbsp;</p>
+                            <h2>ä¸‰ã€é…ç½®</h2>
+                            <p><strong>1.MySQL é…ç½®</strong> ä¿®æ”¹ MySQL çš„ my.cnf æ–‡ä»¶ï¼Œmac ä¸Šæ˜¯åœ¨ /etc/my.cnf</p>
+                            <div class="dp-highlighter">
+                                <div class="bar"><br></div>
+                                <ol class="dp-j" start="1">
+                                    <li class="alt">binlog_format=ROW</li>
+                                    <li>log-bin=mysql-bin</li>
+                                    <li class="alt">server-id=<span class="number">1</span></li>
+                                </ol>
+                            </div>
+                            <p>ä¸‹é¢åˆ†åˆ«è¯´æ˜ä¸€ä¸‹è¿™ä¸‰è¡Œé…ç½® go-mysql-search é™å®šäº† binlog å¿…é¡»ä½¿ç”¨ ROW æ¨¡å¼ï¼Œserver-id å’Œ ä¸‹é¢çš„é…ç½®æ–‡ä»¶ä¸­çš„ä¸€è‡´ã€‚ &nbsp;
+                                <strong>2.go-mysql-elasticsearch é…ç½®</strong></p>
+                            <p class="p1">ä¿®æ”¹ go-mysql-elasticsearch/etc/river.toml</p>
+                            <p class="p1">è¯¥æ–‡ä»¶æ˜¯å”¯ä¸€é…ç½®æ–‡ä»¶</p>
+                            <div class="dp-highlighter">
+                                <div class="bar"><br></div>
+                                <ol class="dp-j" start="1">
+                                    <li class="alt">#&nbsp;MySQL&nbsp;address,&nbsp;user&nbsp;and&nbsp;password</li>
+                                    <li>#&nbsp;user&nbsp;must&nbsp;have&nbsp;replication&nbsp;privilege&nbsp;in&nbsp;MySQL.</li>
+                                    <li class="alt">my_addr&nbsp;=&nbsp;<span
+                                            class="string">&quot;127.0.0.1:3306&quot;</span></li>
+                                    <li>my_user&nbsp;=&nbsp;<span class="string">&quot;root&quot;</span></li>
+                                    <li class="alt">my_pass&nbsp;=&nbsp;<span class="string">&quot;123456&quot;</span>
+                                    </li>
+                                    <li>my_charset&nbsp;=&nbsp;<span class="string">&quot;utf8&quot;</span></li>
+                                    <li class="alt"><br></li>
+                                    <li>#&nbsp;Set&nbsp;<span class="keyword">true</span> when&nbsp;elasticsearch&nbsp;use&nbsp;https
+                                    </li>
+                                    <li class="alt">#es_https&nbsp;=&nbsp;<span class="keyword">false</span></li>
+                                    <li>#&nbsp;Elasticsearch&nbsp;address</li>
+                                    <li class="alt">es_addr&nbsp;=&nbsp;<span
+                                            class="string">&quot;127.0.0.1:9200&quot;</span></li>
+                                    <li>#&nbsp;Elasticsearch&nbsp;user&nbsp;and&nbsp;password,&nbsp;maybe&nbsp;set&nbsp;by&nbsp;shield,&nbsp;nginx,&nbsp;or&nbsp;x-pack</li>
+                                    <li class="alt">es_user&nbsp;=&nbsp;<span class="string">&quot;&quot;</span></li>
+                                    <li>es_pass&nbsp;=&nbsp;<span class="string">&quot;&quot;</span></li>
+                                    <li class="alt"><br></li>
+                                    <li>#&nbsp;Path&nbsp;to&nbsp;store&nbsp;data,&nbsp;like&nbsp;master.info,&nbsp;<span
+                                            class="keyword">if</span> not&nbsp;set&nbsp;or&nbsp;empty,
+                                    </li>
+                                    <li class="alt">#&nbsp;we&nbsp;must&nbsp;use&nbsp;<span class="keyword">this</span>
+                                        to&nbsp;support&nbsp;breakpoint&nbsp;resume&nbsp;syncing.
+                                    </li>
+                                    <li>#&nbsp;TODO:&nbsp;support&nbsp;other&nbsp;storage,&nbsp;like&nbsp;etcd.</li>
+                                    <li class="alt">data_dir&nbsp;=&nbsp;<span class="string">&quot;./var&quot;</span>
+                                    </li>
+                                    <li><br></li>
+                                    <li class="alt">#&nbsp;Inner&nbsp;Http&nbsp;status&nbsp;address</li>
+                                    <li>stat_addr&nbsp;=&nbsp;<span class="string">&quot;127.0.0.1:12800&quot;</span>
+                                    </li>
+                                    <li class="alt"><br></li>
+                                    <li>#&nbsp;pseudo&nbsp;server&nbsp;id&nbsp;like&nbsp;a&nbsp;slave</li>
+                                    <li class="alt">server_id&nbsp;=&nbsp;<span class="number">1</span></li>
+                                    <li><br></li>
+                                    <li class="alt">#&nbsp;mysql&nbsp;or&nbsp;mariadb</li>
+                                    <li>flavor&nbsp;=&nbsp;<span class="string">&quot;mysql&quot;</span></li>
+                                    <li class="alt"><br></li>
+                                    <li>#&nbsp;mysqldump&nbsp;execution&nbsp;path</li>
+                                    <li class="alt">#&nbsp;<span class="keyword">if</span> not&nbsp;set&nbsp;or&nbsp;empty,&nbsp;ignore&nbsp;mysqldump.
+                                    </li>
+                                    <li>mysqldump&nbsp;=&nbsp;<span class="string">&quot;mysqldump&quot;</span></li>
+                                    <li class="alt"><br></li>
+                                    <li>#&nbsp;<span class="keyword">if</span> we&nbsp;have&nbsp;no&nbsp;privilege&nbsp;to&nbsp;use&nbsp;mysqldump&nbsp;with&nbsp;--master-data,
+                                    </li>
+                                    <li class="alt">#&nbsp;we&nbsp;must&nbsp;skip&nbsp;it.</li>
+                                    <li>#skip_master_data&nbsp;=&nbsp;<span class="keyword">true</span></li>
+                                    <li class="alt"><br></li>
+                                    <li>#&nbsp;minimal&nbsp;items&nbsp;to&nbsp;be&nbsp;inserted&nbsp;in&nbsp;one&nbsp;bulk</li>
+                                    <li class="alt">bulk_size&nbsp;=&nbsp;<span class="number">128</span></li>
+                                    <li><br></li>
+                                    <li class="alt">
+                                        #&nbsp;force&nbsp;flush&nbsp;the&nbsp;pending&nbsp;requests&nbsp;<span
+                                            class="keyword">if</span> we&nbsp;don&#39;t&nbsp;have&nbsp;enough&nbsp;items&nbsp;&gt;=&nbsp;bulk_size
+                                    </li>
+                                    <li>flush_bulk_time&nbsp;=&nbsp;<span class="string">&quot;200ms&quot;</span></li>
+                                    <li class="alt"><br></li>
+                                    <li>#&nbsp;Ignore&nbsp;table&nbsp;without&nbsp;primary&nbsp;key</li>
+                                    <li class="alt">skip_no_pk_table&nbsp;=&nbsp;<span class="keyword">false</span></li>
+                                    <li><br></li>
+                                    <li class="alt">#&nbsp;MySQL&nbsp;data&nbsp;source</li>
+                                    <li>[[source]]</li>
+                                    <li class="alt">schema&nbsp;=&nbsp;<span class="string">&quot;sens_blog&quot;</span>
+                                    </li>
+                                    <li><br></li>
+                                    <li class="alt"><br></li>
+                                    <li>[[rule]]</li>
+                                    <li class="alt">schema&nbsp;=&nbsp;<span class="string">&quot;sens_blog&quot;</span>
+                                    </li>
+                                    <li>table&nbsp;=&nbsp;<span class="string">&quot;sens_post&quot;</span></li>
+                                    <li class="alt">index&nbsp;=&nbsp;<span class="string">&quot;blog&quot;</span></li>
+                                    <li>type&nbsp;=&nbsp;<span class="string">&quot;post&quot;</span></li>
+                                    <li class="alt">filter&nbsp;=&nbsp;[<span class="string">&quot;post_id&quot;</span>,&nbsp;<span
+                                            class="string">&quot;user_id&quot;</span>,&nbsp;<span class="string">&quot;post_title&quot;</span>,&nbsp;<span
+                                            class="string">&quot;post_summary&quot;</span>,&nbsp;<span class="string">&quot;post_thumbnail&quot;</span>,&nbsp;<span
+                                            class="string">&quot;post_type&quot;</span>,&nbsp;<span class="string">&quot;post_status&quot;</span>,&nbsp;<span
+                                            class="string">&quot;post_views&quot;</span>,&nbsp;&nbsp;<span
+                                            class="string">&quot;post_likes&quot;</span>,&nbsp;<span class="string">&quot;comment_size&quot;</span>,&nbsp;<span
+                                            class="string">&quot;post_date&quot;</span>]
+                                    </li>
+                                    <li>id&nbsp;=&nbsp;[<span class="string">&quot;post_id&quot;</span>]</li>
+                                    <li class="alt"><br></li>
+                                    <li>[rule.field]</li>
+                                    <li class="alt">post_id&nbsp;=&nbsp;<span class="string">&quot;postId&quot;</span>
+                                    </li>
+                                    <li>user_id&nbsp;=&nbsp;<span class="string">&quot;userId&quot;</span></li>
+                                    <li class="alt">post_title&nbsp;=&nbsp;<span
+                                            class="string">&quot;postTitle&quot;</span></li>
+                                    <li>post_summary&nbsp;=&nbsp;<span class="string">&quot;postSummary&quot;</span>
+                                    </li>
+                                    <li class="alt">post_thumbnail&nbsp;=&nbsp;<span class="string">&quot;postThumbnail&quot;</span>
+                                    </li>
+                                    <li>post_type&nbsp;=&nbsp;<span class="string">&quot;postType&quot;</span></li>
+                                    <li class="alt">post_status&nbsp;=&nbsp;<span
+                                            class="string">&quot;postStatus&quot;</span></li>
+                                    <li>post_views&nbsp;=&nbsp;<span class="string">&quot;postViews&quot;</span></li>
+                                    <li class="alt">post_likes&nbsp;=&nbsp;<span
+                                            class="string">&quot;postLikes&quot;</span></li>
+                                    <li>comment_size&nbsp;=&nbsp;<span class="string">&quot;commentSize&quot;</span>
+                                    </li>
+                                    <li class="alt">post_date&nbsp;=&nbsp;<span
+                                            class="string">&quot;postDate&quot;</span></li>
+                                </ol>
+                            </div>
+                            <p class="p1">ä¸Šé¢çš„&nbsp;schema æŒ‡çš„æ˜¯ MySQL æ•°æ®åº“åï¼Œtable æ•°æ®åº“ä¸­è¦åŒæ­¥çš„è¡¨åï¼Œindex æ˜¯ ES ç´¢å¼•ï¼Œtype æ˜¯ ES
+                                ç±»å‹ã€‚</p>
+                            <p class="p1">ä¸Šé¢è¿™æ®µé…ç½®æŒ‡çš„æ˜¯ åŒæ­¥ MySQL sens_blog æ•°æ®åº“ä¸­çš„ sens_post è¡¨åˆ° ES ä¸­ï¼Œç´¢å¼•ä¸º blogï¼Œç±»å‹ä¸º
+                                postã€‚å¦‚æœç´¢å¼•æ²¡æœ‰åˆ›å»ºï¼Œä¼šè‡ªåŠ¨åˆ›å»ºã€‚å¦‚æœç´¢å¼•åˆ›å»ºäº†ï¼Œä¸ä¼šè‡ªåŠ¨åˆ›å»ºã€‚</p>
+                            <p class="p1">å»ºè®®è¿˜æ˜¯è‡ªå·±åˆ›å»º ç´¢å¼•</p>
+                            <p class="p1">PUT&nbsp;127.0.0.1:9200/blog</p>
+                            <div class="dp-highlighter">
+                                <div class="bar"><br></div>
+                                <ol class="dp-j" start="1">
+                                    <li class="alt">{</li>
+                                    <li>&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">&quot;settings&quot;</span>:&nbsp;{
+                                    </li>
+                                    <li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                                            class="string">&quot;number_of_shards&quot;</span>:&nbsp;<span
+                                            class="number">5</span>,
+                                    </li>
+                                    <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">&quot;number_of_replicas&quot;</span>:&nbsp;<span
+                                            class="number">1</span></li>
+                                    <li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;},</li>
+                                    <li>&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">&quot;mappings&quot;</span>:&nbsp;{
+                                    </li>
+                                    <li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                                            class="string">&quot;post&quot;</span>:&nbsp;{
+                                    </li>
+                                    <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                                            class="string">&quot;properties&quot;</span>:&nbsp;{
+                                    </li>
+                                    <li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                                            class="string">&quot;postId&quot;</span>:&nbsp;{
+                                    </li>
+                                    <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                                            class="string">&quot;type&quot;</span>:&nbsp;<span class="string">&quot;long&quot;</span>
+                                    </li>
+                                    <li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},</li>
+                                    <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                                            class="string">&quot;userId&quot;</span>:&nbsp;{
+                                    </li>
+                                    <li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                                            class="string">&quot;type&quot;</span>:&nbsp;<span class="string">&quot;long&quot;</span>
+                                    </li>
+                                    <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},</li>
+                                    <li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                                            class="string">&quot;postTitle&quot;</span>:&nbsp;{
+                                    </li>
+                                    <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                                            class="string">&quot;type&quot;</span>:&nbsp;<span class="string">&quot;text&quot;</span>
+                                    </li>
+                                    <li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},</li>
+                                    <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                                            class="string">&quot;postSummary&quot;</span>:&nbsp;{
+                                    </li>
+                                    <li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                                            class="string">&quot;type&quot;</span>:&nbsp;<span class="string">&quot;text&quot;</span>
+                                    </li>
+                                    <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},</li>
+                                    <li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                                            class="string">&quot;postThumbnail&quot;</span>:&nbsp;{
+                                    </li>
+                                    <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                                            class="string">&quot;type&quot;</span>:&nbsp;<span class="string">&quot;keyword&quot;</span>
+                                    </li>
+                                    <li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},</li>
+                                    <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                                            class="string">&quot;postType&quot;</span>:&nbsp;{
+                                    </li>
+                                    <li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                                            class="string">&quot;type&quot;</span>:&nbsp;<span class="string">&quot;keyword&quot;</span>
+                                    </li>
+                                    <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},</li>
+                                    <li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                                            class="string">&quot;postStatus&quot;</span>:&nbsp;{
+                                    </li>
+                                    <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                                            class="string">&quot;type&quot;</span>:&nbsp;<span class="string">&quot;integer&quot;</span>
+                                    </li>
+                                    <li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},</li>
+                                    <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                                            class="string">&quot;postViews&quot;</span>:&nbsp;{
+                                    </li>
+                                    <li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                                            class="string">&quot;type&quot;</span>:&nbsp;<span class="string">&quot;long&quot;</span>
+                                    </li>
+                                    <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},</li>
+                                    <li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                                            class="string">&quot;postLikes&quot;</span>:&nbsp;{
+                                    </li>
+                                    <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                                            class="string">&quot;type&quot;</span>:&nbsp;<span class="string">&quot;long&quot;</span>
+                                    </li>
+                                    <li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},</li>
+                                    <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                                            class="string">&quot;commentSize&quot;</span>:&nbsp;{
+                                    </li>
+                                    <li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                                            class="string">&quot;type&quot;</span>:&nbsp;<span class="string">&quot;long&quot;</span>
+                                    </li>
+                                    <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},</li>
+                                    <li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                                            class="string">&quot;postDate&quot;</span>:&nbsp;{
+                                    </li>
+                                    <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                                            class="string">&quot;type&quot;</span>:&nbsp;<span class="string">&quot;date&quot;</span>
+                                    </li>
+                                    <li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</li>
+                                    <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</li>
+                                    <li class="alt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</li>
+                                    <li>&nbsp;&nbsp;&nbsp;&nbsp;}</li>
+                                    <li class="alt">}</li>
+                                </ol>
+                            </div>
+                            <p class="p1"><br></p>
+                            <h2 class="p1">å››ã€å¯åŠ¨ï¼Œå¼€å§‹è‡ªåŠ¨åŒæ­¥</h2>
+                            <p class="p1">ä¸Šé¢é…ç½®æ–‡ä»¶ä¿®æ”¹åï¼Œä¿å­˜ã€‚</p>
+                            <p class="p1">æ‰§è¡Œå‘½ä»¤ï¼š</p>
+                            <div class="dp-highlighter">
+                                <ol class="dp-j" start="1">
+                                    <li class="alt">./bin/go-mysql-elasticsearch&nbsp;-config=./etc/river.toml</li>
+                                </ol>
+                            </div>
+                            <p class="p1">ç„¶åå°±èƒ½å¼€å§‹åŒæ­¥ã€‚</p>
+                            <p class="p1">æ‰“å¼€ es çš„ head æ’ä»¶ï¼šhttp://127.0.0.1:9100 æŸ¥çœ‹æ•°æ®</p>
+                            <p class="p1"><a
+                                    href="http://blog-cdn.codergroup.cn/uploads/2019/02/WX20190205-193343@2x.png"><img
+                                    class="wp-image-9335 aligncenter fr-fic fr-dii"
+                                    src="http://blog-cdn.codergroup.cn/uploads/2019/02/WX20190205-193343@2x-1024x611.png"
+                                    alt="" width="651" height="389"></a></p>
+                            <p class="p1">å¦‚æœä½ ä¸å°å¿ƒåˆ é™¤äº†ç´¢å¼•ï¼Œæƒ³è¦é‡æ–°åŒæ­¥ï¼Œä½†æ˜¯å´å‘ç°æ— æ³•åŒæ­¥ä¹‹å‰çš„æ•°æ®ã€‚</p>
+                            <p class="p1">ä½ å¯ä»¥åˆ é™¤ go-mysql-elasticsearch/var/master.info å³å¯è§£å†³é—®é¢˜</p>
+                            <p class="p1"><br></p>
+                            <audio controls="controls" style="display: none;"><br></audio>
+                        </div>
+
+
+                        <div class="clear"></div>
+                        <div id="social">
+                            <div class="social-main">
+                                <span class="like">
+                                     <a href="javascript:void(0);" data-id="9334" title="ç‚¹èµ"
+                                        class="favorite">
+                                         <i class="fa fa-thumbs-up"></i>èµ
+                                         <i class="count">3</i>
+                                    </a>
+                                </span>
+                                <div class="shang-p">
+                                    <div class="shang-empty"><span></span></div>
+                                    <span class="tipso_style" id="tip-p" data-tipso="
+ <span id=&quot;shang&quot;> <span class=&quot;shang-main&quot;><h4><i class=&quot;be be-favorite&quot; aria-hidden=&quot;true&quot;></i> å¦‚æœè®¤ä¸ºæœ¬æ–‡å¯¹æ‚¨æœ‰æ‰€å¸®åŠ©è¯·èµåŠ©æœ¬ç«™</h4> <span class=&quot;shang-img&quot;> <img src=&quot;http://imgs.zmingcx.com/wp-content/uploads/2015/11/alipay.png&quot; alt=&quot;alipay&quot;/><h4>æ”¯ä»˜å®æ‰«ä¸€æ‰«èµåŠ©</h4> </span> <span class=&quot;shang-img&quot;> <img src=&quot;http://imgs.zmingcx.com/wp-content/uploads/2015/11/alipay.png&quot; alt=&quot;weixin&quot;/><h4>å¾®ä¿¡é’±åŒ…æ‰«æèµåŠ©</h4> </span> <span class=&quot;clear&quot;></span> </span> </span>"> <span
+                                            class="shang-s"><a title="èµåŠ©æœ¬ç«™">èµ</a></span> </span>
+                                    <span class="shang-s">
+                                        <a href="p/shang" target="_blank">èµ</a>
+                                    </span>
+                                </div>
+                                <div class="share-sd">
+                                    <span class="share-s"><a href="javascript:void(0)" id="share-s" title="åˆ†äº«"><i
+                                            class="fa fa-share-alt"></i>åˆ†äº«</a></span>
+                                    <div id="share">
+                                        <ul class="bdsharebuttonbox bdshare-button-style1-16"
+                                            data-bd-bind="1541944366515">
+                                            <li><a title="æ›´å¤š" class="bds_more fa fa-plus-square" data-cmd="more"
+                                                   onclick="return false;" href="#"></a></li>
+                                            <li><a title="åˆ†äº«åˆ°QQç©ºé—´" class="fa fa-qq" data-cmd="qzone"
+                                                   onclick="return false;" href="#"></a></li>
+                                            <li><a title="åˆ†äº«åˆ°æ–°æµªå¾®åš" class="fa fa-weibo" data-cmd="tsina"
+                                                   onclick="return false;" href="#"></a></li>
+                                            <li><a title="åˆ†äº«åˆ°è…¾è®¯å¾®åš" class="fa fa-pinterest-square" data-cmd="tqq"
+                                                   onclick="return false;" href="#"></a></li>
+                                            <li><a title="åˆ†äº«åˆ°äººäººç½‘" class="fa fa-renren" data-cmd="renren"
+                                                   onclick="return false;" href="#"></a></li>
+                                            <li><a title="åˆ†äº«åˆ°å¾®ä¿¡" class="fa fa-weixin" data-cmd="weixin"
+                                                   onclick="return false;" href="#"></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="clear"></div>
+                            </div>
+                        </div>
+
+                        <footer class="single-footer">
+                            <ul class="single-meta">
+                                <li class="print">
+                                    <a href="javascript:printme()" target="_self" title="æ‰“å°">
+                                        <i class="fa fa-print"></i>
+                                    </a>
+                                </li>
+                                <li class="comment">
+                                    <a href="#comments" rel="external nofollow">
+                                        <i class="fa fa-comment-o"></i> 1
+                                    </a>
+                                </li>
+                                <li class="views"><i class="fa fa-eye"></i> 299 views</li>
+                                <li class="r-hide"><a href="javascript:pr()" title="ä¾§è¾¹æ "><i
+                                        class="fa fa-caret-left"></i> <i class="fa fa-caret-right"></i> å…¨å±</a></li>
+                            </ul>
+                            <ul id="fontsize">
+                                <li>A+</li>
+                            </ul>
+                            <div class="single-cat-tag">
+                                <div class="single-cat">æ‰€å±åˆ†ç±»ï¼š
+                                    <a href="category/search-engine" rel="category tag">æœç´¢å¼•æ“æ¡†æ¶</a>
+                                    <a href="category/dependency" rel="category tag">ç¬¬ä¸‰æ–¹ä¾èµ–</a>
+                                </div>
+                            </div>
+                        </footer><!-- .entry-footer -->
+
+                        <div class="clear"></div>
+
+                    </div><!-- .entry-content -->
+
+                </article><!-- #post -->
+
+                <div class="single-tag">
+                    <ul class="wow fadeInUp" data-wow-delay="0.3s">
+                        <li>
+                            <a href="tag/mysql" rel="tag" style="background:#4fad7b">MySQL</a>
+                        </li>
+                        <li>
+                            <a href="tag/elasticsearch" rel="tag" style="background:#4fad7b">elasticsearch</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="authorbio wow fadeInUp" data-wow-delay="0.3s">
+                <#--<img alt="" src="http://blog-cdn.codergroup.cn/uploads/2019/4/1f00317cbaaf712c93e481d021e93791"-->
+                <#--class="avatar avatar-64 photo" height="64" width="64">-->
+                    <ul class="spostinfo">
+                        <li><strong>ç‰ˆæƒå£°æ˜ï¼š</strong>æœ¬ç«™åŸåˆ›æ–‡ç« ï¼Œäº 2019å¹´02æœˆ05æ—¥ï¼Œç”±
+                            <b><a href="author/saysky"
+                                  rel="author">è¨€æ›Œ
+                            </a>
+                            </b> å‘è¡¨ã€‚
+                        </li>
+                        <li class="reprinted"><strong>è½¬è½½è¯·æ³¨æ˜ï¼š</strong>
+                            <a href="article/9334" rel="bookmark">
+                                ElasticSeachå®æ—¶åŒæ­¥MySQLæ•°æ®| è¨€æ›Œåšå®¢
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="clear"></div>
+                </div>
+
+                <div id="related-img" class="wow fadeInUp" data-wow-delay="0.3s">
+                    <div id="scrolldiv">
+                        <ul>
+                            <li class="scrolltext-title">
+                                <div class="r4">
+                                    <div class="related-site">
+                                        <figure class="related-site-img">
+                                                <span class="load">
+                                                    <a href="article/7170">
+                                                        <img src="http://blog-cdn.codergroup.cn/static/images/thumbnail/img_6.jpg"
+                                                             alt="SpringBoot æ•´åˆ elasticsearch å®ä¾‹">
+                                                    </a>
+                                                </span>
+                                        </figure>
+                                        <div class="related-title">
+                                            <a href="article/7170">SpringBoot æ•´åˆ elasticsearch å®ä¾‹</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="scrolltext-title">
+                                <div class="r4">
+                                    <div class="related-site">
+                                        <figure class="related-site-img">
+                                                <span class="load">
+                                                    <a href="article/5514">
+                                                        <img src="http://blog-cdn.codergroup.cn/static/images/thumbnail/img_0.jpg"
+                                                             alt="å®‰è£…MySQLå‡ºç° Install/Remove of the Service Deniedï¼">
+                                                    </a>
+                                                </span>
+                                        </figure>
+                                        <div class="related-title">
+                                            <a href="article/5514">å®‰è£…MySQLå‡ºç° Install/Remove of the Service Deniedï¼</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="scrolltext-title">
+                                <div class="r4">
+                                    <div class="related-site">
+                                        <figure class="related-site-img">
+                                                <span class="load">
+                                                    <a href="article/9338">
+                                                        <img src="http://blog-cdn.codergroup.cn/uploads/2019/2/2eccea206276fb06d02c34a5380da18f"
+                                                             alt="SpringBoot æ•´åˆElasticSearchï¼Œå®ç°ç«™å†…æœç´¢ï¼Œé«˜äº®å…³é”®å­—">
+                                                    </a>
+                                                </span>
+                                        </figure>
+                                        <div class="related-title">
+                                            <a href="article/9338">SpringBoot æ•´åˆElasticSearchï¼Œå®ç°ç«™å†…æœç´¢ï¼Œé«˜äº®å…³é”®å­—</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="scrolltext-title">
+                                <div class="r4">
+                                    <div class="related-site">
+                                        <figure class="related-site-img">
+                                                <span class="load">
+                                                    <a href="article/9334">
+                                                        <img src="http://blog-cdn.codergroup.cn/uploads/2019/2/2eccea206276fb06d02c34a5380da18f"
+                                                             alt="ElasticSeachå®æ—¶åŒæ­¥MySQLæ•°æ®">
+                                                    </a>
+                                                </span>
+                                        </figure>
+                                        <div class="related-title">
+                                            <a href="article/9334">ElasticSeachå®æ—¶åŒæ­¥MySQLæ•°æ®</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+
+                <nav class="nav-single wow fadeInUp" data-wow-delay="0.3s">
+                    <a href="article/9302" rel="prev">
+                        <span class="meta-nav">
+                            <span class="post-nav">
+                                <i class="fa fa-angle-left"></i> ä¸Šä¸€ç¯‡
+                            </span><br>Shiro Freemarkeræ ‡ç­¾çš„ä½¿ç”¨
+                        </span>
+                    </a>
+
+                    <a href="article/9338" rel="next">
+                        <span class="meta-nav">
+                            <span class="post-nav">ä¸‹ä¸€ç¯‡
+                                <i class="fa fa-angle-right"></i>
+                            </span><br>SpringBoot æ•´åˆElasticSearchï¼Œå®ç°ç«™å†…æœç´¢ï¼Œé«˜äº®å…³é”®å­—
+                        </span>
+                    </a>
+                    <div class="clear"></div>
+                </nav>
+
+                <nav class="navigation post-navigation" role="navigation">
+                    <h2 class="screen-reader-text">æ–‡ç« å¯¼èˆª</h2>
+                    <div class="nav-links">
+                        <div class="nav-previous">
+                            <a href="article/9302" rel="prev">
+                                <span class="meta-nav-r" aria-hidden="true">
+                                    <i class="fa fa-angle-left"></i>
+                                </span>
+                            </a>
+                        </div>
+                        <div class="nav-next">
+                            <a href="article/9338" rel="next">
+                                <span class="meta-nav-l" aria-hidden="true">
+                                    <i class="fa fa-angle-right"></i>
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+                </nav>
+
+                <!-- å¼•ç”¨ -->
+                <div class="scroll-comments"></div>
+
+                <link type="text/css" rel="stylesheet" href="/page/css/OwO.min.css">
+                <style></style>
+                <div id="comments" class="comments-area">
+                    <#if article.articleCanComment == true>
+                        <div id="respond" class="comment-respond wow fadeInUp" data-wow-delay="0.3s">
+                            <h3 id="reply-title" class="comment-reply-title">å‘è¡¨è¯„è®º
+                                <small><a rel="nofollow" id="cancel-comment-reply-link" href="javascript:void(0)" style="display: none;">å–æ¶ˆå›å¤</a></small>
+                            </h3>
+                            <form action="" method="post"><p class="comment-form-comment">
+                                <div class="OwO"></div>
+                                <textarea id="commentContent" class="comment-input-content" name="commentContent" rows="4"
+                                          tabindex="1" placeholder="èµ¶å¿«è¯„è®ºä¸€ä¸ªå§ï¼"></textarea>
+                                <div class="native-message" style="display: none"></div>
+                                </p>
+                                <div id="comment-author-info"><p class="comment-form-author"><label for="author">æ˜µç§°<span
+                                        class="required">*</span></label> <input type="text" class="comment-input comment-input-who" name="commentAuthor" id="commentAuthor">
+                                </p>
+                                    <p class="comment-form-email"><label for="email">é‚®ç®±<span class="required">*</span></label> <input type="text" class="comment-input comment-input-email" name="commentAuthorEmail" id="commentAuthorEmail"></p>
+                                    <p class="comment-form-url"><label for="url">ç½‘å€</label>
+                                        <input type="text" class="comment-input comment-input-website" name="commentAuthorUrl" id="commentAuthorUrl">
+                                    </p></div>
+                                <div class="clear"></div>
+                                <p class="form-submit"><input id="submit" name="submit" type="button" tabindex="5" value="æäº¤è¯„è®º"> <input type="hidden" name="postId" value="9334">
+                                    <input type="hidden" name="commentParent" id="commentParent" value="0"></p></form>
+                        </div>
+                        <h2 class="comments-title wow fadeInUp" data-wow-delay="0.3s"> ç›®å‰è¯„è®ºï¼š1</h2>
+                        <ul class="comment-list" id="comments-list">
+                            <li class="comment even thread-even parent" id="comment-id-4141">
+                                <div class="comment-body">
+                                    <div class="comment-author vcard"><img class="avatar" src="/page/img/avator-comment.png" alt="avatar"> <strong> <a
+                                            href="javascript:void(0)" rel="external nofollow"
+                                            class="native-list-one-head-name" target="_blank">å“ˆå“ˆ</a> </strong> <span
+                                            class="comment-meta commentmetadata native-comment-ua"> <span class="ua-info"
+                                                                                                          style="display: none;"> <span
+                                            class="WB-OS native-comment-ua-info" style="display: none;"> Mozilla/5.0 (Linux; U; Android 9; zh-; MI 8 Build/PKQ1.180729.001) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/71.0.3578.141 Mobile Safari/537.36 XiaoMi/MiuiBrowser/10.9.0 </span> æ±Ÿè‹çœ ç§»åŠ¨ </span> <br> <span
+                                            class="comment-aux"> <span class="reply"> <a rel="nofollow" at="4141" class="native-list-one-footer-reback" href="javascript:void(0)">å›å¤</a> </span> 2019-07-07 10:13 </span> </span>
+                                    </div>
+                                    <p>å¥½ç‰›å•Š</p></div>
+                            </li>
+                            <li class="comment even thread-even parent" id="comment-id-4118">
+                                <div class="comment-body">
+                                    <div class="comment-author vcard"><img class="avatar" src="/page/img/avator-comment.png" alt="avatar"> <strong> <a
+                                            href="javascript:void(0)" rel="external nofollow"
+                                            class="native-list-one-head-name" target="_blank">haibara98</a> </strong> <span
+                                            class="comment-meta commentmetadata native-comment-ua"> <span class="ua-info"
+                                                                                                          style="display: none;"> <span
+                                            class="WB-OS native-comment-ua-info" style="display: none;"> Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36 </span> æ±Ÿè‹çœ ç§»åŠ¨ </span> <br> <span
+                                            class="comment-aux"> <span class="reply"> <a rel="nofollow" at="4118"
+                                                                                         class="native-list-one-footer-reback"
+                                                                                         href="javascript:void(0)">å›å¤</a> </span> 2019-06-11 15:34 </span> </span>
+                                    </div>
+                                    <p>ndndnd</p></div>
+                            </li>
+                            <li class="comment even thread-even parent" id="comment-id-4117">
+                                <div class="comment-body">
+                                    <div class="comment-author vcard"><img class="avatar" src="static/images/avatar/30.jpeg"
+                                                                           alt="avatar"> <strong> <a
+                                            href="javascript:void(0)" rel="external nofollow"
+                                            class="native-list-one-head-name" target="_blank">haibara98</a> </strong> <span
+                                            class="comment-meta commentmetadata native-comment-ua"> <span class="ua-info"
+                                                                                                          style="display: none;"> <span
+                                            class="WB-OS native-comment-ua-info" style="display: none;"> Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36 </span> æ±Ÿè‹çœ ç§»åŠ¨ </span> <br> <span
+                                            class="comment-aux"> <span class="reply"> <a rel="nofollow" at="4117"
+                                                                                         class="native-list-one-footer-reback"
+                                                                                         href="javascript:void(0)">å›å¤</a> </span> 2019-06-11 15:33 </span> </span>
+                                    </div>
+                                    <p>mhgmf</p></div>
+                            </li>
+                            <li class="comment even thread-even parent" id="comment-id-2028">
+                                <div class="comment-body">
+                                    <div class="comment-author vcard"><img class="avatar"
+                                                                           src="/page/img/avator-comment.png"
+                                                                           alt="avatar"> <strong> <a
+                                            href="javascript:void(0)" rel="external nofollow"
+                                            class="native-list-one-head-name" target="_blank">sadfsadfdsa</a> </strong>
+                                        <span class="comment-meta commentmetadata native-comment-ua"> <span class="ua-info" style="display: none;"> <span
+                                                class="WB-OS native-comment-ua-info" style="display: none;"> Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.121 Safari/537.36 </span> æ±Ÿè‹çœ ç§»åŠ¨ </span> <br> <span
+                                                class="comment-aux"> <span class="reply">
+                                            <a rel="nofollow" at="2028" class="native-list-one-footer-reback" href="javascript:void(0)">å›å¤</a> </span> 2019-03-18 10:09 </span> </span>
+                                    </div>
+                                    <p>|Â´ãƒ»Ï‰ãƒ»)ãƒ<img src='/page/img/avator-comment.png' alt='å‘µå‘µ.png'
+                                                   style='vertical-align: middle;'></p></div>
+                                <ul class="comment-list children">
+                                    <li class="comment even thread-even parent" id="comment-id-2029">
+                                        <div class="comment-body">
+                                            <div class="comment-author vcard"><img class="avatar" src="/page/img/avator-comment.png" alt="avatar"> <strong>
+                                                <a href="javascript:void(0)" rel="external nofollow"
+                                                    class="native-list-one-head-name" target="_blank">sadfsadfdsa</a>
+                                            </strong> <span class="comment-meta commentmetadata native-comment-ua "> <span
+                                                    class="ua-info" style="display: none;"> <span class="WB-OS native-comment-ua-info" style="display: none;"> Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.121 Safari/537.36 </span> æ±Ÿè‹çœ ç§»åŠ¨ </span> <br> <span
+                                                    class="comment-aux"> <span class="reply"> <a rel="nofollow" at="2029" class="native-list-one-footer-reback" href="javascript:void(0)">å›å¤</a> </span> 2019-03-18 10:19 </span> </span></div>
+                                            <p><a href='#comment-id-2028'>@sadfsadfdsa</a> tttttt</p></div>
+                                    </li>
+                                </ul><!-- .comment-list --> </li>
+                        </ul><!-- .comment-list -->
+                        <div class="scroll-links">
+                            <nav class="navigation comment-navigation" role="navigation"><h2 class="screen-reader-text">
+                                è¯„è®ºå¯¼èˆª</h2>
+                                <div class="nav-links">
+                                    <div class="nav-previous"><a href="https://liuyanzhao.com/message.html/comment-page-3/#comments">è¾ƒæ—©è¯„è®º</a>
+                                    </div>
+                                </div>
+                            </nav>
+                        </div>
+                        <nav class="comment-navigation">
+                            <div class="pagination"><span class="page-numbers current">1</span> <a class="page-numbers"
+                                                                                                   href="?page=2#comments-list">2</a>
+                                <a class="page-numbers" href="?page=3#comments-list">3</a> <a class="page-numbers" href="?page=4#comments-list">4</a>
+                                <a class="next page-numbers" href="?page=2#comments-list"> <i class="fa fa-angle-right"></i></a></div>
+                        </nav>
+                        <div class="clear"></div>
+                    </#if>
+                    <#if article.articleCanComment == false>
+                        <h2 class="comments-title wow fadeInUp" data-wow-delay="0.3s"> åšä¸»è®¾ç½®æ­¤æ–‡ç« ä¸èƒ½è¯„è®º</h2>
+                    </#if>
+                </div>
+                <script src="http://blog-cdn.codergroup.cn/static/plugins/jquery/jquery.min.js"></script>
+                <script src="http://blog-cdn.codergroup.cn/static/plugins/md5/md5.min.js"></script>
+                <script src="http://blog-cdn.codergroup.cn/static/plugins/ua-parser/ua-parser.min.js"></script>
+                <script src="http://blog-cdn.codergroup.cn/static/plugins/OwO/OwO.min.js"></script>
+                <script> var defaultPlaceholder = $('#commentContent').attr("placeholder");
+                var s = new OwO({
+                    logo: 'OÏ‰Oè¡¨æƒ…',
+                    container: document.getElementsByClassName('OwO')[0],
+                    target: document.getElementsByClassName('comment-input-content')[0],
+                    position: 'down',
+                    width: '100%',
+                    maxHeight: '210px',
+                    api: "static/plugins/OwO/OwO.min.json"
+                });
+                $(document).ready(function () {
+                    $(".native-comment-ua").each(function (i) {
+                        var uaInfo = $(this).find(".native-comment-ua-info").html();
+                        $(this).find('.ua-info').show().html(show_ua(uaInfo));
+                    });
+                    if ($('#commentAuthor').val() == '') {
+                        var author = localStorage.getItem("author");
+                        $("#commentAuthor").val(author == 'undefined' ? '' : author);
+                    }
+                    if ($('#commentAuthorEmail').val() == '') {
+                        var email = localStorage.getItem("email");
+                        $("#commentAuthorEmail").val(email == 'undefined' ? '' : email);
+                    }
+                    if ($('#commentAuthorUrl').val() == '') {
+                        var url = localStorage.getItem("url");
+                        $("#commentAuthorUrl").val(url == 'undefined' ? '' : url);
+                    }
+                });
+                $('#submit').click(function () {
+                    var author = $("#commentAuthor");
+                    var content = $("#commentContent");
+                    var email = $("#commentAuthorEmail");
+                    var url = $("#commentAuthorUrl");
+                    if (author.val() == '' || content.val() == '') {
+                        $(".native-message").html("<span style='color:red'>è¯·è¾“å…¥å¿…å¡«é¡¹ï¼</span>");
+                        $(".native-message").fadeIn(1000);
+                        setTimeout(function () {
+                            $(".native-message").fadeOut(1000);
+                        }, 1500);
+                        return;
+                    }
+                    $(this).attr("disabled", "disabled");
+                    $(this).html("æäº¤ä¸­...");
+                    $.ajax({
+                        type: 'POST',
+                        url: 'newComment',
+                        async: false,
+                        data: {
+                            'postId': $('input[name=postId]').val(),
+                            'commentContent': $('textarea[name=commentContent]').val(),
+                            'commentAuthor': $('input[name=commentAuthor]').val(),
+                            'commentAuthorEmail': $('input[name=commentAuthorEmail]').val(),
+                            'commentAuthorUrl': $('input[name=commentAuthorUrl]').val(),
+                            'commentAgent': navigator.userAgent,
+                            'commentParent': $('input[name=commentParent]').val()
+                        },
+                        success: function (data) {
+                            localStorage.setItem('author', author.val());
+                            localStorage.setItem('email', email.val());
+                            localStorage.setItem('url', url.val());
+                            if (data.code == 1) {
+                                $('.comment-input-content').val("");
+                                $(".native-message").html("<span>" + data.msg + "</span>");
+                                window
+                            } else {
+                                $(".native-message").html("<span style='color:red'>" + data.msg + "</span>");
+                            }
+                            $(".native-message").fadeIn(1000);
+                            setTimeout(function () {
+                                $(".native-message").fadeOut(1000);
+                                $("#submit").removeAttr("disabled");
+                                $("#submit").html("æäº¤è¯„è®º");
+                                window.location.reload();
+                            }, 1500);
+                        }
+                    });
+                });
+                $('.native-list-one-footer-reback').click(function () {
+                    var at = $(this).attr("at");
+                    var commentParentAuthor = $('#comment-id-' + at).find(".native-list-one-head-name").html();
+                    $('#commentParent').val(at);
+                    $('#commentContent').attr("placeholder", "@" + commentParentAuthor + ": ");
+                    $('#commentContent').focus();
+                    $('#cancel-comment-reply-link').show();
+                });
+                $('#cancel-comment-reply-link').click(function () {
+                    $('#commentContent').focus();
+                    $('#commentContent').attr("placeholder", defaultPlaceholder);
+                    $('#commentParent').val(0);
+                    $('#cancel-comment-reply-link').hide();
+                });
+                $('.comment-delete-link').click(function () {
+                    var id = $(this).attr('data-id');
+                    $.ajax({
+                        type: 'POST',
+                        url: 'admin/comment/remove',
+                        async: false,
+                        data: {'commentId': id,},
+                        success: function (data) {
+                            setTimeout(function () {
+                                window.location.reload();
+                            }, 1500);
+                        }
+                    });
+                });
+                var parser = new UAParser();
+
+                function show_ua(string) {
+                    parser.setUA(string);
+                    var uua = parser.getResult();
+                    if (uua.os.version == 'x86_64') {
+                        uua.os.version = 'x64';
+                    }
+                    var browser = uua.browser.name + ' ' + uua.browser.version;
+                    var os = uua.os.name + ' ' + uua.os.version;
+                    return '<span class="ua visible-md-block">' + browser + '</span> <span class="ua visible-md-block">' + os + '</span>';
+                } </script>
+            </main>
+
+        </div><!-- .content-area -->
+
+        <div id="sidebar" class="widget-area all-sidebar">
+            <aside id="text-2" class="widget widget_text wow fadeInUp" data-wow-delay="0.3s"><h3
+                    class="widget-title"><i class="fa fa-bars"></i>æ”¯æŒæœ¬ç«™</h3>
+                <div class="textwidget">
+                    <span style="color:red;">åšä¸»è¿‘æœŸå¼€äº†æ·˜å®åº—(åº—åï¼š<b>è¨€æ›Œåšå®¢å’¨è¯¢éƒ¨</b>)ï¼Œæ¬¢è¿å¤§å®¶æ¥å’¨è¯¢ã€‚ä¸»è¥ã€Javaé—®é¢˜è§£å†³ã€‘ï¼Œã€Javaé¡¹ç›®æ¯•ä¸šè®¾è®¡ã€‘ã€ã€æ¯•ä¸šè®ºæ–‡ã€‘ã€ã€ç½‘ç«™å»ºè®¾ã€‘ç­‰å†…å®¹ã€‚</span>
+                    <img src="http://blog-cdn.codergroup.cn/uploads/2019/5/b8feb24338e42dd0b25e7b78945cd990">
+                </div>
+                <div class="clear"></div>
+            </aside>
+
+
+            <aside class="widget wow fadeInUp" data-wow-delay="0.3s">
+                <h3 class="widget-title"><i class="fa fa-bars"></i>çƒ­é—¨æ ‡ç­¾</h3>
+                <div class="tagcloud">
+                    <a href="tag/java"
+                       class="tag-cloud-link tag-link-75 tag-link-position-1"
+                       style="font-size: 14px;" title="191ä¸ªè¯é¢˜">Java</a>
+                    <a href="tag/error"
+                       class="tag-cloud-link tag-link-75 tag-link-position-1"
+                       style="font-size: 14px;" title="72ä¸ªè¯é¢˜">æ•…éšœ</a>
+                    <a href="tag/wordpress"
+                       class="tag-cloud-link tag-link-75 tag-link-position-1"
+                       style="font-size: 14px;" title="69ä¸ªè¯é¢˜">WordPress</a>
+                    <div class="clear"></div>
+                </div>
+                <div class="clear"></div>
+            </aside>
+
+            <aside class="widget wow fadeInUp" data-wow-delay="0.3s">
+                <h3 class="widget-title"><i class="fa fa-bars"></i>é˜…è¯»æ¦œ</h3>
+                <div id="hot_comment_widget">
+                    <ul>
+                        <li>
+                            <span class='li-icon li-icon-1'>1</span>
+                            <a href="article/5202" rel="bookmark"
+                               title=" 122331 views">
+                                ã€æ–°ã€‘ä¸‰å›½å¿—13å¨åŠ›åŠ å¼ºpkç‰ˆ1.13ç‰ˆæœ¬ä¸‹è½½åœ°å€å’Œè§£å‹å¯†ç </a>
+                        </li>
+                        <li>
+                            <span class='li-icon li-icon-2'>2</span>
+                            <a href="article/4730" rel="bookmark"
+                               title=" 58590 views">
+                                ã€Šç››ä¸–ä¸­çš„è¼èšã€‹åŸæ–‡</a>
+                        </li>
+                        <li>
+                            <span class='li-icon li-icon-3'>3</span>
+                            <a href="article/3223" rel="bookmark"
+                               title=" 21148 views">
+                                Javaå­¦ä¹ èµ„æ–™æ•´åˆï¼ˆæŒç»­æ›´æ–°ï¼‰</a>
+                        </li>
+                        <li>
+                            <span class='li-icon li-icon-4'>4</span>
+                            <a href="article/6347" rel="bookmark"
+                               title=" 17356 views">
+                                ä¸€ä¸ªç®€å•æ¼‚äº®çš„Javaåšå®¢ç³»ç»Ÿ-é€‚åˆåˆå­¦ssmè€…</a>
+                        </li>
+                        <li>
+                            <span class='li-icon li-icon-5'>5</span>
+                            <a href="article/8402" rel="bookmark"
+                               title=" 16667 views">
+                                CoderGroup â€”â€” åŸºäº SpringBoot å®ç°çš„å¼€å‘è€…ç¤¾åŒºï¼Œæ¬¢è¿å…¥é©»</a>
+                        </li>
+                        <li>
+                            <span class='li-icon li-icon-6'>6</span>
+                            <a href="article/5872" rel="bookmark"
+                               title=" 12468 views">
+                                Intellij IDEAå¦‚ä½•åˆ›å»ºèµ„æºæ–‡ä»¶å¤¹Source Folder</a>
+                        </li>
+                        <li>
+                            <span class='li-icon li-icon-7'>7</span>
+                            <a href="article/5828" rel="bookmark"
+                               title=" 9538 views">
+                                ã€Šä¿¡é•¿ä¹‹é‡æœ›13å¤©é“ã€‹ä¸‹è½½åœ°å€å’Œwin10å¥½å¡è§£å†³æ–¹æ¡ˆ</a>
+                        </li>
+                        <li>
+                            <span class='li-icon li-icon-8'>8</span>
+                            <a href="article/2176" rel="bookmark"
+                               title=" 8137 views">
+                                é…ç½®ä¸ƒç‰›è‡ªå®šä¹‰åŸŸåcdnåŠ é€Ÿï¼Œè®©ä½ çš„ç½‘ç«™é£èµ·æ¥</a>
+                        </li>
+                        <li>
+                            <span class='li-icon li-icon-9'>9</span>
+                            <a href="article/6300" rel="bookmark"
+                               title=" 8016 views">
+                                SSMåšå®¢å®æˆ˜(9)-æ‹¦æˆªå™¨éªŒè¯æƒé™å’Œç™»å½•ä¸æ³¨é”€çš„å®ç°</a>
+                        </li>
+                        <li>
+                            <span class='li-icon li-icon-10'>10</span>
+                            <a href="article/7431" rel="bookmark"
+                               title=" 7546 views">
+                                SpringBoot + Spring Security + Thymeleaf å®ç°æƒé™ç®¡ç†ç™»å½•</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="clear"></div>
+            </aside>
+        </div>
+        <div class="clear"></div>
+    </div><!-- .site-content -->
+
+    <@footer></@footer>
+</div><!-- .site -->
+<@script></@script>
+<script>
+    var _hmt = _hmt || [];
+    (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?6afab79aca1c297eeabbd7b79812dba7";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        }
+        else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
 </script>
 </body>
 </html>
+

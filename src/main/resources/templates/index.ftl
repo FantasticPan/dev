@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿<#include "include/macros.ftl"/>
+<!DOCTYPE html>
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -11,269 +12,12 @@
     <meta name="theme-color" content="#fff">
     <meta name="keywords" content="刘言曌,言曌博客,刘䶮曌博客,Java博客,JavaEE,JavaWeb,后端开发,Java成长之路,Java,个人博客,Java个人博客">
     <meta name="description" content="言曌博客是专注JavaEE,JavaWeb的个人技术博客，同时是个人程序人生的点滴记录和时光储备。">
-    <!--[if lt IE 9]>
-    <script src="/page/js/html5.js"></script>
-    <script src="/page/js/css3-mediaqueries.js"></script>
-    <![endif]-->
-    <meta name='robots' content='noindex,follow'>
-    <link rel='stylesheet' id='begin-style-css' href='/page/css/style.css'
-          type='text/css' media='all'>
-    <link rel='stylesheet' id='fonts-css' href='/page/css/fonts.css'
-          type='text/css' media='all'>
-    <#--<link rel="alternate" type="application/rss+xml" title="atom 1.0" href="feed.xml">-->
-    <style>
-        ::-webkit-scrollbar {
-            width: 6px;
-            height: 6px;
-            background-color: #eee;
-        }
-
-        ::-webkit-scrollbar-thumb {
-            background-color: #3798e8;
-        }
-
-        ::-webkit-scrollbar-track {
-            background-color: #eee;
-        }
-
-    </style>
+    <@css></@css>
+    <link rel="stylesheet" href="/lipan/css/page.css" type="text/css" media="all">
 </head>
 <body>
 <div id="page" class="hfeed site">
-    <header id="masthead" class="site-header">
-        <nav id="top-header">
-            <div class="top-nav">
-                <div id="user-profile">
-                    <div class="user-login">欢迎光临！</div>
-                    <div class="nav-set">
-                        <div class="nav-login">
-                            <a href="admin/login"
-                               title="Login"><i class="fa fa-user"></i>登录
-                            </a>
-                        </div>
-                    </div>
-                    <div class="clear"></div>
-                </div>
-                <div class="menu-topmenu-container">
-                    <ul id="menu-topmenu" class="top-menu">
-                        <li class="menu-item menu-item-type-post_type menu-item-object-page">
-                            <a href="p/shang">
-                                <i class="fa-heart fa"></i>
-                                <span class="font-text">赞赏记录</span>
-                            </a>
-                        </li>
-                        <li class="menu-item menu-item-type-post_type menu-item-object-page">
-                            <a href="p/favorite">
-                                <i class="fa-paperclip fa"></i>
-                                <span class="font-text">收藏夹</span>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-        <!--  #menu-box -->
-        <div id="menu-box">
-            <div id="top-menu">
-			<span class="nav-search">
-				<i class="fa fa-search"></i>
-			</span>
-                <span class="mobile-login"><a href="admin/login" title="Login"><i class="fa fa-user"></i></a></span>
-                <div class="logo-site">
-                    <h1 class="site-title">
-                        <a href="/" title="" rel="home">LiPan`s博客</a>
-                    </h1>
-                    <p class="site-description"> 程序人生，永不止步</p>
-                </div><!-- .logo-site -->
-
-                <div id="site-nav-wrap">
-                    <div id="sidr-close">
-                        <a href="#sidr-close" class="toggle-sidr-close">×</a>
-                    </div>
-                    <nav id="site-nav" class="main-nav">
-                        <a href="#sidr-main" id="navigation-toggle" class="bars">
-                            <i class="fa fa-bars"></i>
-                        </a>
-                        <div class="menu-mainmenu-container">
-                            <ul id="menu-mainmenu" class="down-menu nav-menu">
-                                <li id="menu-item-138"
-                                    class="menu-item menu-item-type-custom menu-item-object-custom">
-                                    <a href="category/javadev">
-                                        <i class="fa-coffee fa"></i>
-                                        <span class="font-text">Java 开发</span>
-                                    </a>
-                                    <ul class="sub-menu">
-                                        <li id="menu-item-109"
-                                            class="menu-item menu-item-type-custom menu-item-object-custom">
-                                            <a href="category/java-basic">
-                                                <span class="font-text">Java 基础</span>
-                                            </a>
-                                        </li>
-                                        <li id="menu-item-155"
-                                            class="menu-item menu-item-type-custom menu-item-object-custom">
-                                            <a href="category/java-web">
-                                                <span class="font-text">JavaWeb</span>
-                                            </a>
-                                            <ul class="sub-menu">
-                                                <li id="menu-item-230"
-                                                    class="menu-item menu-item-type-custom menu-item-object-custom">
-                                                    <a href="category/templates">
-                                                        <span class="font-text">模板引擎</span>
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li id="menu-item-193"
-                                            class="menu-item menu-item-type-custom menu-item-object-custom">
-                                            <a href="category/core-java">
-                                                <span class="font-text">java 进阶</span>
-                                            </a>
-                                            <ul class="sub-menu">
-                                                <li id="menu-item-229"
-                                                    class="menu-item menu-item-type-custom menu-item-object-custom">
-                                                    <a href="category/java-code">
-                                                        <span class="font-text">Java 源码</span>
-                                                    </a>
-                                                </li>
-                                                <li id="menu-item-242"
-                                                    class="menu-item menu-item-type-custom menu-item-object-custom">
-                                                    <a href="category/multi-thread">
-                                                        <span class="font-text">多线程并发编程</span>
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li id="menu-item-275"
-                                    class="menu-item menu-item-type-custom menu-item-object-custom">
-                                    <a href="category/back-frameworks">
-                                        <i class="fa-building fa"></i>
-                                        <span class="font-text">框架与实战</span>
-                                    </a>
-                                    <ul class="sub-menu">
-                                        <li id="menu-item-179"
-                                            class="menu-item menu-item-type-custom menu-item-object-custom">
-                                            <a href="category/spring">
-                                                <span class="font-text">Spring 家族</span>
-                                            </a>
-                                            <ul class="sub-menu">
-                                                <li id="menu-item-250"
-                                                    class="menu-item menu-item-type-custom menu-item-object-custom">
-                                                    <a href="category/springboot">
-                                                        <span class="font-text">SpringBoot教程</span>
-                                                    </a>
-                                                </li>
-                                                <li id="menu-item-251"
-                                                    class="menu-item menu-item-type-custom menu-item-object-custom">
-                                                    <a href="category/springcloud">
-                                                        <span class="font-text">SpringCloud</span>
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li id="menu-item-198"
-                                    class="menu-item menu-item-type-custom menu-item-object-custom">
-                                    <a href="category/computer-science">
-                                        <i class="fa-cubes fa"></i>
-                                        <span class="font-text">计算机科学</span>
-                                    </a>
-                                    <ul class="sub-menu">
-                                        <li id="menu-item-200"
-                                            class="menu-item menu-item-type-custom menu-item-object-custom">
-                                            <a href="category/data-structure-and-algorithm">
-                                                <span class="font-text">数据结构和算法</span>
-                                            </a>
-                                        </li>
-                                        <li id="menu-item-201"
-                                            class="menu-item menu-item-type-custom menu-item-object-custom">
-                                            <a href="category/operating-system">
-                                                <span class="font-text">操作系统</span>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li id="menu-item-236"
-                                    class="menu-item menu-item-type-custom menu-item-object-custom">
-                                    <a href="category/other-tech">
-                                        <i class="fa-th-large fa"></i>
-                                        <span class="font-text">其他技术</span>
-                                    </a>
-                                    <ul class="sub-menu">
-                                        <li id="menu-item-4"
-                                            class="menu-item menu-item-type-custom menu-item-object-custom">
-                                            <a href="category/js">
-                                                <span class="font-text">JavaScript/jQuery</span>
-                                            </a>
-                                        </li>
-                                        <li id="menu-item-85"
-                                            class="menu-item menu-item-type-custom menu-item-object-custom">
-                                            <a href="category/web-build">
-                                                <span class="font-text">网站建设</span>
-                                            </a>
-                                            <ul class="sub-menu">
-                                                <li id="menu-item-16"
-                                                    class="menu-item menu-item-type-custom menu-item-object-custom">
-                                                    <a href="category/webserver">
-                                                        <span class="font-text">Apache/Nginx</span>
-                                                    </a>
-                                                </li>
-                                                <li id="menu-item-15"
-                                                    class="menu-item menu-item-type-custom menu-item-object-custom">
-                                                    <a href="category/os">
-                                                        <span class="font-text">Linux</span>
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li id="menu-item-276"
-                                    class="menu-item menu-item-type-custom menu-item-object-custom">
-                                    <a href="category/knowledge">
-                                        <i class="fa-bookmark fa"></i>
-                                        <span class="font-text">资源与知识</span>
-                                    </a>
-                                    <ul class="sub-menu">
-                                        <li id="menu-item-13"
-                                            class="menu-item menu-item-type-custom menu-item-object-custom">
-                                            <a href="category/vedio">
-                                                <span class="font-text">视频收藏</span>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li id="menu-item-277"
-                                    class="menu-item menu-item-type-custom menu-item-object-custom">
-                                    <a href="p/message">
-                                        <i class="fa-comments fa"></i>
-                                        <span class="font-text">留言板</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </nav><!-- #site-nav -->
-                </div><!-- #site-nav-wrap -->
-                <div class="clear"></div>
-            </div><!-- #top-menu -->
-        </div>
-        <!-- #menu-box -->
-
-    </header><!-- #masthead -->
-
-    <div id="search-main">
-        <div class="searchbar">
-            <form method="get" id="searchform" action="search">
-            <span>
-                <input type="text" value="" name="keyword" id="keyword" placeholder="输入搜索内容" required/>
-                <button type="submit" id="searchsubmit">搜索</button>
-            </span>
-            </form>
-        </div>
-        <div class="clear"></div>
-    </div>
+    <@header></@header>
 
 
     <nav class="breadcrumb">
@@ -377,7 +121,7 @@
                         </figure>
                         <header class="entry-header">
                             <h2 class="entry-title">
-                                <a href="/article/display?articleId=${article.articleId}" rel="bookmark"><#if article.articleTop != 0>【置顶】</#if>${article.articleTitle}</a>
+                                <a href="/article/display?articleId=${article.articleId}" rel="bookmark"><#if article.articleTop != 0><b>【置顶】</b></#if>${article.articleTitle}</a>
                             </h2>
                         </header>
                         <div class="entry-content">
@@ -385,9 +129,9 @@
                             <span class="title-l"></span>
                             <span class="new-icon"></span>
                             <span class="entry-meta">
-                            <span class="date">${article.articleReleaseDate}&nbsp;&nbsp;</span>
-                            <span class="views"><i class="fa fa-eye"></i> ${article.articleViewCount} views</span>
-                            <span class="comment">&nbsp;&nbsp;<a href="article/9318#comments" rel="external nofollow"><i class="fa fa-comment-o"></i> ${article.articleCommentCount}</a></span>
+                                <span class="date"><i class="fa fa-calendar"></i> ${article.articleReleaseDate?string("yyyy-MM-dd")}&nbsp;&nbsp;</span>
+                            <span class="views"><i class="fa fa-eye"></i> 浏览(${article.articleViewCount})</span>
+                            <span class="comment">&nbsp;&nbsp;<a href="article/9318#comments" rel="external nofollow"><i class="fa fa-comments-o"></i> 评论(${article.articleCommentCount})</a></span>
                         </span>
                             <div class="clear"></div>
                         </div>
@@ -396,49 +140,45 @@
                 </#list>
             </main>
 
-            <nav class="navigation pagination" role="navigation">
-                <div class="nav-links">
-                    <a class="page-numbers"><span class="screen-reader-text">第 </span>共${pageInfo.pages}页<span class="screen-reader-text"> 页</span></a>
-                    <a class="page-numbers" href="/"><span class="screen-reader-text">第 </span>首页<span class="screen-reader-text"> 页</span></a>
+            <nav class="comment-navigation">
+                <div class="pagination">
+                    <a class="page-numbers" href="/">共${pageInfo.pages}页</a>
+                    <a class="page-numbers" href="/">首页</a>
                     <#if pageInfo.hasPreviousPage>
                         <#if pageInfo.pageNum == 2>
-                            <a class="page-numbers" href="/"><span class="screen-reader-text">第 </span>上一页<span class="screen-reader-text"> 页</span></a>
+                            <a class="page-numbers" href="/">上一页</a>
                         </#if>
                         <#if pageInfo.pageNum != 2>
-                            <a class="page-numbers" href="/?pageNum=${pageInfo.prePage}"><span class="screen-reader-text">第 </span>上一页<span class="screen-reader-text"> 页</span></a>
+                            <a class="page-numbers" href="/?pageNum=${pageInfo.prePage}">上一页</a>
                         </#if>
                     </#if>
                     <#list pageInfo.navigatepageNums as page_num>
                         <#if page_num == pageInfo.pageNum>
-                            <span class="page-numbers current">
-                                <span class="screen-reader-text">第 </span>${page_num}<span class="screen-reader-text"> 页</span>
-                            </span>
+                            <span class="page-numbers current">${page_num}</span>
                         </#if>
                         <#if page_num != pageInfo.pageNum>
-                            <a class="page-numbers" href="/?pageNum=${page_num}"><span class="screen-reader-text">第 </span>${page_num}<span class="screen-reader-text"> 页</span></a>
+                            <a class="page-numbers" href="/?pageNum=${page_num}">${page_num}</a>
                         </#if>
                     </#list>
                     <#if pageInfo.hasNextPage>
                         <#if pageInfo.hasNextPage>
-                            <a class="page-numbers" href="/?pageNum=${pageInfo.nextPage}"><span class="screen-reader-text">第 </span>下一页<span class="screen-reader-text"> 页</span></a>
+                            <a class="page-numbers" href="/?pageNum=${pageInfo.nextPage}">下一页</a>
                         </#if>
                     </#if>
-                    <a class="page-numbers" href="/?pageNum=${pageInfo.navigateLastPage}"><span class="screen-reader-text">第 </span>尾页<span class="screen-reader-text"> 页</span></a>
+                    <a class="page-numbers" href="/?pageNum=${pageInfo.navigateLastPage}">尾页</a>
                 </div>
             </nav>
         </div><!-- .content-area -->
 
         <div id="sidebar" class="widget-area all-sidebar">
             <aside class="widget about wow fadeInUp" data-wow-delay="0.3s">
-                <h3 class="widget-title">
-                    <i class="fa fa-bars"></i>关于本站
-                </h3>
+                <h3 class="widget-title"><i class="fa fa-bars"></i>关于本站</h3>
                 <div id="feed_widget">
                     <div class="feed-about">
                         <!--样式二：小人-->
                         <a href="https://github.com/FantasticPan" class="github-corner" aria-label="View source on GitHub" title="Fork me on GitHub" target="_blank">
                             <svg width="50" height="50" viewBox="0 0 250 250"
-                                 style="fill:#64CEAA; color:#fff; position: absolute; top: 0; border: 0; right: 0;"
+                                 style="fill:#2f889a; color:#fff; position: absolute; top: 0; border: 0; right: 0;"
                                  aria-hidden="true">
                                 <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
                                 <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
@@ -475,37 +215,23 @@
                         </style>
                         <div class="about-main">
                             <div class="about-img">
-                                <img src="upload/2018/10/avatar20181111193957347.jpg" alt="QR Code">
+                                <img src="/lipan/img/dog.jpg" alt="QR Code">
                             </div>
                             <div class="about-name">博客初心</div>
-                            <div class="about-the">言曌博客，个人程序人生的点滴记录和时光储备。淡泊明志，宁静致远。珍惜原创，矢志不渝。
+                            <div class="about-the">个人程序人生的点滴记录和时光储备。淡泊明志，宁静致远。珍惜原创，矢志不渝。
                             </div>
                         </div>
                         <div class="clear"></div>
                         <ul>
                             <li class="weixin">
-                        <span>
-                            <a title="微信" target="_blank" href="upload/2018/11/wechat20181230193700343.jpg"><i
-                                    class="fa fa-weixin"></i>
-                            </a>
-                        </span>
+                                <span><a title="微信" target="_blank" href="upload/2018/11/wechat20181230193700343.jpg"><i class="fa fa-weixin"></i></a></span>
                             </li>
                             <li class="tqq">
-                                <a target=blank rel="external nofollow"
-                                   href=http://wpa.qq.com/msgrd?V=3&uin=847064370&Site=QQ&Menu=yes
-                                   title="QQ在线">
-                                    <i class="fa fa-qq"></i>
-                                </a>
+                                <a target=blank rel="external nofollow" href=http://wpa.qq.com/msgrd?V=3&uin=847064370&Site=QQ&Menu=yes title="QQ在线"><i class="fa fa-qq"></i></a>
                             </li>
-                            <li class="tsina">
-                                <a title=""
-                                   href="http://weibo.com/liuyanzhao1/profile?rightmod=1&wvr=6&mod=personinfo&is_all=1"
-                                   target="_blank" rel="external nofollow"><i class="fa fa-weibo"></i></a>
+                            <li class="tsina"><a title="" href="http://weibo.com/liuyanzhao1/profile?rightmod=1&wvr=6&mod=personinfo&is_all=1" target="_blank" rel="external nofollow"><i class="fa fa-weibo"></i></a>
                             </li>
-                            <li class="feed">
-                                <a title="" href="https://github.com/saysky"
-                                   target="_blank"
-                                   rel="external nofollow"><i class="fa fa-github"></i></a></li>
+                            <li class="feed"><a title="点击查看我的GitHub" href="https://github.com/FantasticPan" target="_blank" rel="external nofollow"><i class="fa fa-github"></i></a></li>
                         </ul>
                         <#--<div class="about-inf">-->
                             <#--<span class="about-pn">文章 808</span>-->
@@ -516,53 +242,50 @@
                 <div class="clear"></div>
             </aside>
 
-            <aside class="widget wow fadeInUp" data-wow-delay="0.3s">
-                <h3 class="widget-title">
-                    <i class="fa fa-bars"></i>网站信息
-                </h3>
-                <div class="widget-text">
-                    <ul class="site-profile">
-                        <li><i class="fa fa-file"></i> 文章总数：808 篇</li>
-                        <#--<li><i class="fa fa-commenting-o"></i> 留言数量：1801 条</li>-->
-                        <li><i class="fa fa-folder-open"></i> 分类数量：49 个</li>
-                        <li><i class="fa fa-tags"></i> 标签总数：71 个</li>
-                        <#--<li><i class="fa fa-link"></i> 链接数量：2 个</li>-->
-                        <li><i class="fa fa-clock-o"></i> 运行天数：<span id="blogStart"></span> 天</li>
-                        <li><i class="fa fa-eye"></i> 访问量：753671 次</li>
-                        <li><i class="fa fa-pencil-square"></i> 最后更新：<span style="color:#2F889A">2019年07月01日</span></li>
-                    </ul>
-                    <script>
-                        var dateBegin = new Date("2018-12-17");
-                        var dateEnd = new Date();
-                        var parseDate = dateEnd.getTime() - dateBegin.getTime();
-                        var days = Math.floor(parseDate / (24 * 3600 * 1000));
-                        document.getElementById('blogStart').innerHTML = days + 1;
-                    </script>
-                </div>
-                <div class="clear"></div>
-            </aside>
-
             <aside class="widget hot_comment wow fadeInUp" data-wow-delay="0.3s">
                 <h3 class="widget-title"><i class="fa fa-bars"></i>阅读榜</h3>
                 <div id="hot_comment_widget">
                     <ul>
                         <li>
                             <span class='li-icon li-icon-1'>1</span>
-                            <a href="article/5202" rel="bookmark"
-                               title=" 122327 views">
-                                【新】三国志13威力加强pk版1.13版本下载地址和解压密码</a>
+                            <a href="article/5202" rel="bookmark" title=" 122327 views">【新】三国志13威力加强pk版1.13版本下载地址和解压密码</a>
                         </li>
                         <li>
                             <span class='li-icon li-icon-2'>2</span>
                             <a href="article/4730" rel="bookmark"
-                               title=" 58585 views">
-                                《盛世中的蝼蚁》原文</a>
+                               title=" 58585 views">《盛世中的蝼蚁》原文</a>
                         </li>
                         <li>
                             <span class='li-icon li-icon-3'>3</span>
-                            <a href="article/3223" rel="bookmark"
-                               title=" 21146 views">
-                                Java学习资料整合（持续更新）</a>
+                            <a href="article/3223" rel="bookmark" title=" 21146 views">Java学习资料整合（持续更新）</a>
+                        </li>
+                        <li>
+                            <span class='li-icon li-icon-4'>4</span>
+                            <a href="article/6347" rel="bookmark" title=" 17356 views">一个简单漂亮的Java博客系统-适合初学ssm者</a>
+                        </li>
+                        <li>
+                            <span class='li-icon li-icon-5'>5</span>
+                            <a href="article/8402" rel="bookmark" title=" 16667 views">CoderGroup —— 基于 SpringBoot 实现的开发者社区，欢迎入驻</a>
+                        </li>
+                        <li>
+                            <span class='li-icon li-icon-6'>6</span>
+                            <a href="article/5872" rel="bookmark" title=" 12468 views">Intellij IDEA如何创建资源文件夹Source Folder</a>
+                        </li>
+                        <li>
+                            <span class='li-icon li-icon-7'>7</span>
+                            <a href="article/5828" rel="bookmark" title=" 9538 views">《信长之野望13天道》下载地址和win10好卡解决方案</a>
+                        </li>
+                        <li>
+                            <span class='li-icon li-icon-8'>8</span>
+                            <a href="article/2176" rel="bookmark" title=" 8137 views">配置七牛自定义域名cdn加速，让你的网站飞起来</a>
+                        </li>
+                        <li>
+                            <span class='li-icon li-icon-9'>9</span>
+                            <a href="article/6300" rel="bookmark" title=" 8016 views">SSM博客实战(9)-拦截器验证权限和登录与注销的实现</a>
+                        </li>
+                        <li>
+                            <span class='li-icon li-icon-10'>10</span>
+                            <a href="article/7431" rel="bookmark" title=" 7546 views">SpringBoot + Spring Security + Thymeleaf 实现权限管理登录</a>
                         </li>
                     </ul>
                 </div>
@@ -570,7 +293,7 @@
             </aside>
 
             <aside class="widget cx_tag_cloud wow fadeInUp" data-wow-delay="0.3s">
-                <h3 class="widget-title"><i class="fa fa-bars"></i>热门标签</h3>
+                <h3 class="widget-title"><i class="fa fa-bars"></i>文章标签</h3>
                 <div class="tagcloud">
                     <a href="tag/java" class="tag-cloud-link tag-link-75 tag-link-position-1" style="font-size: 14px;">Java</a>
                     <a href="tag/error" class="tag-cloud-link tag-link-75 tag-link-position-1" style="font-size: 14px;">故障</a>
@@ -600,67 +323,40 @@
                 </div>
                 <div class="clear"></div>
             </aside>
-
-
+            <aside class="widget wow fadeInUp" data-wow-delay="0.3s">
+                <h3 class="widget-title">
+                    <i class="fa fa-bars"></i>网站信息
+                </h3>
+                <div class="widget-text">
+                    <ul class="site-profile">
+                        <li><i class="fa fa-file"></i> 文章总数：808 篇</li>
+                        <#--<li><i class="fa fa-commenting-o"></i> 留言数量：1801 条</li>-->
+                        <li><i class="fa fa-folder-open"></i> 分类数量：49 个</li>
+                        <li><i class="fa fa-tags"></i> 标签总数：71 个</li>
+                        <#--<li><i class="fa fa-link"></i> 链接数量：2 个</li>-->
+                        <li><i class="fa fa-clock-o"></i> 运行天数：<span id="blogStart"></span> 天</li>
+                        <li><i class="fa fa-eye"></i> 访问量：753671 次</li>
+                        <li><i class="fa fa-pencil-square"></i> 最后更新：<span style="color:#2F889A">2019年07月01日</span></li>
+                    </ul>
+                    <script>
+                        var dateBegin = new Date("2018-12-17");
+                        var dateEnd = new Date();
+                        var parseDate = dateEnd.getTime() - dateBegin.getTime();
+                        var days = Math.floor(parseDate / (24 * 3600 * 1000));
+                        document.getElementById('blogStart').innerHTML = days + 1;
+                    </script>
+                </div>
+                <div class="clear"></div>
+            </aside>
         </div>
         <div class="clear"></div>
     </div><!-- .site-content -->
 
     <div class="clear"></div>
-    <!-- 友情链接盒子 -->
-    <#--<div class="links-box">-->
-        <#--<div id="links">-->
-            <#--<ul class="lx7">-->
-                <#--<li class="link-f link-name wow fadeInUp" data-wow-delay="0.3s">-->
-                    <#--<a href="https://liuyanzhao.com">言曌博客</a>-->
-                <#--</li>-->
-            <#--</ul>-->
-            <#--<ul class="lx7">-->
-                <#--<li class="link-f link-name wow fadeInUp" data-wow-delay="0.3s">-->
-                    <#--<a href="http://codergroup.cn">CoderGroup</a>-->
-                <#--</li>-->
-            <#--</ul>-->
-            <#--<div class="clear"></div>-->
-        <#--</div>-->
-    <#--</div>-->
-    <#include "include/footer.ftl"/>
 
-    <ul id="scroll">
-        <li class="log log-no"><a class="log-button" title="文章目录"><i class="fa fa-bars"></i></a><div class="log-prompt"><div class="log-arrow">文章目录</div></div></li>
-        <li><a class="scroll-h" title="返回顶部"><i class="fa fa-angle-up"></i></a></li>
-        <li><a class="scroll-b" title="转到底部"><i class="fa fa-angle-down"></i></a></li>
-        <li class="gb2-site"><a id="gb2big5"><span>繁</span></a></li>
-        <li class="qqonline">
-            <div class="online">
-                <a href="javascript:void(0)"><i class="fa fa-qq"></i></a>
-            </div>
-            <div class="qqonline-box">
-                <div class="qqonline-main">
-                    <div class="nline-wiexin">
-                        <h4>微信</h4>
-                        <img title="微信" alt="微信" src="upload/2018/11/wechat20181230193700343.jpg">
-                    </div>
-                    <div class="nline-qq">
-                        <a target="_blank" rel="external nofollow"
-                           href="http://wpa.qq.com/msgrd?v=3&uin=847064370&site=qq&menu=yes"><i class="fa fa-qq"></i>在线咨询
-                        </a>
-                    </div>
-                </div>
-                <span class="qq-arrow"></span>
-            </div>
-        </li>
-    </ul>
+    <@footer></@footer>
 </div><!-- .site -->
-<script type='text/javascript' src='/page/js/jquery.min.js'></script>
-<script type='text/javascript' src='/page/js/jquery.cookie.js'></script>
-<script type='text/javascript' src='/page/js/slides.js'></script>
-<script type='text/javascript' src='/page/js/sticky.js'></script>
-<script type='text/javascript' src='/page/js/superfish.js'></script>
-<script type='text/javascript' src='/page/js/jquery.lazyload.js'></script>
-<script type='text/javascript' src='/page/js/tipso.js'></script>
-<script type='text/javascript' src='/page/js/script.js'></script>
-<script type='text/javascript' src='/page/js/gb2big5.js'></script>
-<script type='text/javascript' src='/page/js/toastr.min.js'></script>
+<@script></@script>
 <script>
     var _hmt = _hmt || [];
     (function () {

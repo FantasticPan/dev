@@ -63,9 +63,10 @@ public class ArticleController {
      * @return 返回视图跳转至文章展示界面
      */
     @GetMapping("/display")
-    public ModelAndView articleDisplay(@RequestParam(value = "articleId") Integer articleId) {
+    public ModelAndView articleDisplay(@RequestParam(value = "articleId") Integer articleId, Model model) {
         Article article = articleService.getArticleById(articleId);
-        return ResultUtil.view("article-display");
+        model.addAttribute("article", article);
+        return ResultUtil.view("article/article-display");
     }
 
     /**
