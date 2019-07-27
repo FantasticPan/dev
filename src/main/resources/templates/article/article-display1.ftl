@@ -13,7 +13,6 @@
     <meta name="keywords" content="SpringBoot">
     <meta name="description" content="博主于去年下半年辞职到过年这段时间，重新整了一下博客系统。 预览地址： &nbsp;一、功能介绍本博客系统基于 SpringBoot 2.x ，支持">
     <@css></@css>
-    <link rel="stylesheet" href="/editormd/editormd.preview.min.css"/>
     <style>
         ::-webkit-scrollbar {
             width: 6px;
@@ -30,6 +29,7 @@
         }
 
     </style>
+    <link rel="stylesheet" href="/editormd/editormd.preview.min.css"/>
 </head>
 <body>
 <link rel="stylesheet" href="http://blog-cdn.codergroup.cn/static/plugins/highlight/highlight.css">
@@ -74,9 +74,8 @@
                     </header><!-- .entry-header -->
 
                     <div class="entry-content">
-                        <#--<div class="single-content" id="md_content">${article.articleHtmlContent}</div>-->
-                        <div class="article-content" id="md_content">${article.articleHtmlContent}</div>
-
+                        <div class="single-content" id="md_content">${article.articleHtmlContent}</div>
+                        <#--<div class="article-content" id="md_content">${article.articleHtmlContent}</div>-->
                         <div class="clear"></div>
                         <div class="separater-line"><span>正文到此结束</span></div>
                         <div id="social">
@@ -138,24 +137,15 @@
                                 <li class="r-hide"><a href="javascript:pr()" title="侧边栏"><i
                                         class="fa fa-caret-left"></i> <i class="fa fa-caret-right"></i> 全屏</a></li>
                             </ul>
-                            <#--<ul id="fontsize">-->
-                                <#--<li>A+</li>-->
-                            <#--</ul>-->
                             <ul id="fontsize">
-                                <li>原创</li>
+                                <li>A+</li>
                             </ul>
-
-                            <#--<ul>-->
-                                <#--<li>-->
-                                    <#--<div class="single-cat-tag">-->
-                                        <#--<div class="single-cat">所属分类：-->
-                                            <#--<a href="category/resource-share" rel="category tag">资源分享</a>-->
-                                            <#--<a href="category/springboot" rel="category tag">SpringBoot教程</a>-->
-                                        <#--</div>-->
-                                    <#--</div>-->
-                                <#--</li>-->
-                            <#--</ul>-->
-
+                            <div class="single-cat-tag">
+                                <div class="single-cat">所属分类：
+                                    <a href="category/resource-share" rel="category tag">资源分享</a>
+                                    <a href="category/springboot" rel="category tag">SpringBoot教程</a>
+                                </div>
+                            </div>
                         </footer><!-- .entry-footer -->
 
                         <div class="clear"></div>
@@ -864,60 +854,6 @@
                     <a href="tag/thread"
                        class="tag-cloud-link tag-link-75 tag-link-position-1"
                        style="font-size: 14px;" title="23个话题">多线程</a>
-                    <a href="tag/jsp"
-                       class="tag-cloud-link tag-link-75 tag-link-position-1"
-                       style="font-size: 14px;" title="22个话题">JSP</a>
-                    <a href="tag/mybatis"
-                       class="tag-cloud-link tag-link-75 tag-link-position-1"
-                       style="font-size: 14px;" title="22个话题">Mybatis</a>
-                    <a href="tag/html-css"
-                       class="tag-cloud-link tag-link-75 tag-link-position-1"
-                       style="font-size: 14px;" title="22个话题">HTML/CSS</a>
-                    <a href="tag/mysql"
-                       class="tag-cloud-link tag-link-75 tag-link-position-1"
-                       style="font-size: 14px;" title="21个话题">MySQL</a>
-                    <a href="tag/php"
-                       class="tag-cloud-link tag-link-75 tag-link-position-1"
-                       style="font-size: 14px;" title="20个话题">PHP</a>
-                    <a href="tag/spring"
-                       class="tag-cloud-link tag-link-75 tag-link-position-1"
-                       style="font-size: 14px;" title="20个话题">Spring</a>
-                    <a href="tag/springmvc"
-                       class="tag-cloud-link tag-link-75 tag-link-position-1"
-                       style="font-size: 14px;" title="20个话题">SpringMVC</a>
-                    <a href="tag/eclipse"
-                       class="tag-cloud-link tag-link-75 tag-link-position-1"
-                       style="font-size: 14px;" title="20个话题">Eclipse</a>
-                    <a href="tag/插件"
-                       class="tag-cloud-link tag-link-75 tag-link-position-1"
-                       style="font-size: 14px;" title="19个话题">插件</a>
-                    <a href="tag/服务器"
-                       class="tag-cloud-link tag-link-75 tag-link-position-1"
-                       style="font-size: 14px;" title="18个话题">服务器</a>
-                    <a href="tag/idea"
-                       class="tag-cloud-link tag-link-75 tag-link-position-1"
-                       style="font-size: 14px;" title="17个话题">IDEA</a>
-                    <a href="tag/c"
-                       class="tag-cloud-link tag-link-75 tag-link-position-1"
-                       style="font-size: 14px;" title="16个话题">C</a>
-                    <a href="tag/面试"
-                       class="tag-cloud-link tag-link-75 tag-link-position-1"
-                       style="font-size: 14px;" title="15个话题">面试</a>
-                    <a href="tag/算法"
-                       class="tag-cloud-link tag-link-75 tag-link-position-1"
-                       style="font-size: 14px;" title="14个话题">算法</a>
-                    <a href="tag/redis"
-                       class="tag-cloud-link tag-link-75 tag-link-position-1"
-                       style="font-size: 14px;" title="14个话题">Redis</a>
-                    <a href="tag/linux"
-                       class="tag-cloud-link tag-link-75 tag-link-position-1"
-                       style="font-size: 14px;" title="14个话题">Linux</a>
-                    <a href="tag/mac"
-                       class="tag-cloud-link tag-link-75 tag-link-position-1"
-                       style="font-size: 14px;" title="13个话题">Mac</a>
-                    <a href="tag/jpa"
-                       class="tag-cloud-link tag-link-75 tag-link-position-1"
-                       style="font-size: 14px;" title="13个话题">JPA</a>
                     <a href="tag/begin"
                        class="tag-cloud-link tag-link-75 tag-link-position-1"
                        style="font-size: 14px;" title="12个话题">知更鸟主题</a>
@@ -1027,10 +963,11 @@
                 </div>
                 <div class="clear"></div>
             </aside>
+
+
         </div>
         <div class="clear"></div>
     </div><!-- .site-content -->
-
     <@footer></@footer>
 </div><!-- .site -->
 <@script></@script>

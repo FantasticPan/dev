@@ -55,7 +55,7 @@ public class ShiroConfig {
         filterChainDefinitionMap.put("/admin/**", "roles[admin]");
 
         //登录的url
-        shiroFilterFactoryBean.setLoginUrl("/login");
+        shiroFilterFactoryBean.setLoginUrl("/toLogin");
         //登录成功跳转的url
         shiroFilterFactoryBean.setSuccessUrl("/");
         //设置没有权限跳转Url

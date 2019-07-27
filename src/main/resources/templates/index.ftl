@@ -82,7 +82,7 @@
                         <li id="callback_s0" class="callbacks1_on"
                             style="float: left; position: relative; opacity: 1; z-index: 2; transition: opacity 800ms ease-in-out 0s;">
                             <a href="article/9352" target="_blank" rel="external nofollow">
-                                <img src="http://blog-cdn.codergroup.cn/uploads/2019/3/15c00051acf2130f6dba16e82b5cc4d2" alt="基于SpringBoot+Shiro+Redis+ElasticSearch实现的博客系统，欢迎注册使用">
+                                <img src="/page/img/1.png" alt="基于SpringBoot+Shiro+Redis+ElasticSearch实现的博客系统，欢迎注册使用">
                             </a>
                             <p class="slider-caption">
                                 基于SpringBoot+Shiro+Redis+ElasticSearch实现的博客系统，欢迎注册使用
@@ -91,7 +91,7 @@
                         <li id="callback_s1" class="callbacks1_on"
                             style="float: left; position: relative; opacity: 1; z-index: 2; transition: opacity 800ms ease-in-out 0s;">
                             <a href="8402.html" target="_blank" rel="external nofollow">
-                                <img src="http://blog-cdn.codergroup.cn/uploads/2019/3/2de4c1a9c0dc4575c05f0cfae5367928"
+                                <img src="/page/img/2.png"
                                      alt="CoderGroup —— 基于 SpringBoot 实现的开发者社区，欢迎入驻">
                             </a>
                             <p class="slider-caption">
@@ -101,7 +101,7 @@
                         <li id="callback_s2" class="callbacks1_on"
                             style="float: left; position: relative; opacity: 1; z-index: 2; transition: opacity 800ms ease-in-out 0s;">
                             <a href="6347.html" target="_blank" rel="external nofollow">
-                                <img src="http://blog-cdn.codergroup.cn/uploads/2019/4/cadc7319d40307a9ec7926f15244daad"
+                                <img src="/page/img/3.png"
                                      alt="一个简单漂亮的Java博客系统-适合初学ssm者">
                             </a>
                             <p class="slider-caption">
@@ -116,7 +116,7 @@
                 <#list pageInfo.list as article>
                     <article class="wow fadeInUp post type-post status-publish format-standard sticky hentry rwz" data-wow-delay="0.3s">
                         <figure class="thumbnail"><span class="load"><a href="article/9318">
-                    <img src="http://blog-cdn.codergroup.cn/uploads/2019/2/6dbdf2da23fae6d98912fdd93e10d425" alt="SpringBoot Shiro多realm实现免密登录"></a></span>
+                    <img src="/page/img/4.png" alt="SpringBoot Shiro多realm实现免密登录"></a></span>
                             <span class="cat"><a href="category/springboot">${article.articleClassify}</a></span>
                         </figure>
                         <header class="entry-header">

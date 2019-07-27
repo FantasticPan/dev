@@ -11,7 +11,6 @@ import org.apache.shiro.authc.UsernamePasswordToken;
 import org.apache.shiro.subject.Subject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -33,10 +32,10 @@ public class LoginController {
      *
      * @return
      */
-    @GetMapping(value = "/login")
-    public ModelAndView login() {
-        return ResultUtil.view("login");
-    }
+    //@GetMapping(value = "/login")
+    //public ModelAndView login() {
+    //    return ResultUtil.view("login");
+    //}
 
     /**
      * 登录

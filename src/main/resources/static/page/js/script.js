@@ -196,20 +196,20 @@ $('#login-main, #login-mobile, #login-see').leanModal({
 });
 
 // 字号
-$("#fontsize").click(function() {
-	var _this = $(this);
-	var _t = $(".single-content");
-	var _c = _this.attr("class");
-	if (_c == "size_s") {
-		_this.removeClass("size_s").addClass("size_l");
-		_this.text("A+");
-		_t.removeClass("fontsmall").addClass("fontlarge");
-	} else {
-		_this.removeClass("size_l").addClass("size_s");
-		_this.text("A-");
-		_t.removeClass("fontlarge").addClass("fontsmall");
-	};
-});
+// $("#fontsize").click(function() {
+// 	var _this = $(this);
+// 	var _t = $(".single-content");
+// 	var _c = _this.attr("class");
+// 	if (_c == "size_s") {
+// 		_this.removeClass("size_s").addClass("size_l");
+// 		_this.text("A+");
+// 		_t.removeClass("fontsmall").addClass("fontlarge");
+// 	} else {
+// 		_this.removeClass("size_l").addClass("size_s");
+// 		_this.text("A-");
+// 		_t.removeClass("fontlarge").addClass("fontsmall");
+// 	};
+// });
 
 // 目录
 if (document.body.clientWidth > 1024) {

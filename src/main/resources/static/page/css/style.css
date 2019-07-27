@@ -2349,13 +2349,15 @@ img.alignleft {
     position: absolute;
     top: 15px;
     left: 20px;
-    line-height: 24px;
-    width: 40px;
+    line-height: 28px;
+    width: 50px;
     text-align: center;
     padding: 0 0 1px 0;
     cursor: pointer;
     border: 1px solid #ddd;
     border-radius: 2px;
+    background-color: #2f889a;
+    color: white;
 }
 
 #fontsize:hover {
@@ -8978,4 +8980,22 @@ li.search-inf {
     font-size: .75rem;
     border-radius: .2rem;
     margin-right: .3rem;
+}
+
+.separater-line {
+    margin: 20px 0 20px 0;
+    width: 100%;
+    height: 1px;
+    border-top: 1px #ccc dotted;
+    text-align: center;
+    overflow: initial !important;
+}
+
+.separater-line span {
+    position: relative;
+    top: -14px;
+    padding: 2px 4px;
+    /*border:1px solid #d6d6d6;*/
+    background-color: #ffffff;
+    color: #006741 !important;
 }
