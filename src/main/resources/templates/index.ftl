@@ -217,22 +217,22 @@
                             <div class="about-img">
                                 <img src="/lipan/img/dog.jpg" alt="QR Code">
                             </div>
-                            <div class="about-name">博客初心</div>
-                            <div class="about-the">个人程序人生的点滴记录和时光储备。淡泊明志，宁静致远。珍惜原创，矢志不渝。
+                            <div class="about-name">李攀</div>
+                            <div class="about-the">西南石油大学在读学生，热衷于后端的学习。
                             </div>
                         </div>
                         <div class="clear"></div>
-                        <ul>
-                            <li class="weixin">
-                                <span><a title="微信" target="_blank" href="upload/2018/11/wechat20181230193700343.jpg"><i class="fa fa-weixin"></i></a></span>
-                            </li>
-                            <li class="tqq">
-                                <a target=blank rel="external nofollow" href=http://wpa.qq.com/msgrd?V=3&uin=847064370&Site=QQ&Menu=yes title="QQ在线"><i class="fa fa-qq"></i></a>
-                            </li>
-                            <li class="tsina"><a title="" href="http://weibo.com/liuyanzhao1/profile?rightmod=1&wvr=6&mod=personinfo&is_all=1" target="_blank" rel="external nofollow"><i class="fa fa-weibo"></i></a>
-                            </li>
-                            <li class="feed"><a title="点击查看我的GitHub" href="https://github.com/FantasticPan" target="_blank" rel="external nofollow"><i class="fa fa-github"></i></a></li>
-                        </ul>
+                        <#--<ul>-->
+                            <#--<li class="weixin">-->
+                                <#--<span><a title="微信" target="_blank" href="upload/2018/11/wechat20181230193700343.jpg"><i class="fa fa-weixin"></i></a></span>-->
+                            <#--</li>-->
+                            <#--<li class="tqq">-->
+                                <#--<a target=blank rel="external nofollow" href=http://wpa.qq.com/msgrd?V=3&uin=847064370&Site=QQ&Menu=yes title="QQ在线"><i class="fa fa-qq"></i></a>-->
+                            <#--</li>-->
+                            <#--<li class="tsina"><a title="" href="http://weibo.com/liuyanzhao1/profile?rightmod=1&wvr=6&mod=personinfo&is_all=1" target="_blank" rel="external nofollow"><i class="fa fa-weibo"></i></a>-->
+                            <#--</li>-->
+                            <#--<li class="feed"><a title="点击查看我的GitHub" href="https://github.com/FantasticPan" target="_blank" rel="external nofollow"><i class="fa fa-github"></i></a></li>-->
+                        <#--</ul>-->
                         <#--<div class="about-inf">-->
                             <#--<span class="about-pn">文章 808</span>-->
                             <#--<span class="about-cn">留言 1801</span>-->
@@ -246,47 +246,12 @@
                 <h3 class="widget-title"><i class="fa fa-bars"></i>阅读榜</h3>
                 <div id="hot_comment_widget">
                     <ul>
-                        <li>
-                            <span class='li-icon li-icon-1'>1</span>
-                            <a href="article/5202" rel="bookmark" title=" 122327 views">【新】三国志13威力加强pk版1.13版本下载地址和解压密码</a>
-                        </li>
-                        <li>
-                            <span class='li-icon li-icon-2'>2</span>
-                            <a href="article/4730" rel="bookmark"
-                               title=" 58585 views">《盛世中的蝼蚁》原文</a>
-                        </li>
-                        <li>
-                            <span class='li-icon li-icon-3'>3</span>
-                            <a href="article/3223" rel="bookmark" title=" 21146 views">Java学习资料整合（持续更新）</a>
-                        </li>
-                        <li>
-                            <span class='li-icon li-icon-4'>4</span>
-                            <a href="article/6347" rel="bookmark" title=" 17356 views">一个简单漂亮的Java博客系统-适合初学ssm者</a>
-                        </li>
-                        <li>
-                            <span class='li-icon li-icon-5'>5</span>
-                            <a href="article/8402" rel="bookmark" title=" 16667 views">CoderGroup —— 基于 SpringBoot 实现的开发者社区，欢迎入驻</a>
-                        </li>
-                        <li>
-                            <span class='li-icon li-icon-6'>6</span>
-                            <a href="article/5872" rel="bookmark" title=" 12468 views">Intellij IDEA如何创建资源文件夹Source Folder</a>
-                        </li>
-                        <li>
-                            <span class='li-icon li-icon-7'>7</span>
-                            <a href="article/5828" rel="bookmark" title=" 9538 views">《信长之野望13天道》下载地址和win10好卡解决方案</a>
-                        </li>
-                        <li>
-                            <span class='li-icon li-icon-8'>8</span>
-                            <a href="article/2176" rel="bookmark" title=" 8137 views">配置七牛自定义域名cdn加速，让你的网站飞起来</a>
-                        </li>
-                        <li>
-                            <span class='li-icon li-icon-9'>9</span>
-                            <a href="article/6300" rel="bookmark" title=" 8016 views">SSM博客实战(9)-拦截器验证权限和登录与注销的实现</a>
-                        </li>
-                        <li>
-                            <span class='li-icon li-icon-10'>10</span>
-                            <a href="article/7431" rel="bookmark" title=" 7546 views">SpringBoot + Spring Security + Thymeleaf 实现权限管理登录</a>
-                        </li>
+                        <#list top10Article as article>
+                            <li>
+                                <span class='li-icon li-icon-${article_index + 1}'>${article_index + 1}</span>
+                                <a href="/article/display?articleId=${article.articleId}" rel="bookmark" title="${article.articleViewCount} views">${article.articleTitle}</a>
+                            </li>
+                        </#list>
                     </ul>
                 </div>
                 <div class="clear"></div>
@@ -301,28 +266,28 @@
                 <div class="clear"></div>
             </aside>
 
-            <aside class="widget recent_comments wow fadeInUp" data-wow-delay="0.3s">
-                <h3 class="widget-title"><i class="fa fa-bars"></i>近期评论</h3>
-                <div id="message" class="message-widget">
-                    <ul>
-                        <li>
-                            <a href="post/9352#comment-id-4165" title="" rel="external nofollow">
-                                <img src="/page/img/avator.png" alt="avatar" class="avatar avatar-128" height="128" width="128">
-                                <span class="comment_author"><strong>1343314863</strong></span>
-                                @1343314863aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa...
-                            </a>
-                        </li>
-                        <li>
-                            <a href="post/9352#comment-id-4164" title="" rel="external nofollow">
-                                <img src="/page/img/avator.png" alt="avatar" class="avatar avatar-128" height="128" width="128">
-                                <span class="comment_author"><strong>1343314863</strong></span>
-                                @1343314863123131
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="clear"></div>
-            </aside>
+            <#--<aside class="widget recent_comments wow fadeInUp" data-wow-delay="0.3s">-->
+                <#--<h3 class="widget-title"><i class="fa fa-bars"></i>近期评论</h3>-->
+                <#--<div id="message" class="message-widget">-->
+                    <#--<ul>-->
+                        <#--<li>-->
+                            <#--<a href="post/9352#comment-id-4165" title="" rel="external nofollow">-->
+                                <#--<img src="/page/img/avator.png" alt="avatar" class="avatar avatar-128" height="128" width="128">-->
+                                <#--<span class="comment_author"><strong>1343314863</strong></span>-->
+                                <#--@1343314863aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa...-->
+                            <#--</a>-->
+                        <#--</li>-->
+                        <#--<li>-->
+                            <#--<a href="post/9352#comment-id-4164" title="" rel="external nofollow">-->
+                                <#--<img src="/page/img/avator.png" alt="avatar" class="avatar avatar-128" height="128" width="128">-->
+                                <#--<span class="comment_author"><strong>1343314863</strong></span>-->
+                                <#--@1343314863123131-->
+                            <#--</a>-->
+                        <#--</li>-->
+                    <#--</ul>-->
+                <#--</div>-->
+                <#--<div class="clear"></div>-->
+            <#--</aside>-->
             <aside class="widget wow fadeInUp" data-wow-delay="0.3s">
                 <h3 class="widget-title">
                     <i class="fa fa-bars"></i>网站信息

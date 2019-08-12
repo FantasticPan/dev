@@ -23,5 +23,11 @@ public interface ArticleDao {
 
     List<Article> getArticleByTag(String articleTag);
 
+    List<Article> getTop10ViewCountArticle();
+
+    List<String> getTags();
+
+    List<String> getClassifies();
+
     Article getArticleById(Integer articleId);
 }

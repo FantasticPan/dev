@@ -49,6 +49,21 @@ public class ArticleServiceImpl implements ArticleService {
     }
 
     @Override
+    public List<Article> getTop10ViewCountArticle() {
+        return articleDao.getTop10ViewCountArticle();
+    }
+
+    @Override
+    public List<String> getTags() {
+        return articleDao.getTags();
+    }
+
+    @Override
+    public List<String> getClassifies() {
+        return articleDao.getClassifies();
+    }
+
+    @Override
     public Article getArticleById(Integer articleId) {
         return articleDao.getArticleById(articleId);
     }

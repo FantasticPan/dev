@@ -21,6 +21,12 @@ public interface ArticleService {
 
     List<Article> getArticleByTag(String articleTag);
 
+    List<Article> getTop10ViewCountArticle();
+
+    List<String> getTags();
+
+    List<String> getClassifies();
+
     Article getArticleById(Integer articleId);
 
     void viewCountIncrease(Integer articleId);
