@@ -65,6 +65,9 @@ public class Article implements Serializable {
     //文章图片路径
     private String articleImage;
 
+    //文章幻灯展示
+    private Boolean articleSlide;
+
     //文章置顶，通过设置权重来决定置顶顺序
     private Integer articleTop;
 
@@ -179,6 +182,14 @@ public class Article implements Serializable {
         this.articleClassify = articleClassify;
     }
 
+    public String getArticleTag() {
+        return articleTag;
+    }
+
+    public void setArticleTag(String articleTag) {
+        this.articleTag = articleTag;
+    }
+
     public Boolean getArticleCanComment() {
         return articleCanComment;
     }
@@ -211,41 +222,19 @@ public class Article implements Serializable {
         this.articleImage = articleImage;
     }
 
+    public Boolean getArticleSlide() {
+        return articleSlide;
+    }
+
+    public void setArticleSlide(Boolean articleSlide) {
+        this.articleSlide = articleSlide;
+    }
+
     public Integer getArticleTop() {
         return articleTop;
     }
 
     public void setArticleTop(Integer articleTop) {
         this.articleTop = articleTop;
-    }
-
-    @Override
-    public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append(getClass().getSimpleName());
-        sb.append(" [");
-        sb.append("Hash = ").append(hashCode());
-        sb.append(", articleId=").append(articleId);
-        sb.append(", articleTitle=").append(articleTitle);
-        sb.append(", articleMarkdownContent=").append(articleMarkdownContent);
-        sb.append(", articleSummary=").append(articleSummary);
-        sb.append(", articleHtmlContent=").append(articleHtmlContent);
-        sb.append(", articleAuthor=").append(articleAuthor);
-        sb.append(", articleReleaseDate=").append(articleReleaseDate);
-        sb.append(", articleUpdateDate=").append(articleUpdateDate);
-        sb.append(", articleViewCount=").append(articleViewCount);
-        sb.append(", articleCommentCount=").append(articleCommentCount);
-        sb.append(", articleLikeCount=").append(articleLikeCount);
-        sb.append(", articleReleaseType=").append(articleReleaseType);
-        sb.append(", articleClassify=").append(articleClassify);
-        sb.append(", articleTag=").append(articleTag);
-        sb.append(", articleCanComment=").append(articleCanComment);
-        sb.append(", articlePreArticleTitle=").append(articlePreArticleTitle);
-        sb.append(", articleNextArticleTitle=").append(articleNextArticleTitle);
-        sb.append(", articleImage=").append(articleImage);
-        sb.append(", articleTop=").append(articleTop);
-        sb.append(", serialVersionUID=").append(serialVersionUID);
-        sb.append("]");
-        return sb.toString();
     }
 }

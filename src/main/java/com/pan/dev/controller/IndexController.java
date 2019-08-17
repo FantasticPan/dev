@@ -38,8 +38,10 @@ public class IndexController {
         List<Article> articleList = articleService.getAllArticle();
         PageInfo<Article> pageInfo = new PageInfo<>(articleList, ConstantUtil.NAVIGATE_PAGES);
         List<Article> top10Article = articleService.getTop10ViewCountArticle();
+        List<Article> articleSlide = articleService.getArticleBySlide();
         model.addAttribute("pageInfo", pageInfo);
         model.addAttribute("top10Article", top10Article);
+        model.addAttribute("articleSlide", articleSlide);
         return ResultUtil.view("index");
     }
 }

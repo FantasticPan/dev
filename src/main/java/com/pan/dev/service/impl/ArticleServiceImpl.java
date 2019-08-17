@@ -54,6 +54,11 @@ public class ArticleServiceImpl implements ArticleService {
     }
 
     @Override
+    public List<Article> getArticleBySlide() {
+        return articleDao.getArticleBySlide();
+    }
+
+    @Override
     public List<String> getTags() {
         return articleDao.getTags();
     }

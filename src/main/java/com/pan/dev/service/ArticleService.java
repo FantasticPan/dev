@@ -23,6 +23,8 @@ public interface ArticleService {
 
     List<Article> getTop10ViewCountArticle();
 
+    List<Article> getArticleBySlide();
+
     List<String> getTags();
 
     List<String> getClassifies();

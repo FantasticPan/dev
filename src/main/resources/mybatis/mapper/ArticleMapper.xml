@@ -21,6 +21,7 @@
         <result property="articlePreArticleTitle" column="article_pre_article_title"/>
         <result property="articleNextArticleTitle" column="article_next_article_title"/>
         <result property="articleImage" column="article_image"/>
+        <result property="articleSlide" column="article_slide"/>
         <result property="articleTop" column="article_top"/>
         <association property="articleAuthor" column="article_author" javaType="User" resultMap="user"/>
     </resultMap>
@@ -42,9 +43,7 @@
         <result property="permissionName" column="permission_name"/>
     </resultMap>
 
-    <insert id="insertArticle" useGeneratedKeys="true" keyProperty="articleId" parameterType="Article">
-        INSERT INTO
-            article
+    <sql id="sql_article_insert">
         <trim prefix="(" suffix=")" suffixOverrides=",">
             <if test="articleId != null">
                 article_id,
@@ -99,6 +98,9 @@
             </if>
             <if test="articleImage != null">
                 article_image,
+            </if>
+            <if test="articleSlide != null">
+                article_slide,
             </if>
             <if test="articleTop != null">
                 article_top,
@@ -159,22 +161,16 @@
             <if test="articleImage != null">
                 #{articleImage,jdbcType=VARCHAR},
             </if>
+            <if test="articleSlide != null">
+                #{articleSlide,jdbcType=BIT},
+            </if>
             <if test="articleTop != null">
                 #{articleTop,jdbcType=INTEGER},
             </if>
         </trim>
-    </insert>
+    </sql>
 
-    <delete id="deleteArticleById" parameterType="integer">
-        DELETE FROM
-            article
-        WHERE
-            article_id = #{articleId}
-    </delete>
-
-    <update id="updateArticle">
-        UPDATE
-            article
+    <sql id="sql_article_update">
         <set>
             <if test="record.articleId != null">
                 article_id = #{record.articleId,jdbcType=INTEGER},
@@ -230,10 +226,32 @@
             <if test="record.articleImage != null">
                 article_image = #{record.articleImage,jdbcType=VARCHAR},
             </if>
+            <if test="record.articleSlide != null">
+                article_slide = #{record.articleSlide,jdbcType=BIT},
+            </if>
             <if test="record.articleTop != null">
                 article_top = #{record.articleTop,jdbcType=INTEGER},
             </if>
         </set>
+    </sql>
+
+    <insert id="insertArticle" useGeneratedKeys="true" keyProperty="articleId" parameterType="Article">
+        INSERT INTO
+            article
+        <include refid="sql_article_insert"/>
+    </insert>
+
+    <delete id="deleteArticleById" parameterType="integer">
+        DELETE FROM
+            article
+        WHERE
+            article_id = #{articleId}
+    </delete>
+
+    <update id="updateArticle">
+        UPDATE
+            article
+        <include refid="sql_article_update"/>
         WHERE
             article_id = #{articleId,jdbcType=INTEGER}
     </update>
@@ -258,6 +276,7 @@
             article_pre_article_title,
             article_next_article_title,
             article_image,
+            article_slide,
             article_top
         FROM
             article
@@ -282,6 +301,7 @@
             article_pre_article_title,
             article_next_article_title,
             article_image,
+            article_slide,
             article_top
         FROM
             article
@@ -308,6 +328,7 @@
             article_pre_article_title,
             article_next_article_title,
             article_image,
+            article_slide,
             article_top
         FROM
             article
@@ -317,29 +338,60 @@
 
     <select id="getTop10ViewCountArticle" resultMap="article">
         SELECT
-        article_id,
-        article_title,
-        article_markdown_content,
-        article_summary,
-        article_html_content,
-        article_author,
-        article_release_date,
-        article_update_date,
-        article_view_count,
-        article_comment_count,
-        article_like_count,
-        article_release_type,
-        article_classify,
-        article_tag,
-        article_can_comment,
-        article_pre_article_title,
-        article_next_article_title,
-        article_image,
-        article_top
+            article_id,
+            article_title,
+            article_markdown_content,
+            article_summary,
+            article_html_content,
+            article_author,
+            article_release_date,
+            article_update_date,
+            article_view_count,
+            article_comment_count,
+            article_like_count,
+            article_release_type,
+            article_classify,
+            article_tag,
+            article_can_comment,
+            article_pre_article_title,
+            article_next_article_title,
+            article_image,
+            article_slide,
+            article_top
         FROM
             article
         ORDER BY
             article_view_count DESC
         LIMIT 0, 10;
+    </select>
+
+    <select id="getArticleBySlide" resultMap="article">
+        SELECT
+            article_id,
+            article_title,
+            article_markdown_content,
+            article_summary,
+            article_html_content,
+            article_author,
+            article_release_date,
+            article_update_date,
+            article_view_count,
+            article_comment_count,
+            article_like_count,
+            article_release_type,
+            article_classify,
+            article_tag,
+            article_can_comment,
+            article_pre_article_title,
+            article_next_article_title,
+            article_image,
+            article_slide,
+            article_top
+        FROM
+            article
+        WHERE
+            article_slide = 1
+        ORDER BY
+            article_view_count DESC
     </select>
 </mapper>
