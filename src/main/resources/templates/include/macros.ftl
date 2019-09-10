@@ -65,22 +65,22 @@
                     </div>
                     <div class="clear"></div>
                 </div>
-                <div class="menu-topmenu-container">
-                    <ul id="menu-topmenu" class="top-menu">
-                        <li class="menu-item menu-item-type-post_type menu-item-object-page">
-                            <a href="p/shang">
-                                <i class="fa-heart fa"></i>
-                                <span class="font-text">赞赏记录</span>
-                            </a>
-                        </li>
-                        <li class="menu-item menu-item-type-post_type menu-item-object-page">
-                            <a href="p/favorite">
-                                <i class="fa-paperclip fa"></i>
-                                <span class="font-text">收藏夹</span>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
+                <#--<div class="menu-topmenu-container">-->
+                    <#--<ul id="menu-topmenu" class="top-menu">-->
+                        <#--<li class="menu-item menu-item-type-post_type menu-item-object-page">-->
+                            <#--<a href="p/shang">-->
+                                <#--<i class="fa-heart fa"></i>-->
+                                <#--<span class="font-text">赞赏记录</span>-->
+                            <#--</a>-->
+                        <#--</li>-->
+                        <#--<li class="menu-item menu-item-type-post_type menu-item-object-page">-->
+                            <#--<a href="p/favorite">-->
+                                <#--<i class="fa-paperclip fa"></i>-->
+                                <#--<span class="font-text">收藏夹</span>-->
+                            <#--</a>-->
+                        <#--</li>-->
+                    <#--</ul>-->
+                <#--</div>-->
             </div>
         </nav>
         <!--  #menu-box -->
@@ -156,113 +156,113 @@
                                         </li>
                                     </ul>
                                 </li>
-                                <li id="menu-item-275"
-                                    class="menu-item menu-item-type-custom menu-item-object-custom">
-                                    <a href="category/back-frameworks">
-                                        <i class="fa-building fa"></i>
-                                        <span class="font-text">框架与实战</span>
-                                    </a>
-                                    <ul class="sub-menu">
-                                        <li id="menu-item-179"
-                                            class="menu-item menu-item-type-custom menu-item-object-custom">
-                                            <a href="category/spring">
-                                                <span class="font-text">Spring 家族</span>
-                                            </a>
-                                            <ul class="sub-menu">
-                                                <li id="menu-item-250"
-                                                    class="menu-item menu-item-type-custom menu-item-object-custom">
-                                                    <a href="category/springboot">
-                                                        <span class="font-text">SpringBoot教程</span>
-                                                    </a>
-                                                </li>
-                                                <li id="menu-item-251"
-                                                    class="menu-item menu-item-type-custom menu-item-object-custom">
-                                                    <a href="category/springcloud">
-                                                        <span class="font-text">SpringCloud</span>
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li id="menu-item-198"
-                                    class="menu-item menu-item-type-custom menu-item-object-custom">
-                                    <a href="category/computer-science">
-                                        <i class="fa-cubes fa"></i>
-                                        <span class="font-text">计算机科学</span>
-                                    </a>
-                                    <ul class="sub-menu">
-                                        <li id="menu-item-200"
-                                            class="menu-item menu-item-type-custom menu-item-object-custom">
-                                            <a href="category/data-structure-and-algorithm">
-                                                <span class="font-text">数据结构和算法</span>
-                                            </a>
-                                        </li>
-                                        <li id="menu-item-201"
-                                            class="menu-item menu-item-type-custom menu-item-object-custom">
-                                            <a href="category/operating-system">
-                                                <span class="font-text">操作系统</span>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li id="menu-item-236"
-                                    class="menu-item menu-item-type-custom menu-item-object-custom">
-                                    <a href="category/other-tech">
-                                        <i class="fa-th-large fa"></i>
-                                        <span class="font-text">其他技术</span>
-                                    </a>
-                                    <ul class="sub-menu">
-                                        <li id="menu-item-4"
-                                            class="menu-item menu-item-type-custom menu-item-object-custom">
-                                            <a href="category/js">
-                                                <span class="font-text">JavaScript/jQuery</span>
-                                            </a>
-                                        </li>
-                                        <li id="menu-item-85"
-                                            class="menu-item menu-item-type-custom menu-item-object-custom">
-                                            <a href="category/web-build">
-                                                <span class="font-text">网站建设</span>
-                                            </a>
-                                            <ul class="sub-menu">
-                                                <li id="menu-item-16"
-                                                    class="menu-item menu-item-type-custom menu-item-object-custom">
-                                                    <a href="category/webserver">
-                                                        <span class="font-text">Apache/Nginx</span>
-                                                    </a>
-                                                </li>
-                                                <li id="menu-item-15"
-                                                    class="menu-item menu-item-type-custom menu-item-object-custom">
-                                                    <a href="category/os">
-                                                        <span class="font-text">Linux</span>
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li id="menu-item-276"
-                                    class="menu-item menu-item-type-custom menu-item-object-custom">
-                                    <a href="category/knowledge">
-                                        <i class="fa-bookmark fa"></i>
-                                        <span class="font-text">资源与知识</span>
-                                    </a>
-                                    <ul class="sub-menu">
-                                        <li id="menu-item-13"
-                                            class="menu-item menu-item-type-custom menu-item-object-custom">
-                                            <a href="category/vedio">
-                                                <span class="font-text">视频收藏</span>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li id="menu-item-277"
-                                    class="menu-item menu-item-type-custom menu-item-object-custom">
-                                    <a href="p/message">
-                                        <i class="fa-comments fa"></i>
-                                        <span class="font-text">留言板</span>
-                                    </a>
-                                </li>
+                                <#--<li id="menu-item-275"-->
+                                    <#--class="menu-item menu-item-type-custom menu-item-object-custom">-->
+                                    <#--<a href="category/back-frameworks">-->
+                                        <#--<i class="fa-building fa"></i>-->
+                                        <#--<span class="font-text">框架与实战</span>-->
+                                    <#--</a>-->
+                                    <#--<ul class="sub-menu">-->
+                                        <#--<li id="menu-item-179"-->
+                                            <#--class="menu-item menu-item-type-custom menu-item-object-custom">-->
+                                            <#--<a href="category/spring">-->
+                                                <#--<span class="font-text">Spring 家族</span>-->
+                                            <#--</a>-->
+                                            <#--<ul class="sub-menu">-->
+                                                <#--<li id="menu-item-250"-->
+                                                    <#--class="menu-item menu-item-type-custom menu-item-object-custom">-->
+                                                    <#--<a href="category/springboot">-->
+                                                        <#--<span class="font-text">SpringBoot教程</span>-->
+                                                    <#--</a>-->
+                                                <#--</li>-->
+                                                <#--<li id="menu-item-251"-->
+                                                    <#--class="menu-item menu-item-type-custom menu-item-object-custom">-->
+                                                    <#--<a href="category/springcloud">-->
+                                                        <#--<span class="font-text">SpringCloud</span>-->
+                                                    <#--</a>-->
+                                                <#--</li>-->
+                                            <#--</ul>-->
+                                        <#--</li>-->
+                                    <#--</ul>-->
+                                <#--</li>-->
+                                <#--<li id="menu-item-198"-->
+                                    <#--class="menu-item menu-item-type-custom menu-item-object-custom">-->
+                                    <#--<a href="category/computer-science">-->
+                                        <#--<i class="fa-cubes fa"></i>-->
+                                        <#--<span class="font-text">计算机科学</span>-->
+                                    <#--</a>-->
+                                    <#--<ul class="sub-menu">-->
+                                        <#--<li id="menu-item-200"-->
+                                            <#--class="menu-item menu-item-type-custom menu-item-object-custom">-->
+                                            <#--<a href="category/data-structure-and-algorithm">-->
+                                                <#--<span class="font-text">数据结构和算法</span>-->
+                                            <#--</a>-->
+                                        <#--</li>-->
+                                        <#--<li id="menu-item-201"-->
+                                            <#--class="menu-item menu-item-type-custom menu-item-object-custom">-->
+                                            <#--<a href="category/operating-system">-->
+                                                <#--<span class="font-text">操作系统</span>-->
+                                            <#--</a>-->
+                                        <#--</li>-->
+                                    <#--</ul>-->
+                                <#--</li>-->
+                                <#--<li id="menu-item-236"-->
+                                    <#--class="menu-item menu-item-type-custom menu-item-object-custom">-->
+                                    <#--<a href="category/other-tech">-->
+                                        <#--<i class="fa-th-large fa"></i>-->
+                                        <#--<span class="font-text">其他技术</span>-->
+                                    <#--</a>-->
+                                    <#--<ul class="sub-menu">-->
+                                        <#--<li id="menu-item-4"-->
+                                            <#--class="menu-item menu-item-type-custom menu-item-object-custom">-->
+                                            <#--<a href="category/js">-->
+                                                <#--<span class="font-text">JavaScript/jQuery</span>-->
+                                            <#--</a>-->
+                                        <#--</li>-->
+                                        <#--<li id="menu-item-85"-->
+                                            <#--class="menu-item menu-item-type-custom menu-item-object-custom">-->
+                                            <#--<a href="category/web-build">-->
+                                                <#--<span class="font-text">网站建设</span>-->
+                                            <#--</a>-->
+                                            <#--<ul class="sub-menu">-->
+                                                <#--<li id="menu-item-16"-->
+                                                    <#--class="menu-item menu-item-type-custom menu-item-object-custom">-->
+                                                    <#--<a href="category/webserver">-->
+                                                        <#--<span class="font-text">Apache/Nginx</span>-->
+                                                    <#--</a>-->
+                                                <#--</li>-->
+                                                <#--<li id="menu-item-15"-->
+                                                    <#--class="menu-item menu-item-type-custom menu-item-object-custom">-->
+                                                    <#--<a href="category/os">-->
+                                                        <#--<span class="font-text">Linux</span>-->
+                                                    <#--</a>-->
+                                                <#--</li>-->
+                                            <#--</ul>-->
+                                        <#--</li>-->
+                                    <#--</ul>-->
+                                <#--</li>-->
+                                <#--<li id="menu-item-276"-->
+                                    <#--class="menu-item menu-item-type-custom menu-item-object-custom">-->
+                                    <#--<a href="category/knowledge">-->
+                                        <#--<i class="fa-bookmark fa"></i>-->
+                                        <#--<span class="font-text">资源与知识</span>-->
+                                    <#--</a>-->
+                                    <#--<ul class="sub-menu">-->
+                                        <#--<li id="menu-item-13"-->
+                                            <#--class="menu-item menu-item-type-custom menu-item-object-custom">-->
+                                            <#--<a href="category/vedio">-->
+                                                <#--<span class="font-text">视频收藏</span>-->
+                                            <#--</a>-->
+                                        <#--</li>-->
+                                    <#--</ul>-->
+                                <#--</li>-->
+                                <#--<li id="menu-item-277"-->
+                                    <#--class="menu-item menu-item-type-custom menu-item-object-custom">-->
+                                    <#--<a href="p/message">-->
+                                        <#--<i class="fa-comments fa"></i>-->
+                                        <#--<span class="font-text">留言板</span>-->
+                                    <#--</a>-->
+                                <#--</li>-->
                             </ul>
                         </div>
                     </nav><!-- #site-nav -->
@@ -272,15 +272,15 @@
         </div>
         <!-- #menu-box -->
     </header><!-- #masthead -->
-    <div id="search-main">
-        <div class="searchbar">
-            <form method="get" id="searchform" action="search">
-            <span>
-                <input type="text" value="" name="keyword" id="keyword" placeholder="输入搜索内容" required/>
-                <button type="submit" id="searchsubmit">搜索</button>
-            </span>
-            </form>
-        </div>
-        <div class="clear"></div>
-    </div>
+    <#--<div id="search-main">-->
+        <#--<div class="searchbar">-->
+            <#--<form method="get" id="searchform" action="search">-->
+            <#--<span>-->
+                <#--<input type="text" value="" name="keyword" id="keyword" placeholder="输入搜索内容" required/>-->
+                <#--<button type="submit" id="searchsubmit">搜索</button>-->
+            <#--</span>-->
+            <#--</form>-->
+        <#--</div>-->
+        <#--<div class="clear"></div>-->
+    <#--</div>-->
 </#macro>

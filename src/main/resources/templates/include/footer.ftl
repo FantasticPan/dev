@@ -24,42 +24,42 @@
             </h3>
             <div class="textwidget">
                 <ul class="menu">
-                    <li>
-                        <a title="" target="_blank" href="p/message">
-                            <i class="fa-commenting fa"></i>
-                            <span class="font-text">留言板</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a target="_blank" href="sitemap">
-                            <i class="fa-sitemap fa"></i>
-                            <span class="font-text">站点地图</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a target="_blank" rel="nofollow" href="archive">
-                            <i class="fa-list-alt fa"></i>
-                            <span class="font-text">文章归档</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a title="" target="_blank" href="tags">
-                            <i class="fa fa-tag"></i>
-                            <span class="font-text">标签库</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a title="" target="_blank" href="recent-comments">
-                            <i class="fa-comment fa"></i>
-                            <span class="font-text">最新评论</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a title="" target="_blank" href="highlight">
-                            <i class="fa-code fa"></i>
-                            <span class="font-text">代码高亮</span>
-                        </a>
-                    </li>
+                    <#--<li>-->
+                        <#--<a title="" target="_blank" href="p/message">-->
+                            <#--<i class="fa-commenting fa"></i>-->
+                            <#--<span class="font-text">留言板</span>-->
+                        <#--</a>-->
+                    <#--</li>-->
+                    <#--<li>-->
+                        <#--<a target="_blank" href="sitemap">-->
+                            <#--<i class="fa-sitemap fa"></i>-->
+                            <#--<span class="font-text">站点地图</span>-->
+                        <#--</a>-->
+                    <#--</li>-->
+                    <#--<li>-->
+                        <#--<a target="_blank" rel="nofollow" href="archive">-->
+                            <#--<i class="fa-list-alt fa"></i>-->
+                            <#--<span class="font-text">文章归档</span>-->
+                        <#--</a>-->
+                    <#--</li>-->
+                    <#--<li>-->
+                        <#--<a title="" target="_blank" href="tags">-->
+                            <#--<i class="fa fa-tag"></i>-->
+                            <#--<span class="font-text">标签库</span>-->
+                        <#--</a>-->
+                    <#--</li>-->
+                    <#--<li>-->
+                        <#--<a title="" target="_blank" href="recent-comments">-->
+                            <#--<i class="fa-comment fa"></i>-->
+                            <#--<span class="font-text">最新评论</span>-->
+                        <#--</a>-->
+                    <#--</li>-->
+                    <#--<li>-->
+                        <#--<a title="" target="_blank" href="highlight">-->
+                            <#--<i class="fa-code fa"></i>-->
+                            <#--<span class="font-text">代码高亮</span>-->
+                        <#--</a>-->
+                    <#--</li>-->
                 </ul>
             </div>
             <div class="clear"></div>
@@ -108,23 +108,23 @@
     <li><a class="scroll-h" title="返回顶部"><i class="fa fa-angle-up"></i></a></li>
     <li><a class="scroll-b" title="转到底部"><i class="fa fa-angle-down"></i></a></li>
     <li class="gb2-site"><a id="gb2big5"><span>繁</span></a></li>
-    <li class="qqonline">
-        <div class="online">
-            <a href="javascript:void(0)"><i class="fa fa-qq"></i></a>
-        </div>
-        <div class="qqonline-box">
-            <div class="qqonline-main">
-                <div class="nline-wiexin">
-                    <h4>微信</h4>
-                    <img title="微信" alt="微信" src="upload/2018/11/wechat20181230193700343.jpg">
-                </div>
-                <div class="nline-qq">
-                    <a target="_blank" rel="external nofollow"
-                       href="http://wpa.qq.com/msgrd?v=3&uin=847064370&site=qq&menu=yes"><i class="fa fa-qq"></i>在线咨询
-                    </a>
-                </div>
-            </div>
-            <span class="qq-arrow"></span>
-        </div>
-    </li>
+    <#--<li class="qqonline">-->
+        <#--<div class="online">-->
+            <#--<a href="javascript:void(0)"><i class="fa fa-qq"></i></a>-->
+        <#--</div>-->
+        <#--<div class="qqonline-box">-->
+            <#--<div class="qqonline-main">-->
+                <#--<div class="nline-wiexin">-->
+                    <#--<h4>微信</h4>-->
+                    <#--<img title="微信" alt="微信" src="upload/2018/11/wechat20181230193700343.jpg">-->
+                <#--</div>-->
+                <#--<div class="nline-qq">-->
+                    <#--<a target="_blank" rel="external nofollow"-->
+                       <#--href="http://wpa.qq.com/msgrd?v=3&uin=847064370&site=qq&menu=yes"><i class="fa fa-qq"></i>在线咨询-->
+                    <#--</a>-->
+                <#--</div>-->
+            <#--</div>-->
+            <#--<span class="qq-arrow"></span>-->
+        <#--</div>-->
+    <#--</li>-->
 </ul>

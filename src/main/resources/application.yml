@@ -20,7 +20,7 @@ spring:
 #        default_encoding: UTF-8
 #        classic_compatible: true
 server:
-  port: 8888
+  port: 9090
 mybatis:
   mapper-locations: classpath:/mybatis/mapper/*.xml
   config-location: classpath:/mybatis/mybatis-config.xml
